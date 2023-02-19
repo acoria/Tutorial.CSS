@@ -1,18 +1,31 @@
-.googleStyledFont {
+/*  Selectors: there are five types of selectors
+        - element
+        - class
+        - id
+        - tag
+        - universal
+
+    Inheritance: each element inherits the styles of its parents but as soon as there is a selector, this overrides the inherited style.
+    Cascading: multiple rules can apply to the same element
+    Specificity: resolves conflicting styles for the same element
+    
+    Order of specificity priority (highest to lowest):
+        - inline styles
+        - #ID selectors
+        - .class, :pseudo-class and [attribute] selectors
+        - <tag> and ::pseudo-element selectors
+        - * universal selector
+        - inheritance
+*/
+
+/* style every element inside body inherits */
+body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* There are five types of selectors:
-    - element
-    - class
-    - id
-    - tag
-    - universal
-*/
-
 /* element selector */
 h1 {
-    color: blue
+    color: blue;
 }
 
 /* class selector */
@@ -30,12 +43,7 @@ h1 {
     color: blueviolet
 }
 
-/* Cascading: multiple rules can apply to the same element
-   Specificity: resolves conflicting styles for the same element
-   Order of specificity priority (highest to lowest):
-        - inline styles
-        - #ID selectors
-        - .class, :pseudo-class and [attribute] selectors
-        - <tag> and ::pseudo-element selectors
-        - * universal selector
-*/
+/* this selector, as any selector does, overrides the inherited style "font-family" */
+h3 {
+    font-family: serif;
+}
