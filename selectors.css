@@ -1,0 +1,41 @@
+.googleStyledFont {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* There are five types of selectors:
+    - element
+    - class
+    - id
+    - tag
+    - universal
+*/
+
+/* element selector */
+h1 {
+    color: blue
+}
+
+/* class selector */
+.classForClassSelector {
+    color: aquamarine;
+}
+
+/* id selector */
+#idOfParagraph {
+    color: green
+}
+
+/* attribute selector */
+[disabled] {
+    color: blueviolet
+}
+
+/* Cascading: multiple rules can apply to the same element
+   Specificity: resolves conflicting styles for the same element
+   Order of specificity priority (highest to lowest):
+        - inline styles
+        - #ID selectors
+        - .class, :pseudo-class and [attribute] selectors
+        - <tag> and ::pseudo-element selectors
+        - * universal selector
+*/
