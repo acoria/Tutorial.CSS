@@ -1,0 +1,9 @@
+/*
+    Descendant ( ): 
+    A style is only applied to the last element in the rule
+    - if the defined tags exist somewhere above the last element
+      (= if the second element is a descendant of the first)
+*/
+div p {
+    color: red;
+}

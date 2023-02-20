@@ -1,0 +1,11 @@
+/*
+    CSS rules consist of the following elements:
+        - selectors (e.g. div, .class, #id)
+        - properties (e.g. background-color, margin, width)
+        - values (e.g. red, 10px, 30%)
+
+    Properties are listed here: https://developer.mozilla.org/en-US/docs/Web/CSS
+
+    Best practices:
+        - Put the more general rules at the top and go down to more specific rules
+*/

@@ -1,0 +1,11 @@
+/*
+    General Sibling (~):
+    Equivalent to the adjacent sibling, but not as strict.
+    A style is only applied to the last element in the rule
+    - if the defined tags exist somewhere before the last element
+    - if the elements share the same parent
+*/
+
+h3~p {
+    color: red;
+}

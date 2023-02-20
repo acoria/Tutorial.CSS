@@ -1,0 +1,14 @@
+/*
+    Child (>): 
+    A style is only applied to the last element in the rule
+    - if it is a direct child somewhere inside of the first element
+*/
+
+div>p {
+    color: red;
+}
+
+/* there can be as many elements as needed */
+div>section>h3 {
+    color: blue;
+}

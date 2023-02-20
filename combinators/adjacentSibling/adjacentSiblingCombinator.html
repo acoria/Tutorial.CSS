@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./adjacentSiblingCombinator.css" />
+    <title>CSS Tutorial: Adjacent Siblings combinators</title>
+  </head>
+  <body>
+    <h1>Adjacent siblings:</h1>
+    <div>
+      <h2>Two elements combinated:</h2>
+      <h3>Not applied</h3>
+      <p>CSS applied</p>
+      <h4>Not applied</h4>
+      <p>Not applied</p>
+    </div>
+
+    <div>
+      <h2>Three elements combinated:</h2>
+      <h3>Not applied</h3>
+      <p>Not applied</p>
+      <section>
+        <h4>CSS applied</h4>
+      </section>
+    </div>
+
+    <div>
+      <h2>Parent elements:</h2>
+      <section>Section</section>
+      <h3>Test after section - CSS applied</h3>
+      <section>
+        <h3>Test inside section - not applied</h3>
+      </section>
+    </div>
+  </body>
+</html>

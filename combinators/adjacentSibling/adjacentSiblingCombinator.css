@@ -1,0 +1,20 @@
+/*
+    Adjacent Sibling (+): 
+    A style is only applied to the last element in the rule
+    - if the defined tags exist directly before the last element
+    - if the elements share the same parent
+*/
+/* only the p-element following an h3-element will be red */
+h3+p {
+    color: red
+}
+
+/* there can be as many elements as needed */
+h3+p+section {
+    color: blueviolet
+}
+
+/* this will only be applied to an h3 following a section, not an h3 inside a section */
+section+h3 {
+    color: blue
+}

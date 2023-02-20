@@ -1,9 +1,11 @@
-/*  Selectors: there are five types of selectors
+/*  
+    Selectors: there are five types of selectors
         - element
         - class
         - id
         - tag
         - universal
+        -> also combinators are possible, e.g. class & element
 
     Inheritance: each element inherits the styles of its parents but as soon as there is a selector, this overrides the inherited style.
     Cascading: multiple rules can apply to the same element
@@ -16,6 +18,7 @@
         - <tag> and ::pseudo-element selectors
         - * universal selector
         - inheritance
+    Exception: combinators -> more specific selectors win over more general ones
 */
 
 /* style every element inside body inherits */
@@ -46,4 +49,11 @@ h1 {
 /* this selector, as any selector does, overrides the inherited style "font-family" */
 h3 {
     font-family: serif;
+    /* 
+        if the inherited style should be used, "inherit" can be used to force inheritance to be used
+        but it is not the best style, since it would have to be applied to any h3 tag:
+        font-family: inherit;
+        instead use combinators to switch the declaration around 
+    */
+
 }

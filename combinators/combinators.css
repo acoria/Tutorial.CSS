@@ -1,0 +1,20 @@
+/*
+    There are four types of combinators:
+        For the same level:
+        - adjacent sibling
+        - general sibling
+        For elements inside elements:
+        - child
+        - descendant
+
+    Specificity:
+    - All combinators have the same priority regarding specificity,
+      so the last combinator defined in the CSS wins.
+    - More specific combinators win over less specific ones
+    e.g. li + li + li wins over ol > li
+
+    For performance reasons it is best to only use classes and ids as selectors
+        e.g. 
+            #someId h1{ }
+            .someClass p{ }
+*/
