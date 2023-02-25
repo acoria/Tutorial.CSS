@@ -1,0 +1,16 @@
+/* remove bullet points from a list (alternatively padding can be set to 0 */
+ul {
+    list-style: none;
+}
+
+/* BEM: Block element modifier: a special form of naming convention e.g. "main-nav__item" */
+
+/* Pay attention to unexpected inline-block behavior! 
+   When you have line breaks in your html, the space between them is considered to be an element,
+   so sometimes your elements will not be in the same line.
+   e.g.
+   </div>
+   <nav>
+
+   To fix this, put them next to each other or leave more space by subtracting more space from one 
+   */

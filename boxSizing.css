@@ -1,0 +1,12 @@
+section {
+  /* this is the default. It means that any width/height defined will only take the content into account
+  e.g. "width: 300px" will result in the content to be 300px and the padding and border to exceed this width. */
+  box-sizing: content-box;
+}
+
+/* box-sizing: content-box is most commonly replaced with "box-sizing: border-box" for the entire application.
+   This causes for the height/width properties the content+padding+border to be considered for and is much more desirable.
+   However, since block-level-elements have their own default box-sizing, the "*" has to be used to override every element*/
+* {
+  box-sizing: border-box;
+}

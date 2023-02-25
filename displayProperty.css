@@ -1,0 +1,32 @@
+/* Any element only ever takes as much height as it needs. If e.g. 50% are defined, they use 50% of its parent height.
+  
+  Certain elements are block level elements by default e.g. section, div, h1 p.
+  Block-level elements are rendered as a block and hence take up all the available horizontal space.
+  This means that two block-level elements will render in two different lines.
+  Margin-top and Margin-bottom can be set. */
+section {
+    /* default for certain elements
+       they use 100% width per default */
+    display: block;
+}
+
+/* Other elements, such as the anchor tag, are inlined, which means they only take up the space they require to fit their content in.
+    Hence two inline-elements will fit into the same line.
+    The following properties have no effect: 
+    Margin-top, margin-bottom, width, height */
+a {
+    display: inline;
+}
+
+/* This hides the element but keeps it inside the DOM, so it can be shown on button click */
+a {
+    display: none;
+    /* to avoid elements taking its space, visibility ca be set to hidden */
+    visibility: hidden;
+}
+
+/* This is a mixed type for when both behaviors are needed. It allows elements to show up next to each other (inline) 
+   and it also allows adding top/bottom-margins, paddings like on block elements (block) */
+a {
+    display: inline-block;
+}

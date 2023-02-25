@@ -8,4 +8,5 @@
 
     Best practices:
         - Put the more general rules at the top and go down to more specific rules
+        - use "*" to change the default to "box-sizing: border-box;" so that all spacing applied always includes content, padding and border
 */

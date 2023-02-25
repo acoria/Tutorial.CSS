@@ -1,0 +1,18 @@
+/* Shorthand properties are a short notation for several properties at once */
+
+section {
+    border: 2px solid blue;
+    /* is short for: */
+    border-radius: 2px;
+    border-style: solid;
+    border-color: blue;
+
+    /* applies to all four sides */
+    margin: 10px;
+    /* top right bottom left */
+    margin: 5px 10px 20px 30px;
+    /* is the shorthand for top&bottom/left&right */
+    margin: 10px 20px;
+
+
+}
