@@ -25,7 +25,7 @@ body {
 .main-nav {
     display: inline-block;
     text-align: right;
-    width: calc(100% - 45px);
+    width: calc(100% - 50px);
     vertical-align: middle;
 }
 
@@ -43,10 +43,37 @@ body {
 .main-nav__item a {
     color: #311238;
     text-decoration: none;
+    font-weight: bold;
+    padding: 2px 0;
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+    color: white;
+    border-bottom: 3px solid white;
+}
+
+.main-nav__item--cta a {
+    color: white;
+    background: #642472;
+    padding: 5px 16px;
+    border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active {
+    color: #642472;
+    background: white;
+    padding: 8px 16px;
+    border: none;
 }
 
 #product-overview {
-    background: #642472;
+    background: url("leaves.jpg");
     height: 400px;
     color: white;
+}
+
+#product-overview h1 {
+    margin: 0;
 }

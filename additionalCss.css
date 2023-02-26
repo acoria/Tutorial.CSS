@@ -1,3 +1,9 @@
+/* Grouping rules: Rules that should be applied to many selectors can be grouped using a "," */
+main-nav__item a:hover,
+main-nav__item a:inactive {
+    color: white;
+}
+
 /* remove bullet points from a list (alternatively padding can be set to 0 */
 ul {
     list-style: none;
@@ -12,5 +18,10 @@ ul {
    </div>
    <nav>
 
-   To fix this, put them next to each other or leave more space by subtracting more space from one 
-   */
+   To fix this, put them next to each other or leave more space by subtracting more space from one */
+
+/* Margin collapsing:
+   When two elements with a margin are next to each other, only the bigger one is applied.
+   e.g. top element with a bottom margin of 10, bottom element with a top margin of 5
+        -> only a margin of 10 is used
+*/

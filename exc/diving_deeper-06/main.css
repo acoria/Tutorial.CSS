@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.box {
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px dashed blue;
+    background: blueviolet;
+    margin: 5px 20px 10px 5px;
+    display: inline-block;
+}
+
+.first-box {
+    /* height: 100%; */
+    /* make sure the 100% of the window is used */
+    box-sizing: border-box;
+    height: 300px;
+    width: 50%;
+    /* visibility: hidden; */
+
+}
+
+div:last-of-type:hover {
+    color: blueviolet;
+    background: white;
+}
