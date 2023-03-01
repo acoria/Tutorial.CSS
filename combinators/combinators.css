@@ -6,6 +6,8 @@
         For elements inside elements:
         - child
         - descendant
+    
+    and an unofficial same-element combinator
 
     Specificity:
     - All combinators have the same priority regarding specificity,

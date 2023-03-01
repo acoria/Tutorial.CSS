@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Jungle</title>
     <link rel="shortcut icon" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Anton"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&family=Roboto:wght@100;400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="main.css" />
@@ -37,12 +35,50 @@
       </nav>
     </header>
     <main>
-      <section id="product-overview">
+      <section id="nature-overview">
         <h1>Nature</h1>
       </section>
-      <section id="plans">
+      <section id="tours">
         <h1 class="section-title">Plan your visit</h1>
-        <p>Make sure to get the best guide that ever existed!</p>
+        <div>
+          <article class="tour">
+            <h1 class="tour__title">FREE</h1>
+            <h2 class="tour__price">0€</h2>
+            <h3>Take a day tour on your own through nature</h3>
+            <ul class="tour__features">
+              <li>Bring your car</li>
+              <li>Stay for the day</li>
+              <li>Look around</li>
+              <li>Read the signs</li>
+            </ul>
+            <button class="button">CHOOSE TOUR</button>
+          </article>
+          <article class="tour tour--highlighted">
+            <h1 class="tour__annotation">RECOMMENDED</h1>
+            <h1 class="tour__title">PLUS</h1>
+            <h2 class="tour__price">80€/night</h2>
+            <h3>For adventurers</h3>
+            <ul class="tour__features">
+              <li>Arrive however you like</li>
+              <li>Stay in a tent overnight</li>
+              <li>Get a guided tour</li>
+              <li>Exclusive guide stories</li>
+            </ul>
+            <button class="button">CHOOSE TOUR</button>
+          </article>
+          <article class="tour">
+            <h1 class="tour__title">PREMIUM</h1>
+            <h2 class="tour__price">299€/night</h2>
+            <h3>Pure luxury</h3>
+            <ul class="tour__features">
+              <li>Get picked up from all over the world</li>
+              <li>Stay in the straw hut overnight</li>
+              <li>Get a personal guide</li>
+              <li>Feed and eat with our animals</li>
+            </ul>
+            <button class="button">CHOOSE TOUR</button>
+          </article>
+        </div>
       </section>
     </main>
   </body>

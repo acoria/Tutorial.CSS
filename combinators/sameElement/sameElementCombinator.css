@@ -1,0 +1,12 @@
+/*
+    Same element (./#):
+    A style is only applied to the element with the class or id specified in the rule
+*/
+
+p.highlighted {
+    color: blueviolet;
+}
+
+h4#highlighted {
+    color: aqua;
+}

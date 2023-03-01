@@ -4,10 +4,12 @@
 
 body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .main-header {
-    background: #9736ac;
+    background: #642472;
     padding: 8px 16px;
 }
 
@@ -55,7 +57,7 @@ body {
 
 .main-nav__item--cta a {
     color: white;
-    background: #642472;
+    background: #9736ac;
     padding: 5px 16px;
     border-radius: 8px;
 }
@@ -68,12 +70,86 @@ body {
     border: none;
 }
 
-#product-overview {
+#nature-overview {
     background: url("leaves.jpg");
     height: 400px;
     color: white;
 }
 
-#product-overview h1 {
+#nature-overview h1 {
     margin: 0;
+    padding: 5px 0 0 5px;
+}
+
+.section-title {
+    color: #642472;
+    text-align: center;
+}
+
+.tour {
+    background: #514471;
+    text-align: center;
+    padding: 16px;
+    margin: 8px;
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+}
+
+.tour--highlighted {
+    background: #531e5f;
+    color: white;
+    /* rgba: a = 1 -> not transparent / a = 0 -> fully transparent */
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.tour__title {
+    color: #311238;
+}
+
+.tour__price {
+    color: #838383
+}
+
+.tour--highlighted .tour__title {
+    color: white;
+}
+
+.tour--highlighted .tour__price {
+    color: #311238;
+}
+
+.tour__annotation {
+    background: white;
+    color: #531e5f;
+    padding: 8px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.tour__features {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.tour__features li {
+    margin: 5px 0;
+}
+
+.button {
+    background: #642472;
+    color: white;
+    font: inherit;
+    border: 1.5px solid #642472;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+    background: white;
+    color: #642472;
 }
