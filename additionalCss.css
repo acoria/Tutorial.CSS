@@ -4,9 +4,20 @@ main-nav__item a:inactive {
     color: white;
 }
 
-/* remove bullet points from a list (alternatively padding can be set to 0 */
+/* remove bullet points from a list with list-style:none (alternatively padding can be set to 0) */
 ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    width: 128px;
+    height: 128px;
+    /* creates a perfectly round circle*/
+    border-radius: 50%;
+    /* horizontal alignment can be achieved by auto margin (does not work for vertical alignment) */
+    margin: auto;
 }
 
 /* BEM: Block element modifier: a special form of naming convention e.g. "main-nav__item" */

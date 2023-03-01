@@ -78,7 +78,8 @@ body {
 
 #nature-overview h1 {
     margin: 0;
-    padding: 5px 0 0 5px;
+    padding: 15px 0 0 15px;
+    font-size: 30px;
 }
 
 .section-title {
@@ -152,4 +153,45 @@ body {
 .button:active {
     background: white;
     color: #642472;
+}
+
+#key-features {
+    background: #327224;
+    margin-top: 32px;
+}
+
+#key-features .section-title {
+    color: white;
+    padding: 12px;
+}
+
+.key-features__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.key-features__features li {
+    display: inline-block;
+    width: 30%;
+    /* Add this to make a line break look better */
+    vertical-align: top;
+}
+
+.key-features__image {
+    background: #9736ac;
+    width: 128px;
+    height: 128px;
+    border: 2px solid #642472;
+    /* creates a perfectly round circle */
+    border-radius: 50%;
+    /* horizontal alignment can be achieved by auto margin (does not work for vertical alignment) */
+    margin: auto;
+}
+
+.key-features__features p {
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
 }
