@@ -7,6 +7,10 @@
     Properties are listed here: https://developer.mozilla.org/en-US/docs/Web/CSS
     Browser support can be checked here: caniuse.com (market share: it also shows how much of the market you reach with a certain css/js-feature)
 
+    File imports: 
+    Always add the more specific css file import after the shared css file to have the possibility to override a more general style   
+    because when there are two selectors for the same element, the last one defined in the code wins.
+
     Best practices:
         - Put the more general rules at the top and go down to more specific rules
         - Use "*" to change the default to "box-sizing: border-box;" so that all spacing applied always includes content, padding and border

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Jungle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    //Adding the shared file first and then the more specific css file to the
+    page //you have the possiblity to override styles in your specific file
+    //because if the selector is the same, the last one wins
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="tours.css" />
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div>
+        <a href="../index.html" class="main-header__brand"> Jungle </a>
+      </div>
+      <nav class="main-nav">
+        <ul class="main-nav__items">
+          <li class="main-nav__item">
+            <a href="tours/index.html">Tours</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="../live-cam/index.html">Live cam</a>
+          </li>
+          <!-- cta: call to action, so the main button -->
+          <li class="main-nav__item main-nav__item--cta">
+            <a href="../visit/index.html">Visit</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="tour tour_plus">
+        <a href="#" class="tour__link">
+          <h1 class="tour__link_title">Our PLUS Tour</h1>
+          <h2 class="tour__link_subtitle">
+            The most popular choice of our customers.
+          </h2>
+          <p class="tour__link_text">
+            Benefit from arriving however you like, staying in a tent overnight,
+            getting a guided tour and listening to the guides exclusive stories!
+          </p>
+        </a>
+      </section>
+      <section id="tour_free" class="tour tour_free">
+        <a href="#" class="tour__link">
+          <h1 class="tour__link_title">Our FREE Tour</h1>
+          <h2 class="tour__link_subtitle">For a little trip into nature</h2>
+          <p class="tour__link_text">Take a tour on your own at zero cost!</p>
+        </a>
+      </section>
+      <section id="tour_premium" class="tour tour_premium">
+        <a href="#" class="tour__link">
+          <h1 class="tour__link_title">Our PREMIUM Tour</h1>
+          <h2 class="tour__link_subtitle">
+            This is pure luxury. We will leave no dream of your open.
+          </h2>
+          <p class="tour__link_text">
+            Stay in our straw huts overnight and experience nature with your own
+            personal guide. Feed and eat with our animals!
+          </p>
+        </a>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <nav>
+        <ul class="main-footer__links">
+          <li class="main-footer__link">
+            <a href="#">Support</a>
+          </li>
+          <li class="main-footer__link">
+            <a href="#">Terms of Use</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

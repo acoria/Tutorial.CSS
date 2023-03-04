@@ -1,0 +1,45 @@
+main {
+    margin-top: 32px;
+}
+
+.tour {
+    border: 3px solid #642472;
+    margin: 8px 0;
+    padding: 20px;
+}
+
+.tour_plus {
+    background: rgba(151, 54, 172, 0.5);
+}
+
+.tour_free {
+    background: rgba(151, 54, 172, 0.2);
+}
+
+.tour_premium {
+    background: #642472;
+}
+
+.tour_premium h1 {
+    color: white;
+}
+
+.tour__link {
+    text-decoration: none;
+}
+
+.tour__link_title {
+    color: black;
+    font-size: large;
+}
+
+.tour__link_subtitle {
+    color: #838383;
+    font-size: medium;
+}
+
+.tour__link_text {
+    background: white;
+    border: 2px solid #642472;
+    padding: 12px;
+}
