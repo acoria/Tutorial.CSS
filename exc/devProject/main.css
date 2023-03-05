@@ -1,5 +1,5 @@
 #nature-overview {
-    background: url("leaves.jpg");
+    background: url("./images/leaves.jpg");
     height: 400px;
     color: white;
 }
@@ -12,6 +12,12 @@
 
 .section-title {
     color: #642472;
+    text-align: center;
+}
+
+.tours {
+    width: 80%;
+    margin: auto;
     text-align: center;
 }
 

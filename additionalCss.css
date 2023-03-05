@@ -20,6 +20,21 @@ div {
     margin: auto;
 }
 
+/* if you want an element to be fully clickable over the entire width, switch to display:block */
+a {
+    display: block;
+}
+
+/***** Floating *****/
+/* float takes an element out of the document flow (=normal space) and floats it to a certain position.
+   Great if you want text or images to float around an element but it is no good for block elements
+   such as sections, div's because they ignore this attribute */
+section {
+    float: right;
+}
+
+
+
 /* BEM: Block element modifier: a special form of naming convention e.g. "main-nav__item" */
 
 /* Pay attention to unexpected inline-block behavior! 

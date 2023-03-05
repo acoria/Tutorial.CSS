@@ -2,10 +2,26 @@ main {
     margin-top: 32px;
 }
 
+.background {
+    background: url(../images/jungle.jpg);
+    width: 500px;
+    height: 500px;
+}
+
 .tour {
-    border: 3px solid #642472;
+    width: 80%;
     margin: 8px 0;
-    padding: 20px;
+    border: 3px solid #642472;
+    border-left: none;
+}
+
+.tour:hover,
+.tour:active {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.clearfix {
+    clear: both;
 }
 
 .tour_plus {
@@ -14,6 +30,15 @@ main {
 
 .tour_free {
     background: rgba(151, 54, 172, 0.2);
+    float: right;
+    border-left: 3px solid #642472;
+    border-right: none;
+    text-align: right;
+}
+
+.tour_free:hover,
+.tour_free:active {
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .tour_premium {
@@ -24,21 +49,27 @@ main {
     color: white;
 }
 
-.tour__link {
-    text-decoration: none;
+.tour_premium .tour__subtitle {
+    color: #bbb;
 }
 
-.tour__link_title {
+.tour__link {
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+}
+
+.tour__title {
     color: black;
     font-size: large;
 }
 
-.tour__link_subtitle {
+.tour__subtitle {
     color: #838383;
     font-size: medium;
 }
 
-.tour__link_text {
+.tour__description {
     background: white;
     border: 2px solid #642472;
     padding: 12px;

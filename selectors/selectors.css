@@ -5,7 +5,7 @@
         - id
         - tag
         - universal
-        -> also combinators are possible, e.g. class & element
+        -> also combinators are possible, e.g. class & element (see combinators)
 
     Inheritance: each element inherits the styles of its parents but as soon as there is a selector, this overrides the inherited style.
     Cascading: multiple rules can apply to the same element

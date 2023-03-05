@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+.main-nav {
+    background: #642472;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+}
+
+.main-content {
+    background: rgba(100, 36, 114, 0.6);
+    height: 1000px;
+}

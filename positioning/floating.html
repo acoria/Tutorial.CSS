@@ -1,0 +1,58 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./floating.css" />
+    <title>CSS Tutorial: Floating</title>
+  </head>
+  <body>
+    <h1>Example 1: Floating element outside the document flow</h1>
+    <img src="./leaf.png" alt="A leaf" />
+    <p>
+      This is a longer text that flows around a picture. This is a longer text
+      that flows around a picture. This is a longer text that flows around a
+      picture. This is a longer text that flows around a picture. This is a
+      longer text that flows around a picture. This is a longer text that flows
+      around a picture. This is a longer text that flows around a picture. This
+      is a longer text that flows around a picture. This is a longer text that
+      flows around a picture. This is a longer text that flows around a picture.
+      This is a longer text that flows around a picture. This is a longer text
+      that flows around a picture. This is a longer text that flows around a
+      picture. This is a longer text that flows around a picture. This is a
+      longer text that flows around a picture. This is a longer text that flows
+      around a picture. This is a longer text that flows around a picture. This
+      is a longer text that flows around a picture. This is a longer text that
+      flows around a picture. This is a longer text that flows around a picture.
+      This is a longer text that flows around a picture. This is a longer text
+      that flows around a picture. This is a longer text that flows around a
+      picture. This is a longer text that flows around a picture.
+    </p>
+    <section>
+      <p>
+        The text inside will float but not the section itself. The text inside
+        will float but not the section itself. The text inside will float but
+        not the section itself. The text inside will float but not the section itself. The text inside
+        will float but not the section itself. The text inside will float but
+        not the section itself. The text inside will float but not the section itself. The text inside
+        will float but not the section itself. The text inside will float but
+        not the section itself.
+      </p>
+    </section>
+    <h1>
+      Example 2: Fix for elements that should not float after a floating element
+    </h1>
+    <img src="./leaf.png" alt="A leaf" />
+    <div class="clearfix"></div>
+    <p>
+      This is a longer text that will no longer flow around the image because of
+      the "clearfix" element.
+    </p>
+    <section>
+      <p>
+        Another section that will ignore that the previous elements float and
+        treat them like they were inside the document flow.
+      </p>
+    </section>
+  </body>
+</html>

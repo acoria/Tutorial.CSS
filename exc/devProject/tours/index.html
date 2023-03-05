@@ -10,14 +10,15 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&family=Roboto:wght@100;400;700&display=swap"
       rel="stylesheet"
     />
-    //Adding the shared file first and then the more specific css file to the
-    page //you have the possiblity to override styles in your specific file
-    //because if the selector is the same, the last one wins
+    <!-- By adding the shared css file first and then the more specific css file to the
+    page you have the possibility to override styles in your specific file
+    because if the selector is the same, the last one wins -->
     <link rel="stylesheet" href="../shared.css" />
     <link rel="stylesheet" href="tours.css" />
   </head>
 
   <body>
+    <div class="background"></div>
     <header class="main-header">
       <div>
         <a href="../index.html" class="main-header__brand"> Jungle </a>
@@ -25,7 +26,7 @@
       <nav class="main-nav">
         <ul class="main-nav__items">
           <li class="main-nav__item">
-            <a href="tours/index.html">Tours</a>
+            <a href="index.html">Tours</a>
           </li>
           <li class="main-nav__item">
             <a href="../live-cam/index.html">Live cam</a>
@@ -40,30 +41,31 @@
     <main>
       <section class="tour tour_plus">
         <a href="#" class="tour__link">
-          <h1 class="tour__link_title">Our PLUS Tour</h1>
-          <h2 class="tour__link_subtitle">
+          <h1 class="tour__title">Our PLUS Tour</h1>
+          <h2 class="tour__subtitle">
             The most popular choice of our customers.
           </h2>
-          <p class="tour__link_text">
+          <p class="tour__description">
             Benefit from arriving however you like, staying in a tent overnight,
             getting a guided tour and listening to the guides exclusive stories!
           </p>
         </a>
       </section>
-      <section id="tour_free" class="tour tour_free">
+      <section class="tour tour_free">
         <a href="#" class="tour__link">
-          <h1 class="tour__link_title">Our FREE Tour</h1>
-          <h2 class="tour__link_subtitle">For a little trip into nature</h2>
-          <p class="tour__link_text">Take a tour on your own at zero cost!</p>
+          <h1 class="tour__title">Our FREE Tour</h1>
+          <h2 class="tour__subtitle">For a little trip into nature</h2>
+          <p class="tour__description">Take a tour on your own at zero cost!</p>
         </a>
       </section>
-      <section id="tour_premium" class="tour tour_premium">
+      <div class="clearfix"></div>
+      <section class="tour tour_premium">
         <a href="#" class="tour__link">
-          <h1 class="tour__link_title">Our PREMIUM Tour</h1>
-          <h2 class="tour__link_subtitle">
+          <h1 class="tour__title">Our PREMIUM Tour</h1>
+          <h2 class="tour__subtitle">
             This is pure luxury. We will leave no dream of your open.
           </h2>
-          <p class="tour__link_text">
+          <p class="tour__description">
             Stay in our straw huts overnight and experience nature with your own
             personal guide. Feed and eat with our animals!
           </p>

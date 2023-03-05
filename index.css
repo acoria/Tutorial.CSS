@@ -7,15 +7,14 @@
     Properties are listed here: https://developer.mozilla.org/en-US/docs/Web/CSS
     Browser support can be checked here: caniuse.com (market share: it also shows how much of the market you reach with a certain css/js-feature)
 
-    File imports: 
-    Always add the more specific css file import after the shared css file to have the possibility to override a more general style   
-    because when there are two selectors for the same element, the last one defined in the code wins.
-
     Best practices:
         - Put the more general rules at the top and go down to more specific rules
         - Use "*" to change the default to "box-sizing: border-box;" so that all spacing applied always includes content, padding and border
         - Use css classes instead of ids or tags wherever possible. They are reusable and affect css only.
           Ids can be used when they already exist but never just introduce them for styling reasons. They are not only css-specific but used for other things.
         - Never use !important unless it is e.g an edge-case of having to change a badly written third-party library
-        - Use :not() rarely because it can in most cases be written in a positive way, which is much easier to maintain 
+        - Use :not() rarely because it can in most cases be written in a positive way, which is much easier to maintain
+        - When importing 2 css files of which one is a shared css file for several components, always add the shared one first and then the more specific 
+          css file. This way you have the possibility to override styles from the more general shared css file because when there are two selectors for the same element,
+          the last style defined in the code (the last import) wins.        
 */

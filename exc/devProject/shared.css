@@ -11,6 +11,10 @@ body {
 .main-header {
     background: #642472;
     padding: 8px 16px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .main-header>div {
