@@ -12,7 +12,7 @@
       <h1>Home</h1>
     </nav>
     <div class="main-content">
-      <h1 class="absolute_pos_html">
+      <h1 class="absolute_pos_is_html">
         An absolutely positioned element with html as positioning context
       </h1>
       <p>
@@ -27,11 +27,24 @@
         background but underneath the navbar.
       </p>
       <div class="main_content__relative_div">
-        <h1 class="absolute_pos_div">
+        <h1 class="absolute_pos_is_div">
           An absolutely positioned element with its surrounding div as
           positioning element
         </h1>
       </div>
+      <div class="main_content__no_special_div">
+        <h1 class="main_content__relative_title">
+          A relatively positioned element
+        </h1>
+        <h1 class="main_content__relative_title_disappear">
+          A relatively positioned element leaving the parent because of
+          overflow:hidden
+        </h1>
+      </div>
     </div>
+    <div class="footer">
+      <h1>Footer</h1>
+    </div>
+    <div class="on_top_of_footer">On top of footer</div>
   </body>
 </html>

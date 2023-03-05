@@ -2,16 +2,31 @@ body {
     margin: 0;
 }
 
-/* The default position for an element is "static" which means that it is part of the document flow.
-   Setting the position to "fixed" means it is taken out of the document flow and is positioned where it is defined (e.g. top/left)
+/* 
+position (x/y-axis): Positions an element within or outside of the document flow on the x/y axis (depending on the picked position).
+    The default position for an element is "static" which means that it is part of the document flow and is positioned top to bottom.
+    There are three other positions: absolute, fixed and relative.
+    Positions for these elements can be defined: top/bottom/left/right.    
 
-   Fixed/absolute: take an element out of the document flow. They are positioned as follows:
+   - fixed/absolute: takes an element out of the document flow. They are positioned as follows:
         - fixed: the positioning context is the viewport (e.g. "top:0" results in the element to be right at the top)
         - absolute: the positioning context depends
 	                    - when no ancestor has a position-property set, the positioning context is the html-element 
                           (e.g. "top:0" results in the element to be at the top of the html-element)
 	                    - when ancestors have a position-property set, the positioning context is applied from the closest element that has a position-property set.
 		                  For this to work, some ancestor should have the "position: relative" property
+    - relative: does not take the element out of the document flow.
+      It is positioned relative to its own actual position. (e.g. "top:20px" moves an element down 20px from its current position)
+      With a relative position, it can occur that an element moves outside of its parent. To avoid this, "overflow:hidden" can be set on the parent which hides the element 
+      if it moves outside of its parent.
+      Careful: if the parent element is the body, "overflow:hidden" has to be set both on body and html element. Otherwise it is ignored!
+
+z-index (z-axis): moves an element along the z-axis.
+    - z-index only applies to elements that have a position-property set to something other than the default (=static), so absolute, fixed or relative.
+    - The default z-index is 0 or auto.
+    - If two elements have the same z-index, the order in the html decides what is on top of what, with the last element winning 
+    - Stacking context: If two parent elements have a z-index defined, this z-index is independent of any z-index defined for the children elements inside their parents.
+      They have their own stacking context and z-index-levels. 
 */
 
 /* this is a fixed element with the positioning context viewport */
@@ -24,11 +39,7 @@ body {
     left: 0;
 }
 
-/* z-index only applies to elements that have a position-property set to something other than the default (=static), so absolute, relative or fixed.
-   The default z-index is 0 or auto.
-   If two elements have the same z-index, the order in the html decides what is on top of what, with the last element winning 
-   e.g. here the nav-element over the background
-*/
+/* here a negative z-index is applied to ensure the background is behind everything else */
 .background {
     position: fixed;
     width: 100%;
@@ -39,7 +50,7 @@ body {
 
 .main-content {
     color: #642472;
-    height: 1000px;
+    height: 1200px;
 }
 
 .main-content p {
@@ -55,7 +66,7 @@ body {
     font-size: medium;
 }
 
-.absolute_pos_html {
+.absolute_pos_is_html {
     position: absolute;
     top: 200px;
     right: 50px;
@@ -64,12 +75,66 @@ body {
 .main_content__relative_div {
     position: relative;
     border: 2px dashed #642472;
-    height: 300px;
+    height: 200px;
 }
 
 /* the ancestor-div has a position "relative" so this is taken as positioning context for the h1-element */
-.absolute_pos_div {
+.absolute_pos_is_div {
     position: absolute;
     top: 50px;
     left: 20px;
+}
+
+.main_content__no_special_div {
+    border: 2px dashed #642472;
+    height: 100px;
+    overflow: hidden;
+}
+
+/* relative positioning allows the moving of elements away from their actual position.
+   In this case, the element moves 50px to the right from its actual position */
+.main_content__relative_title {
+    margin: 0;
+    position: relative;
+    left: 50px;
+}
+
+/* this relatively positioned element disappear because the parent is set to overflow:hidden
+   which prevents an element to be displayed outside of its parent */
+.main_content__relative_title_disappear {
+    margin: 0;
+    position: relative;
+    left: 50px;
+    top: 35px;
+}
+
+/* this demonstrates the stacking context for the z-axis. Even though the footer-h1-child has a z-index (300) bigger than
+   the last element (200), it is shown underneath it because it has its own stacking context inside its parent. */
+.footer {
+    background: black;
+    padding: 20px;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+}
+
+.footer h1 {
+    display: inline;
+    margin: 0;
+    font-size: large;
+    padding: 10px;
+    background: white;
+    position: fixed;
+    z-index: 300;
+}
+
+.on_top_of_footer {
+    border: 2px solid black;
+    background: white;
+    font-size: large;
+    position: fixed;
+    bottom: 10px;
+    z-index: 200;
 }
