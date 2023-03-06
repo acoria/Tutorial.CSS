@@ -5,7 +5,7 @@ body {
 /* 
 position (x/y-axis): Positions an element within or outside of the document flow on the x/y axis (depending on the picked position).
     The default position for an element is "static" which means that it is part of the document flow and is positioned top to bottom.
-    There are three other positions: absolute, fixed and relative.
+    There are four other positions: absolute, fixed, relative and sticky. (Sticky is relatively new and does not have the best browser support)
     Positions for these elements can be defined: top/bottom/left/right.    
 
    - fixed/absolute: takes an element out of the document flow. They are positioned as follows:
@@ -20,6 +20,8 @@ position (x/y-axis): Positions an element within or outside of the document flow
       With a relative position, it can occur that an element moves outside of its parent. To avoid this, "overflow:hidden" can be set on the parent which hides the element 
       if it moves outside of its parent.
       Careful: if the parent element is the body, "overflow:hidden" has to be set both on body and html element. Otherwise it is ignored!
+    - sticky: a combination of fixed and relative. It stays in the document flow and does not change position but acts as fixed when scrolling and the defined position is reached.
+      It also disappears with its parent when scrolled out.
 
 z-index (z-axis): moves an element along the z-axis.
     - z-index only applies to elements that have a position-property set to something other than the default (=static), so absolute, fixed or relative.
@@ -64,6 +66,12 @@ z-index (z-axis): moves an element along the z-axis.
     padding: 8px;
     border: 2px solid #642472;
     font-size: medium;
+}
+
+/* this element stops at the top at 300px when scrolling down */
+.main_content_sticky {
+    position: sticky;
+    top: 300px;
 }
 
 .absolute_pos_is_html {
