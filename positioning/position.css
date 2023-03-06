@@ -11,12 +11,12 @@ position (x/y-axis): Positions an element within or outside of the document flow
    - fixed/absolute: takes an element out of the document flow. They are positioned as follows:
         - fixed: the positioning context is the viewport (e.g. "top:0" results in the element to be right at the top)
         - absolute: the positioning context depends
-	                    - when no ancestor has a position-property set, the positioning context is the html-element 
-                          (e.g. "top:0" results in the element to be at the top of the html-element)
-	                    - when ancestors have a position-property set, the positioning context is applied from the closest element that has a position-property set.
-		                  For this to work, some ancestor should have the "position: relative" property
+            - when no ancestor has a position-property set, the positioning context is the html-element 
+                (e.g. "top:0" results in the element to be at the top of the html-element)
+            - when ancestors have a position-property set, the positioning context is applied from the closest element that has a position-property set.
+                For this to work, some ancestor should have the "position: relative" property
     - relative: does not take the element out of the document flow.
-      It is positioned relative to its own actual position. (e.g. "top:20px" moves an element down 20px from its current position)
+      It is positioned relative to its own actual position, so the positioning context is the element itself. (e.g. "top:20px" moves an element down 20px from its current position)
       With a relative position, it can occur that an element moves outside of its parent. To avoid this, "overflow:hidden" can be set on the parent which hides the element 
       if it moves outside of its parent.
       Careful: if the parent element is the body, "overflow:hidden" has to be set both on body and html element. Otherwise it is ignored!

@@ -16,6 +16,7 @@ main {
     border: 3px solid #642472;
     border-left: none;
     position: relative;
+    z-index: 1;
 }
 
 .tour:hover,
@@ -40,6 +41,7 @@ main {
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 10;
 }
 
 .tour_free {

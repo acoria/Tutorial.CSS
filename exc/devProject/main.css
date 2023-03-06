@@ -2,12 +2,16 @@
     background: url("./images/leaves.jpg");
     height: 400px;
     color: white;
+    margin-top: 30px;
+    position: relative;
 }
 
 #nature-overview h1 {
     margin: 0;
     padding: 15px 0 0 15px;
     font-size: 30px;
+    position: absolute;
+    bottom: 5%;
 }
 
 .section-title {

@@ -1,4 +1,4 @@
-/* Float takes an element out of the document flow (the order of the elements) and floats it to a certain position
+/* Float takes an element out of the document flow (the default positioning behavior of the elements) and floats it to a certain position
    above the existing elements.
    This is great for having text or images float around an element but it is no good for block elements
    such as sections, div's because they ignore this attribute -> see clearfix */
