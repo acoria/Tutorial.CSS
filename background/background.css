@@ -1,0 +1,50 @@
+h1 {
+    display: inline-block;
+    background: white;
+}
+
+div {
+    height: 250px;
+    border: 2px dashed black;
+    margin-bottom: 5px;
+    background-image: url(../leaf_small.png);
+}
+
+/* an image is repeated to fit the entire space of its parent
+   a defined background color has no effect */
+.default {
+    background-color: red;
+}
+
+/* stops an image from being repeated */
+.no_repeat {
+    background-repeat: no-repeat;
+}
+
+/* repeats an image along the x-axis */
+.repeat-x {
+    background-repeat: repeat-x;
+}
+
+/* repeats an image along the y-axis */
+.repeat-y {
+    background-repeat: repeat-y;
+}
+
+/* define your own size which ignores the aspect ratio */
+.background-size_own-size {
+    background-repeat: no-repeat;
+    background-size: 300px 200px;
+}
+
+/* stretches the image to fit on the x-axis */
+.background-size_fit_x_axis {
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* stretches the image to fit on the y-axis */
+.background-size_fit_y_axis {
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
