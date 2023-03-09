@@ -1,6 +1,17 @@
 h1 {
     display: inline-block;
-    background: white;
+    background: gainsboro;
+    position: absolute;
+    bottom: 0;
+}
+
+section {
+    height: 250px;
+    border: 2px dashed black;
+    margin-bottom: 5px;
+    background-image: url(../leaf_small.png);
+    position: relative;
+    background-color: rgba(138, 43, 226, 0.6);
 }
 
 div {
@@ -8,6 +19,9 @@ div {
     border: 2px dashed black;
     margin-bottom: 5px;
     background-image: url(../leaf_small.png);
+    position: relative;
+    background-color: rgba(138, 43, 226, 0.6);
+    background-repeat: no-repeat;
 }
 
 /* an image is repeated to fit the entire space of its parent
@@ -33,18 +47,15 @@ div {
 
 /* define your own size which ignores the aspect ratio */
 .background-size_own-size {
-    background-repeat: no-repeat;
     background-size: 300px 200px;
 }
 
 /* stretches the image to fit on the x-axis */
 .background-size_fit_x_axis {
-    background-repeat: no-repeat;
     background-size: 100%;
 }
 
 /* stretches the image to fit on the y-axis */
 .background-size_fit_y_axis {
-    background-repeat: no-repeat;
     background-size: auto 100%;
 }

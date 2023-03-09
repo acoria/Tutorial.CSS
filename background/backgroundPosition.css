@@ -1,0 +1,68 @@
+h1 {
+    display: inline-block;
+    background: gainsboro;
+    position: absolute;
+    bottom: 0;
+}
+
+div {
+    height: 250px;
+    border: 2px dashed black;
+    margin-bottom: 5px;
+    background-image: url(./colorfulPicture.png);
+    position: relative;
+    background-color: rgba(138, 43, 226, 0.6);
+    background-repeat: no-repeat;
+}
+
+/* position an image to the left */
+.background-position_left {
+    background-image: url(../leaf_small.png);
+    background-position: 50px 0;
+}
+
+/* position an image down from the top */
+.background-position_top {
+    background-image: url(../leaf_small.png);
+    background-position: 0 50px;
+}
+
+/* position an image to the left and centered on y-axis*/
+.background-position_left_centered {
+    background-image: url(../leaf_small.png);
+    background-position: 100px;
+}
+
+.background-position_example_image {
+    background-size: auto 100%;
+}
+
+/* the percentage value is the percentage of the cut-off part of the picture to be displayed on top or left. 
+   50% centers it */
+.background-position_centered {
+    background-position: 50% 50%;
+    /* this is equivalent to: */
+    /* background-position: center; */
+}
+
+/* if there is one position in percentage, this is the ratio of how much of the cut-off part of the picture on the right and in the bottom is displayed.
+   background-position: x% y%
+   40%: "Only show 40% of the missing image on the right side" -> This pushes the image to the right
+   Or another way to read it: "Cut 40% of the left side and 60% of the right side" */
+.background-position_percentage {
+    background-position: 40%;
+    /* since 50% is the default when the x-value was provided, it is unnecessary to write it but possible */
+    /* background-position: 40% 50%; */
+}
+
+/* positions can also be defined by left/center/right and top/center/bottom */
+.background-position_absolute {
+    background-position: right center;
+    /* they can also be mixed with percentages */
+    /* background-position: 40% center; */
+}
+
+/* define where to crop how much off */
+.background-position_percentage_of_position {
+    background-position: right 40% top 50%;
+}
