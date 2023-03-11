@@ -13,4 +13,14 @@ section {
     margin: 5px 10px 20px 30px;
     /* is the shorthand for top&bottom/left&right */
     margin: 10px 20px;
+
+    /* all this could be shortened.. */
+    background: url(../images/jungle.jpg);
+    background-size: cover;
+    background-position: left 20% center;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-clip: content-box;
+    /* ..to this: */
+    background: url(../images/jungle.jpg) left 20% center/cover no-repeat border-box content-box;
 }

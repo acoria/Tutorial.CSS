@@ -1,0 +1,60 @@
+div {
+    height: 150px;
+}
+
+/* the default is a vertical gradient, top to bottom, equally split */
+.default {
+    background-image: linear-gradient(red, blue);
+}
+
+/* there can be as many colors as needed */
+.rainbow {
+    background-image: linear-gradient(red, orange, yellow, green, blue, purple, pink);
+}
+
+/* define a direction, such as bottom to top */
+.bottomToTop {
+    background-image: linear-gradient(to top, red, blue);
+}
+
+/* define more than one direction, such as to right bottom */
+.topToRightBottom {
+    background-image: linear-gradient(to right bottom, red, blue);
+}
+
+/* define the angle by degree: 
+   180°: default from top to bottom */
+.angle180degrees {
+    background-image: linear-gradient(180deg, red, blue);
+}
+
+/* define the angle by degree:
+    90°: left to right */
+.angle90degrees {
+    background-image: linear-gradient(90deg, red, blue);
+}
+
+/* define the angle by degree: 
+   0°: switched around bottom to top */
+.angle0degrees {
+    background-image: linear-gradient(0deg, red, blue);
+}
+
+/* define the angle by degree, e.g. 30% */
+.angle30degrees {
+    background-image: linear-gradient(30deg, red, blue);
+}
+
+.toTransparent {
+    background-image: linear-gradient(180deg, red, transparent);
+}
+
+/* proportionally, it can be defined how far a color stretches and then changes to another color */
+.proportionally {
+    background-image: linear-gradient(180deg, red 60%, blue, black);
+}
+
+/* there will be no blur when red blurs within 60% and the following already after 50% */
+.proportionError {
+    background-image: linear-gradient(180deg, red 60%, blue 50%, black);
+}

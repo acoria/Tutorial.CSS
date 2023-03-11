@@ -41,3 +41,8 @@ a {
    e.g. top element with a bottom margin of 10, bottom element with a top margin of 5
         -> only a margin of 10 is used
 */
+
+/* Image sizes:
+    - within inline elements: images use per default their entire size, no matter what the size of a surrounding element (e.g. a-element) is. It will exceed it 
+    - within block elements: images use only the space of their surrounding elements (e.g. div).
+*/

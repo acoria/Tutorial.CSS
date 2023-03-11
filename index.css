@@ -18,8 +18,3 @@
           css file. This way you have the possibility to override styles from the more general shared css file because when there are two selectors for the same element,
           the last style defined in the code (the last import) wins.        
 */
-
-/*
-- Within inline elements: images use per default their entire size, no matter what the size of a surrounding element (e.g. a element) is. It will exceed it 
-- Within block elements: images use only the space of their surrounding elements (e.g. div).
-*/
