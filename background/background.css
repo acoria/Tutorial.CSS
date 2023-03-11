@@ -5,23 +5,13 @@ h1 {
     bottom: 0;
 }
 
-section {
+.defaultBackground>div {
     height: 250px;
     border: 2px dashed black;
     margin-bottom: 5px;
     background-image: url(../leaf_small.png);
     position: relative;
     background-color: rgba(138, 43, 226, 0.6);
-}
-
-div {
-    height: 250px;
-    border: 2px dashed black;
-    margin-bottom: 5px;
-    background-image: url(../leaf_small.png);
-    position: relative;
-    background-color: rgba(138, 43, 226, 0.6);
-    background-repeat: no-repeat;
 }
 
 /* an image is repeated to fit the entire space of its parent
@@ -30,32 +20,83 @@ div {
     background-color: red;
 }
 
+.backgroundRepeatAndSize>div {
+    height: 250px;
+    border: 2px dashed black;
+    margin-bottom: 5px;
+    background-image: url(../leaf_small.png);
+    position: relative;
+    background-color: rgba(138, 43, 226, 0.6);
+    background-repeat: no-repeat;
+}
+
 /* stops an image from being repeated */
-.no_repeat {
+#no_repeat {
     background-repeat: no-repeat;
 }
 
 /* repeats an image along the x-axis */
-.repeat-x {
+#repeat-x {
     background-repeat: repeat-x;
 }
 
 /* repeats an image along the y-axis */
-.repeat-y {
+#repeat-y {
     background-repeat: repeat-y;
 }
 
 /* define your own size which ignores the aspect ratio */
-.background-size_own-size {
+#background-size_own-size {
     background-size: 300px 200px;
 }
 
 /* stretches the image to fit on the x-axis */
-.background-size_fit_x_axis {
+#background-size_fit_x_axis {
     background-size: 100%;
 }
 
 /* stretches the image to fit on the y-axis */
-.background-size_fit_y_axis {
+#background-size_fit_y_axis {
     background-size: auto 100%;
+}
+
+.backgroundOrigin>div {
+    height: 200px;
+    border: 5px dashed black;
+    margin-bottom: 10px;
+    background-image: url(./colorfulPicture.png);
+    position: relative;
+    /* background-color: rgba(138, 43, 226, 0.6); */
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+
+/* This is the default background origin. The background origin is like the box-sizing for background images.
+   It defines the container in which to show the image and therefore decides whether the background includes e.g. the border or not.
+   With the default "padding-box" the image stretches into the border if the image is too big/cropped.
+   Here it is cropped on the bottom and right side, so it is part of the border on those sides */
+#background-origin_default {
+    background-origin: padding-box;
+}
+
+/* The container includes the border, so the background image stretches into the boarder */
+#background-origin_border-box {
+    background-origin: border-box;
+}
+
+/* The container without any border and padding. This pushes the background image down because of the set padding of 20px */
+#background-origin_content-box {
+    background-origin: content-box;
+}
+
+/* Decides where to cut off the image. This way the background image does not exceed into the boarder 
+   in the bottom and right side.
+   It overrides background-origin */
+#background-clip_padding-box {
+    background-clip: padding-box;
+}
+
+/* Clips the image before the padding */
+#background-clip_content-box {
+    background-clip: content-box;
 }
