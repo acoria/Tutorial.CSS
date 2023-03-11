@@ -1,4 +1,5 @@
-/* Shorthand properties are a short notation for several properties at once */
+/* Shorthand properties are a short notation for several properties at once 
+   Careful. By using them, all other properties defined before the shorthand notation are overwritten with a default */
 
 section {
     border: 2px solid blue;
@@ -21,6 +22,7 @@ section {
     background-repeat: no-repeat;
     background-origin: border-box;
     background-clip: content-box;
-    /* ..to this: */
+    /* ..to this: 
+       background-position and background-size have to be separated by a / */
     background: url(../images/jungle.jpg) left 20% center/cover no-repeat border-box content-box;
 }

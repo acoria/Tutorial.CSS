@@ -23,6 +23,7 @@
     width: 100%;
     /* this fixes a white line underneath the images which appears when an image is placed inside an inline-block element */
     vertical-align: top;
+    filter: grayscale(30%)
 }
 
 .testimonial__info {
