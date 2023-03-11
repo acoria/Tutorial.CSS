@@ -1,3 +1,7 @@
+/* A gradient allows for a color to switch to another or to become transparent gradually.
+   A gradient counts as a background.
+   A linear gradient is applied following a line. */
+
 div {
     height: 150px;
 }

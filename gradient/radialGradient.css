@@ -1,0 +1,58 @@
+/* A gradient allows for a color to switch to another or to become transparent gradually.
+   A gradient counts as a background.
+   A radial gradient is applied following a circle or ellipse. */
+
+h1 {
+    font-size: x-large;
+}
+
+div {
+    height: 150px;
+    width: 300px;
+}
+
+/* per default it radiates from the center as an ellipse */
+.default {
+    background-image: radial-gradient(red, blue);
+}
+
+/* a circle can be used */
+.circle {
+    background-image: radial-gradient(circle, red, blue);
+}
+
+/* they can be positioned by percentage of x/y-axis */
+.positionedXY {
+    background-image: radial-gradient(circle at 20% 50%, red, blue);
+}
+
+/* they can be positioned like a linear gradient */
+.positionedAtTop {
+    background-image: radial-gradient(circle at top, red, blue);
+}
+
+/* the size of the circle (but not the ellipse) can be defined */
+.sizedCircle {
+    background-image: radial-gradient(circle 20px at 20% 50%, red, blue);
+}
+
+/* to size the ellipse, two values need to be defined for width/height */
+.sizedEllipse {
+    background-image: radial-gradient(60px 30px, red, blue);
+}
+
+/* the size of the ellipse is from the defined center (20%/60%) to the farthest side,
+   so the outermost green circle touches the right and top side */
+.sizeFarthestSide {
+    background-image: radial-gradient(ellipse farthest-side at 20% 60%, red, blue, green);
+}
+
+/* the opposite to farthest-side. It is the size of the ellipse from the defined center to the closest sides (left and bottom) */
+.sizeClosestSide {
+    background-image: radial-gradient(ellipse closest-side at 10% 60%, red, blue, green);
+}
+
+/* the size can also be defined with the corners, here radiating to the top right corner in green */
+.sizeFarthestCorner {
+    background-image: radial-gradient(ellipse farthest-corner at 20% 60%, red, blue, green);
+}
