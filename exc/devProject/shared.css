@@ -21,7 +21,7 @@ body {
 
 .main-header {
     background: #642472;
-    padding: 4px 16px;
+    padding: 0.25rem 1rem;
     width: 100%;
     position: fixed;
     top: 0;
@@ -38,12 +38,12 @@ body {
     color: #311238;
     text-decoration: none;
     font-weight: bold;
-    height: 22px;
+    height: 1.4rem;
     display: inline-block;
 }
 
 .main-header__brand img {
-    width: 40px;
+    width: 2.5rem;
 }
 
 .main-nav {
@@ -61,26 +61,26 @@ body {
 
 .main-nav__item {
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 0.3rem;
 }
 
 .main-nav__item a {
     color: #311238;
     text-decoration: none;
     font-weight: bold;
-    padding: 2px 0;
+    padding: 0.1rem 0;
 }
 
 .main-nav__item a:hover,
 .main-nav__item a:active {
     color: white;
-    border-bottom: 3px solid white;
+    border-bottom: 0.2rem solid white;
 }
 
 .main-nav__item--cta a {
     color: white;
     background: #9736ac;
-    padding: 5px 16px;
+    padding: 0.3rem 1rem;
     border-radius: 8px;
 }
 
@@ -88,14 +88,14 @@ body {
 .main-nav__item--cta a:active {
     color: #642472;
     background: white;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
     border: none;
 }
 
 .main-footer {
     background: black;
-    padding: 32px;
-    margin-top: 48px;
+    padding: 2rem;
+    margin-top: 3rem;
 }
 
 .main-footer__links {
@@ -107,7 +107,7 @@ body {
 
 .main-footer__link {
     display: inline-block;
-    margin: 0 16px;
+    margin: 0 1rem;
 }
 
 .main-footer__link a {
@@ -125,7 +125,7 @@ body {
     color: white;
     font: inherit;
     border: 1.5px solid #642472;
-    padding: 8px;
+    padding: 0.5rem;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
