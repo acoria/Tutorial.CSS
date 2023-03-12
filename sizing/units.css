@@ -1,0 +1,76 @@
+/* There are six different types of units:
+    - pixels (px)
+    - percentage (%) of the surrounding containers, depending on their position (see below)
+    - root em (rem) refers to the browser font size
+    - em (em) refers to the browser font size but also applies (for me) unclear multiplications
+    - viewport height (vh)
+    - viewport width (vw)
+
+    For percentage values, the surrounding containers are used for reference:
+        - Elements with "position: fixed" have the viewport as reference/containing block and 100% will result in the entire screen to be use.
+        - Elements with "position: absolute" use the ancestor (their content + padding) as reference/containing block.
+	      The ancestor is the next surrounding element with a position other than static, so absolute, relative, fixed or sticky
+        - Elements with "position: static/relative" use the ancestor (only their content) as reference/containing block.
+	      The ancestor is the next surrounding "block" level element.
+    
+    For box-shadows/borders defining px is fine, since it does not add to any readability when the font size is increased.
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* fixed element that stretches over entire screen because it uses the viewport as containing block */
+.fixedElement {
+    background-color: blueviolet;
+    color: white;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0;
+}
+
+.relativeElement {
+    background-color: blue;
+    color: white;
+    position: relative;
+    margin-top: 100px;
+    display: inline-block;
+    padding: 20px;
+    width: 800px;
+    height: 200px;
+}
+
+/* Absolute element with width of 50% of the surrounding element because this is its containing block (having position relative).
+   The padding of the surrounding container is included in the width for the calculation, so it is exactly half of 800px -> 400px */
+.absoluteElement {
+    background-color: green;
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+}
+
+.blockLevelElement {
+    width: 1000px;
+    height: 250px;
+    padding: 50px;
+    background-color: yellow;
+}
+
+/* relative element with a width of 50% of the div-block-level-element (not the a, which is an inline level element) 
+   Since the block-level-element is 1000px wide but has 50px padding on each side, the content is 900px wide.
+   This leads to 450px for the relative element (50%) */
+.relativeElementInsideBlock {
+    position: relative;
+    background-color: red;
+    width: 50%;
+}
+
+/* 2rem will result in 32px for the default browser font-size of 16px (2rem x 16 = 32px) */
+.remSizing {
+    font-size: 2rem;
+}
