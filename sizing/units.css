@@ -2,9 +2,9 @@
     - pixels (px)
     - percentage (%) of the surrounding containers, depending on their position (see below)
     - root em (rem) refers to the browser font size
-    - em (em) refers to the browser font size but also applies (for me) unclear multiplications
-    - viewport height (vh)
-    - viewport width (vw)
+    - em (em) refers to the inherited font size of its ancestor multiplied its own em-value
+    - viewport height (vh) / viewport width (vw)
+    - auto to align element in the center
 
     For percentage values, the surrounding containers are used for reference:
         - Elements with "position: fixed" have the viewport as reference/containing block and 100% will result in the entire screen to be use.
@@ -14,6 +14,17 @@
 	      The ancestor is the next surrounding "block" level element.
     
     For box-shadows/borders defining px is fine, since it does not add to any readability when the font size is increased.
+
+    This is a list of properties with their recommended units:
+        font-size     rem
+        padding       rem
+        margin        rem
+        border        px
+        width         %/vw
+        height        %/vh
+        top/bottom    %
+        left/right    % 
+
 */
 
 * {
@@ -68,6 +79,24 @@ body {
     position: relative;
     background-color: red;
     width: 50%;
+}
+
+/* The viewport can be used for defining a width/height depending on the viewport (so the visible browser window size).
+   The value is the percentage of the viewport */
+.viewport {
+    width: 20vw;
+    height: 20vh;
+    background-color: rgba(138, 43, 226, 0.5);
+}
+
+/* Viewport minimum: this checks which side the the smallest one is (for desktop pc's mainly the height).
+   This means that the unit becomes vh. So for the following configuration, the width has a maximum of 80vh.
+   This switches when the width is minimized by pulling the window. When the width gets smaller than the height, 
+   the unit switches and the view gets smaller. (the use case is not quite clear yet. It seems to be useful for mobile orientation) */
+.vmin {
+    width: 80vmin;
+    height: 20vh;
+    background-color: rgba(138, 43, 226, 0.3);
 }
 
 /* 2rem will result in 32px for the default browser font-size of 16px (2rem x 16 = 32px) */
