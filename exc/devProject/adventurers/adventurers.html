@@ -11,12 +11,27 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="../modal.css" />
     <link rel="stylesheet" href="adventurers.css" />
   </head>
 
   <body>
     <div class="backdrop"></div>
+    <div class="modal">
+      <h1 class="modal__title">Do you want to continue?</h1>
+      <div class="modal__actions">
+        <a href="visit/visit.html" class="modal__action">Yes!</a>
+        <button class="modal__action modal__action--negative" type="button">
+          No, thanks
+        </button>
+      </div>
+    </div>
     <header class="main-header">
+      <button class="toggle-button">
+        <span class="toggle-button__bar"></span>
+        <span class="toggle-button__bar"></span>
+        <span class="toggle-button__bar"></span>
+      </button>
       <div>
         <a href="../index.html" class="main-header__brand">
           <img src="../images/tree_white.png" alt="A tree from our jungle" />
@@ -37,6 +52,19 @@
         </ul>
       </nav>
     </header>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav__items">
+        <li class="mobile-nav__item">
+          <a href="../tours/tours.html">Tours</a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="../adventurers/adventurers.html">Adventurers</a>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--cta">
+          <a href="../visit/visit.html">Visit</a>
+        </li>
+      </ul>
+    </nav>
     <main>
       <div>
         <div class="testimonial" id="customer-1">
@@ -78,5 +106,6 @@
         </div>
       </div>
     </main>
+    <script src="../shared.js"></script>
   </body>
 </html>
