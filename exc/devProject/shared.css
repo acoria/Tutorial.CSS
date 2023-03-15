@@ -27,7 +27,6 @@ body {
     color: #311238;
     text-decoration: none;
     font-weight: bold;
-    height: 1.4rem;
     display: inline-block;
 }
 
@@ -86,49 +85,7 @@ body {
 }
 
 .main-nav {
-    display: inline-block;
-    text-align: right;
-    width: calc(100% - 100px);
-    vertical-align: middle;
-}
-
-.main-nav__items {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.main-nav__item {
-    display: inline-block;
-    margin: 0 0.3rem;
-}
-
-.main-nav__item a {
-    color: #311238;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.1rem 0;
-}
-
-.main-nav__item a:hover,
-.main-nav__item a:active {
-    color: white;
-    border-bottom: 0.2rem solid white;
-}
-
-.main-nav__item--cta a {
-    color: white;
-    background: #9736ac;
-    padding: 0.3rem 1rem;
-    border-radius: 8px;
-}
-
-.main-nav__item--cta a:hover,
-.main-nav__item--cta a:active {
-    color: #642472;
-    background: white;
-    padding: 0.5rem 1rem;
-    border: none;
+    display: none;
 }
 
 .main-footer {
@@ -145,8 +102,8 @@ body {
 }
 
 .main-footer__link {
-    display: inline-block;
-    margin: 0 1rem;
+    display: block;
+    margin: 1rem 0;
 }
 
 .main-footer__link a {
@@ -174,4 +131,65 @@ body {
 .button:active {
     background: white;
     color: #642472;
+}
+
+@media (min-width: 40rem) {
+    .toggle-button {
+        display: none;
+    }
+
+    .toggle-button__bar {
+        display: none;
+    }
+
+    .main-nav {
+        display: inline-block;
+        text-align: right;
+        width: calc(100% - 100px);
+        vertical-align: middle;
+    }
+
+    .main-nav__items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .main-nav__item {
+        display: inline-block;
+        margin: 0 0.3rem;
+    }
+
+    .main-nav__item a {
+        color: #311238;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.1rem 0;
+    }
+
+    .main-nav__item a:hover,
+    .main-nav__item a:active {
+        color: white;
+        border-bottom: 0.2rem solid white;
+    }
+
+    .main-nav__item--cta a {
+        color: white;
+        background: #9736ac;
+        padding: 0.3rem 1rem;
+        border-radius: 8px;
+    }
+
+    .main-nav__item--cta a:hover,
+    .main-nav__item--cta a:active {
+        color: #642472;
+        background: white;
+        padding: 0.5rem 1rem;
+        border: none;
+    }
+
+    .main-footer__link {
+        display: inline-block;
+        margin: 0 1rem;
+    }
 }
