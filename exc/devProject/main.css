@@ -1,6 +1,6 @@
 #nature-overview {
     background: url("./images/leaves.jpg");
-    background-size: 100%;
+    background-size: auto 100%;
     background-position-y: center;
     height: 45vh;
     color: white;
@@ -21,27 +21,18 @@
     text-align: center;
 }
 
-.tours {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-}
-
 .tour {
     background: #514471;
     text-align: center;
     padding: 1rem;
-    margin: 0.5rem;
-    display: inline-block;
-    width: 30%;
-    vertical-align: middle;
+    margin: 0.5rem 0;
+    width: 100%;
 }
 
 .tour--highlighted {
     background: #531e5f;
     color: white;
     /* rgba: a = 1 -> not transparent / a = 0 -> fully transparent */
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .tour__title {
@@ -117,4 +108,28 @@
     font-weight: bold;
     color: white;
     font-size: 1.2rem;
+}
+
+@media (min-width: 40rem) {
+    #nature-overview {
+        background-size: 100%;
+    }
+
+    .tours {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .tour {
+        display: inline-block;
+        width: 30%;
+        vertical-align: middle;
+        min-width: 13rem;
+        max-width: 25rem;
+    }
+
+    .tour--highlighted {
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
 }
