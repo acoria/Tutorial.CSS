@@ -1,0 +1,44 @@
+/* Media queries in combination with the meta-tag "viewport" allow for the site layout to be changed depending on certain conditions.
+    
+Best practices:
+   - Design "mobile first" and then adjust the layout for the desktop page with the media queries.
+   - Add media queries to the bottom of the css.
+   - Check https://www.mydevice.io/ for the usual device sizes to support.
+*/
+
+.surroundingBlocks {
+   background-color: blue;
+   width: 100%;
+   padding: 1rem;
+}
+
+.block {
+   background-color: blueviolet;
+   height: 10vh;
+   width: 15vw;
+   min-width: 7rem;
+   margin: 1rem;
+}
+
+/* If the screen has a minimum width of 40rem, this style is applied */
+@media (min-width: 40rem) {
+   .block {
+      display: inline-block;
+   }
+}
+
+/* Various sizes can be added.
+   Careful with the order. If they were switched (60 before 40), the 60 would be overridden and never applied. */
+@media(min-width: 60rem) {}
+
+/* Logical operators can be combined (e.g. min-height, orientation:landscape/portrait) */
+/* and operator */
+@media (min-width: 40rem) and (min-height: 60rem) {}
+
+/* or operator */
+@media (min-width: 40rem),
+(min-height: 60rem) {}
+
+/* Careful with portrait orientation because a desktop-view is landscape mode although you might want 
+   to have the behavior for a big screen in portrait mode*/
+@media (min-width: 40rem) and (orientation: portrait) {}

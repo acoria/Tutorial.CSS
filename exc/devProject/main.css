@@ -21,6 +21,10 @@
     text-align: center;
 }
 
+.tours{
+    min-width: 40rem;
+}
+
 .tour {
     background: #514471;
     text-align: center;
