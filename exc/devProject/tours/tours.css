@@ -15,6 +15,7 @@ main {
 
 .tour {
     width: 80%;
+    max-width: 60rem;
     margin: 0.5rem 0;
     border: 3px solid #642472;
     border-left: none;
@@ -97,4 +98,21 @@ a.tour__link:active {
     background: white;
     border: 2px solid #642472;
     padding: 0.8rem;
+}
+
+@media (min-width: 40rem) {
+    main {
+        max-width: 70rem;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 70rem) {
+    .tour_free {
+        border: 3px solid #642472;
+    }
+
+    .tour {
+        border: 3px solid #642472;
+    }
 }

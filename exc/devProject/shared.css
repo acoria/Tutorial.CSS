@@ -8,6 +8,14 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+main {
+    /* ensure the footer is at the bottom by taking the entire height
+       minus the margin in the top (for the navigation)
+       minus the footer height */
+    min-height: calc(100vh - 3rem - 4rem);
+    margin-top: 3.2rem;
+}
+
 .main-header {
     background: #642472;
     padding: 0.25rem 1rem;
@@ -27,11 +35,13 @@ body {
     color: #311238;
     text-decoration: none;
     font-weight: bold;
+    height: 2.5rem;
     display: inline-block;
 }
 
 .main-header__brand img {
     width: 2.5rem;
+    height: 100%;
 }
 
 .toggle-button {
