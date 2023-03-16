@@ -28,7 +28,7 @@ Best practices:
 }
 
 /* Various sizes can be added.
-   Careful with the order. If they were switched (60 before 40), the 60 would be overridden and never applied. */
+   Careful with the order. If they were switched (60 before 40), the 60 would be overridden by the 40 and never applied. */
 @media(min-width: 60rem) {}
 
 /* Logical operators can be combined (e.g. min-height, orientation:landscape/portrait) */
