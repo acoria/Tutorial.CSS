@@ -1,0 +1,90 @@
+/* 
+    When styling forms, there are some styles that ensure a nicer look:
+     - labels in bold
+     - set form elements to 100% width
+     - remove outline of selected elements (:focus) and give them a border and lighter background color that match your sides style
+     - ensure checkboxes and labels are on the same level
+     - set "font: inherit" because per default, forms use the browser default
+     - style your checkboxes if wanted
+     - use the :invalid pseudo selector for invalid inputs
+*/
+
+.form {
+    padding: 1rem;
+}
+
+.form label {
+    font-weight: bold;
+}
+
+/* form element width needs to be set to 100%, even if they are a block-level element. It is their default. */
+/* not: changes all inputs which do not fullfil the condition defined in "not" */
+.form label,
+.form input:not([type="checkbox"]),
+.form select {
+    display: block;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+/* style the input fields and set the site's font */
+.form input:not([type="checkbox"]),
+.form select {
+    border: 1px solid #ccc;
+    padding: 0.2rem 0.5rem;
+    font: inherit;
+}
+
+/* style selected elements */
+.form input:focus-visible,
+.form select:focus-visible {
+    outline: none;
+    background-color: rgba(151, 54, 172, 0.2);
+    border: 1px solid #9736ac;
+}
+
+/* put checkbox and its label on the same level */
+.form input[type="checkbox"],
+/* the label following the checkbox */
+.form input[type="checkbox"]+label {
+    display: inline-block;
+    width: auto;
+    vertical-align: bottom;
+}
+
+/* adjust the checkboxes */
+/* appearance overrides the browser defaults */
+.form input[type="checkbox"] {
+    border: 1px solid #ccc;
+    background-color: white;
+    width: 1rem;
+    height: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* in case the checkboxes were adjusted, add your own style for a checked checkbox */
+.form input[type="checkbox"]:checked {
+    background-color: #9736ac;
+    outline: 1px solid rgba(151, 54, 172, 0.2);
+}
+
+/*use the invalid pseudo selector for invalid inputs */
+.form input:invalid,
+.form select:invalid {
+    border-color: red;
+    background-color: rgb(255, 187, 187);
+}
+
+button[type="submit"] {
+    margin-top: 1rem;
+    display: block;
+}
+
+@media (min-width: 40rem) {
+    .form {
+        margin: auto;
+        width: 25rem;
+    }
+}

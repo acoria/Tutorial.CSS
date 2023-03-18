@@ -16,6 +16,7 @@ main {
     font-weight: bold;
 }
 
+/* hide the outline and style a selected element according to your sides colors */
 .signup-form input:focus-visible,
 .signup-form select:focus-visible {
     outline: none;
@@ -62,9 +63,9 @@ main {
 .signup-form input[type="checkbox"]:checked {
     background-color: #9736ac;
     outline: 1px solid rgba(151, 54, 172, 0.2);
-    ;
 }
 
+/*use the invalid pseudo selector for invalid inputs */
 .signup-form input:invalid,
 .signup-form select:invalid {
     border-color: red;

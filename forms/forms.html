@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./forms.css" />
+    <title>CSS Tutorial: Forms</title>
+  </head>
+  <body>
+    <form action="gotToSomePage.html" class="form">
+      <label for="title">Title</label>
+      <select id="title">
+        <option value="mr">Mr.</option>
+        <option value="ms">Ms.</option>
+      </select>
+      <label for="name">Name</label>
+      <input type="text" id="name" />
+      <label for="email">E-Mail</label>
+      <input type="email" id="email"/>
+      <input type="checkbox" id="agree-terms" />
+      <label for="agree-terms"
+        >Sell my soul with
+        <a href="#">Terms &amp; Conditions</a>
+      </label>
+      <button type="submit" class="button" disabled>Sign Up</button>
+    </form>
+  </body>
+</html>
