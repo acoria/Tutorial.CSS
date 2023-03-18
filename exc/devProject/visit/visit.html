@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jungle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- By adding the shared css file first and then the more specific css file to the
+    page you have the possibility to override styles in your specific file
+    because if the selector is the same, the last one wins -->
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="visit.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <button class="toggle-button">
+        <span class="toggle-button__bar"></span>
+        <span class="toggle-button__bar"></span>
+        <span class="toggle-button__bar"></span>
+      </button>
+      <div>
+        <a href="../index.html" class="main-header__brand"
+          ><img src="../images/tree_white.png" alt="A tree from our jungle"
+        /></a>
+      </div>
+      <nav class="main-nav">
+        <ul class="main-nav__items">
+          <li class="main-nav__item">
+            <a href="../tours/tours.html">Tours</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="../adventurers/adventurers.html">Adventurers</a>
+          </li>
+          <!-- cta: call to action, so the main button -->
+          <li class="main-nav__item main-nav__item--cta">
+            <a href="../visit/index.html">Visit</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav__items">
+        <li class="mobile-nav__item">
+          <a href="../tours/tours.html">Tours</a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="../adventurers/adventurers.html">Adventurers</a>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--cta">
+          <a href="../visit/visit.html">Visit</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <h1 class="signup-title">Awesome! Let's dive right in!</h1>
+      <form action="visit.html" class="signup-form">
+        <label for="title">Title</label>
+        <select id="title">
+          <option value="mr">Mr.</option>
+          <option value="ms">Ms.</option>
+        </select>
+        <label for="first-name">First name</label>
+        <input type="text" id="first-name" />
+        <label for="last-name">Last name</label>
+        <input type="text" id="last-name" />
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" />
+        <label for="password">Password</label>
+        <input type="password" id="password" />
+        <input type="checkbox" id="agree-terms" />
+        <label for="agree-terms"
+          >Agree to
+          <a href="#">Terms &amp; Conditions</a>
+        </label>
+        <button type="submit" class="button">Sign Up</button>
+      </form>
+    </main>
+    <footer class="main-footer">
+      <nav>
+        <ul class="main-footer__links">
+          <li class="main-footer__link">
+            <a href="#">Support</a>
+          </li>
+          <li class="main-footer__link">
+            <a href="#">Terms of Use</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <script src="../shared.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+/* Element with attribute */
+input {
+    background-color: rgb(0, 0, 255);
+}
+
+/* Elements with a specific attribute value */
+[type="email"] {
+    background-color: red;
+}
+
+/* Elements with a specific attribute value from a list of values */
+[lang~="en-us"] {
+    background-color: aqua;
+}
+
+/* Equal/Prefix: Elements with a specific attribute value equal or starting with a value */
+[lang|="de"] {
+    background-color: chartreuse;
+}
+
+/* Prefix: Elements starting with a specific attribute value */
+[href^="#"] {
+    color: pink;
+}
+
+/* Suffix: Elements ending with a specific attribute value */
+[href$=".de"] {
+    display: block;
+    color: cornflowerblue
+}
+
+/* Element with at least one attribute value */
+[src*="flower"] {
+    border: 5px solid chocolate;
+}
+
+/* Check values case-insensitively */
+[src*="tree" i]{
+    border: 5px solid black;
+}
