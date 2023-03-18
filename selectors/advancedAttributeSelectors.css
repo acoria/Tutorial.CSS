@@ -29,7 +29,7 @@ input {
     color: cornflowerblue
 }
 
-/* Element with at least one attribute value */
+/* Fuzzy: Element with something from an attribute value */
 [src*="flower"] {
     border: 5px solid chocolate;
 }

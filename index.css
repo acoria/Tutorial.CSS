@@ -16,5 +16,9 @@
         - Use :not() rarely because it can in most cases be written in a positive way, which is much easier to maintain
         - When importing 2 css files of which one is a shared css file for several components, always add the shared one first and then the more specific 
           css file. This way you have the possibility to override styles from the more general shared css file because when there are two selectors for the same element,
-          the last style defined in the code (the last import) wins.        
+          the last style defined in the code (the last import) wins.
+
+    Self-styling forms:
+        - remove outline of selected elements (:focus) and give them a border and lighter background color that match your sides style 
+	      - set "font: inherit" because per default, forms use the browser default
 */

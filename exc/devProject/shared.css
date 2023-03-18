@@ -143,6 +143,14 @@ main {
     color: #642472;
 }
 
+/* selects all buttons which are disabled */
+.button[disabled] {
+    cursor: not-allowed;
+    border: #a1a1a1;
+    background-color: #ccc;
+    color: #a1a1a1;
+}
+
 @media (min-width: 40rem) {
     .toggle-button {
         display: none;
