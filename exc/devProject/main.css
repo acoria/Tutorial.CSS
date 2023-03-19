@@ -21,9 +21,9 @@
     text-align: center;
 }
 
-.tours{
+/* .tours{
     min-width: 40rem;
-}
+} */
 
 .tour {
     background: #514471;
@@ -76,7 +76,6 @@
 #key-features {
     background: #327224;
     margin-top: 2rem;
-
 }
 
 #key-features .section-title {
