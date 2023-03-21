@@ -1,0 +1,172 @@
+/*
+  When no font family or generic family is defined, the browser will use its default.
+  This default can be looked up in the "Computed" tab in the browser console.
+
+  Fonts consist of:
+    - Generic family (e.g. sans-serif)
+        - Font family (e.g. Roboto)
+          - Font faces
+            - Font weight (e.g. light 300)
+            - Font style (e.g. italic)
+
+  - Generic families: (core attribute, is a fallback incase a font family does not exist)
+    - serif
+    - sans-serif
+    - cursive
+    - monospace
+    - fantasy
+
+  - Font families:
+    - If they consist of more than one word, they need to be defined in quotes.
+    - Best practice: Always define a generic family in the end
+
+  - Font weight:
+    A weight from 100 to 900 that can be set via "font-weight". The higher the value the bolder the font is.
+    The option "bolder" means bolder than the inherited value. There is also "normal" and bold":
+      - normal: 400
+      - bold: 700
+    
+  - Font attributes:
+    - font-size (e.g. 1rem)
+    - font-style (e.g. italic)
+    - font-weight: (e.g. bold)
+    - font-variant (e.g. small-caps)
+    - letter-spacing: the space between each letter (e.g. letter-spacing: 1rem)
+    - white-space: how to handle whitespace and line breaks
+    - line-height: depends on the font-family (e.g. normal/1)
+    - text-decoration: adding a line (e.g. underline/overline/line-through) Can also be used with dotted & color.
+    - text-shadow: adds a shadow (e.g. 2px 2px 7px gray)
+    
+  - Font face:
+    Each font face has to be imported separately.
+      e.g. https://fonts.googleapis.com/css2?family=Roboto:400,900 for 400 and 900
+    but the browser tries to compensate. If e.g. the italic font is not imported, 
+    it tries to add it by itself, ending up with a different italic than the expected.
+
+  - Font types:
+      - ttf/otf: TrueType/OpenType Format
+      - woff: Web Open Font Format (compressed ttf/otf format)
+      - woff2: woff 2.0 (faster, more compressed format that is not as well supported yet)
+
+  - CSS Font Stack: Website to see supported, locally(by the operating system) delivered fonts for windows and mac.
+
+  - Font shorthand:
+    - This is the order in which the attributes are to be added:
+      font-style font-variant font-weight font-size/line-height font-family
+    - The two mandatory parameters are size and font family
+      font: 1.2rem "Roboto", "sans-serif";
+    - Additional attributes can be added: style, variant, weight, line-height(after the size/):
+      font: italic small-caps 700 1.2rem/2 "Roboto", "sans-serif";
+
+  - Best practices:
+      - use "import" for fonts instead of html link:
+        If a font is imported e.g. like a Google Font, it has to be imported in the html which is connected to the css. 
+        Otherwise the font is not found.
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+        To avoid errors, the font can be imported via css into a shared css file:
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&display=swap');
+      - When importing your own custom fonts, start the ttf file with a lowercase letter because in some browsers, this can lead to problems.
+
+*/
+
+/* Many font-families can be defined so the browser will check them one by one until it finds an existing one.
+   If none of the defined ones are found, the browser default for the generic family is used */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* This is the best practice for importing fonts from Google. This should be added to a shared css file so that each page can access the font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&display=swap');
+
+body {
+  /* this is the equivalent of 400 */
+  font-weight: normal;
+}
+
+/* this is a thin, italic font which needs importing https://fonts.googleapis.com/css2?family=Roboto:100i */
+h1 {
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* you can add your own custom font face... */
+@font-face {
+  font-family: "My own roboto";
+  src: url(RobotoMono-Medium.ttf);
+  /* This is a performance improvement on how to load fonts which is hardly supported by browsers
+     There is swap, block, fallback, optional & auto.
+     Defines the font family loading behavior to ensure fonts are immediately visible for the user */
+  font-display: block;
+}
+
+/* ...and use it in the project */
+p {
+  font-family: "My own roboto";
+}
+
+/* Attention: If you add multiple font faces for the same family, you need to add the weight.
+   Otherwise the browser wont be able to tell the difference and the last one overrides the first */
+@font-face {
+  font-family: "My own roboto";
+  src: url(robotoMono-Bold.ttf);
+  font-weight: 700;
+}
+
+/* If they are available, all font types could be added */
+@font-face {
+  font-family: "My own roboto";
+  src: url(robotoMono-medium.woff2) format("woff2"),
+    url(robotoMono-medium.woff) format("woff"),
+    url(robotoMono-Bold.ttf) format("truetype");
+}
+
+/* there are additional attributes, such as font variants */
+h2 {
+  font-variant: small-caps;
+}
+
+/* set a space between each individual letter */
+h3 {
+  letter-spacing: 1rem;
+}
+
+/* decide on how to handle/collapse whitespace in text and whether to have a line break or not (nowrap) */
+#noWrap {
+  white-space: nowrap;
+}
+
+#pre {
+  white-space: pre;
+}
+
+#preWrap {
+  white-space: pre-wrap;
+}
+
+#preLine {
+  white-space: pre-line;
+}
+
+div {
+  background-color: gainsboro;
+  width: 20%
+}
+
+#textDecoration {
+  text-decoration: underline wavy red;
+}
+
+#textShadow {
+  text-shadow: 2px 2px 7px rgb(131, 131, 131);
+}
+
+/* property shorthand:
+   font-style font-variant font-weight font-size/line-height font-family */
+a {
+  font: italic small-caps 700 1.2rem/2 "Roboto", "sans-serif";
+}
+
+/* you can also refer to system fonts (menu, status-bar) which will take the size of the operating system */
+a {
+  font: menu;
+}
