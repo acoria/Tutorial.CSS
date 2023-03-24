@@ -1,0 +1,140 @@
+/* The wrapper for a flexbox is the flex container. All elements inside are the flex items.
+
+    The default when applying display: flex/inline-flex sets the two attributes automatically:
+        - flex-direction: row;
+        - flex-wrap: nowrap;
+    There is a shorthand for the two attributes:
+        - flex-flow: row nowrap;
+
+    There is a main-axis and a cross-axis. They always start in the same corner and are perpencidular.
+    Per default, the "row" direction places the main-axis on the left and when there is not enough space, 
+    the elements are wrapped along the cross axis, which also starts in the left corner and goes down.
+    For e.g. row-reverse, the main-axis is placed in the right corner and wrapping items will place themselves
+    down from there on the right side.
+
+    align-items: defines the position of the elements along the cross-axis.
+        - stretch: is the default and stretches all elements along the cross-axis.
+        - center: aligns all items in the middle of the cross-axis
+        - flex-start: aligns all items at the start of the cross-axis
+        - flex-end: aligns all items at the end of the cross-axis
+        - baseline: aligns the items along the elements content (e.g. text) .
+
+    justify-content: defines the position of the elements along the main-axis.
+
+    align-content: decides about the behavior of the second row when elements wrap, ?-axis.
+*/
+
+/* This is the default flex flexbox behavior. The items inside the flex container are aligned horizontally. */
+.flexContainer_default {
+    display: flex;
+    /* this is the default:
+    flex-wrap: nowrap;
+    flex-direction: row; */
+}
+
+/* The inline-flex flexbox behavior is the equivalent to inline-block. 
+   It takes up only the necessary space */
+.flexContainer_inline-flex {
+    display: inline-flex;
+}
+
+/* If there is not enough space, the elements are wrapped into the next line.
+   The height of the bottom elements is also only as big as their content. */
+.flexContainer_wrap {
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* If a bigger element is added to a line, the other elements take up the same space. */
+.flexContainer_wrapHeight {
+    max-width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* This switches the direction, causing the smaller elements to dock to the bottom */
+.flexContainer_wrap-reverse {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.flexContainer_wrapDefault {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* This swaps the order of the items from last to first and aligns them horizontally */
+.flexContainer_row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* This aligns all elements vertically */
+.flexContainer_column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* This swaps the order of the items from last to first and aligns them vertically. */
+.flexContainer_column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.flexContainer_align-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: ;
+    align-items: flex-end;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    margin: 0.5rem 0 0.2rem 0;
+    font-size: 1rem;
+}
+
+div {
+    background-color: #0a725f;
+    margin: 0.5rem;
+    border: 2px solid black;
+    padding: 0.5rem;
+}
+
+.normalDiv {
+    background-color: #004C78;
+}
+
+.width100 {
+    background-color: #0066A1;
+    width: 100px;
+}
+
+.height100 {
+    background-color: #6558ea;
+    height: 100px;
+}
+
+.width_height150 {
+    background-color: #457ed0;
+    width: 150px;
+    height: 150px;
+}
+
+.width200 {
+    background-color: #80B3D0;
+    width: 200px;
+}
+
+.width200_2 {
+    background-color: #94b8d7;
+    width: 200px;
+}
