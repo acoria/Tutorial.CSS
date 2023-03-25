@@ -12,23 +12,31 @@
     For e.g. row-reverse, the main-axis is placed in the right corner and wrapping items will place themselves
     down from there on the right side.
 
-    justify-content: defines the position of the elements along the main-axis. 
-        - center, flex-start/end, baseline, space-evenly, space-between etc.
+    Flex-container properties (parent):
+        justify-content: defines the position of the elements along the main-axis. 
+            - center, flex-start/end, baseline, space-evenly, space-between etc.
 
-    align-items: defines the position of the elements along the cross-axis.
-        - stretch: is the default and stretches all elements along the cross-axis.
-        - center: aligns all items in the middle of the cross-axis
-        - flex-start: aligns all items at the start of the cross-axis
-        - flex-end: aligns all items at the end of the cross-axis
-        - baseline: aligns the items along the elements content (e.g. text).
+        align-items: defines the position of the elements along the cross-axis.
+            - stretch: is the default and stretches all elements along the cross-axis.
+            - center: aligns all items in the middle of the cross-axis
+            - flex-start: aligns all items at the start of the cross-axis
+            - flex-end: aligns all items at the end of the cross-axis
+            - baseline: aligns the items along the elements content (e.g. text).
 
-    align-content: decides about the alignment on the cross-axis when there is more than one row.
-        - normal: is the default
-        - center: align them all centered
-        - flex-start/end: move elements to the start or end
-        - space-evenly: put an equal space between the start, end and in between
-        - space-between: put only space between the first and second row but not at the start or end
-        - etc.
+        align-content: decides about the alignment on the cross-axis when there is more than one row.
+            - normal: is the default
+            - center: align them all centered
+            - flex-start/end: move elements to the start or end
+            - space-evenly: put an equal space between the start, end and in between
+            - space-between: put only space between the first and second row but not at the start or end
+            - etc.
+    
+    Flex items properties (children):
+        - order: specifies the order of a child in a container. The higher the number, the later it is positioned (further right or down, depending on the direction)
+          0 is the default. Negative and positive values are possible.
+        - align-self: allows an element to be positioned in relation to the cross axis of its surrounding container 
+        - flex-grow: distributes remaining space according to the weight defined in flex grow.
+          The default is 0 which means it will not use any of the remaining space (keep its size). 
 */
 
 /* This is the default flex flexbox behavior. The items inside the flex container are aligned horizontally. */
@@ -98,7 +106,61 @@
     align-items: flex-end;
     /* default */
     /* align-content: normal; */
-    align-content: space-between;
+    /* align-content: space-between; */
+}
+
+.order {
+    display: flex;
+}
+
+/* puts this element in the front because the order of the items is lowest to highest number */
+.secondElement {
+    order: -1;
+    background-color: #0066A1;
+}
+
+.firstElement {
+    background-color: #457ed0;
+}
+
+.align-itself {
+    display: flex;
+    align-items: center;
+}
+
+/* allows the positioning of an individual element on the cross axis */
+#toTop {
+    align-self: flex-start;
+}
+
+/* So if there is 400px spare space to fill because each element takes about 100px... */
+.flex-grow {
+    display: flex;
+    width: 700px;
+    padding: 0;
+}
+
+/* ...0 is the default and will not use any more space than its content... */
+#flex-grow0 {
+    flex-grow: 0;
+    background-color: #004C78;
+    margin: 0;
+}
+
+/* ...flex-grow: 1 will occupy 1/4 of the remaining space... */
+#flex-grow1 {
+    flex-grow: 1;
+    background-color: #6558ea;
+    margin: 0;
+}
+
+/* ...and flex-grow: 3 will occupy 3/4 of the remaining space... */
+#flex-grow3 {
+    flex-grow: 3;
+    background-color: #457ed0;
+    /* width: 200px; if you add a width to the element, its theoretical space gets bigger, resulting in the remaining
+    space to be smaller. Therefore it will increase in size and the element before it will be smaller */
+    margin: 0;
 }
 
 * {
