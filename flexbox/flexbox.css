@@ -36,7 +36,17 @@
           0 is the default. Negative and positive values are possible.
         - align-self: allows an element to be positioned in relation to the cross axis of its surrounding container 
         - flex-grow: distributes remaining space according to the weight defined in flex grow.
-          The default is 0 which means it will not use any of the remaining space (keep its size). 
+          The default is 0 which means it will not use any of the remaining space (keep its size).
+        - flex-shrink: defines if an element can shrink and at which ratio.
+          A value of 0 defines that an element cannot shrink and keeps its defined size.
+          The default is 1. Any value bigger than 0 defines that the element can shrink. If there is more than one element with a shrink-value, 
+          they shrink with these ratios.
+        - flex-basis: the size of an element depending on the main axis.
+            - auto: The defined width or height (depending on the orientation) will be applied, referring to the main axis.
+            - a size, such as px/rem/%: The element will have this defined sized in the main axis direction.
+
+        - shorthand for flex-grow | flex-shrink | flex-basis:
+            e.g. flex: 0 1 auto;
 */
 
 /* This is the default flex flexbox behavior. The items inside the flex container are aligned horizontally. */
@@ -161,6 +171,55 @@
     /* width: 200px; if you add a width to the element, its theoretical space gets bigger, resulting in the remaining
     space to be smaller. Therefore it will increase in size and the element before it will be smaller */
     margin: 0;
+}
+
+/* When there is not enough space for all elements (3 times 150px) the elements shrink */
+.flex-shrink {
+    display: flex;
+    padding: 0;
+    width: 388px;
+}
+
+/* This element does not shrink because of its shrink value of 0  */
+#flex-shrink0 {
+    flex-shrink: 0;
+    background-color: #004C78;
+    margin: 0;
+    width: 150px;
+}
+
+/* This element shrinks with a ratio of 1 */
+#flex-shrink1 {
+    flex-shrink: 1;
+    background-color: #6558ea;
+    margin: 0;
+    width: 150px;
+}
+
+/* This element shrinks with a ratio of 4, so 4 times more than the element next to it */
+#flex-shrink3 {
+    flex-shrink: 3;
+    background-color: #457ed0;
+    margin: 0;
+    width: 150px;
+}
+
+.flex-basis{
+    display: flex;
+}
+
+#flex-basis_auto{
+    background-color: #457ed0;
+    width: 150px;
+    height: 100px;
+    flex-basis: auto;
+}
+
+#flex-basis_300{
+    background-color: #004C78;
+    width: 150px;
+    height: 100px;
+    flex-basis: 300px;
 }
 
 * {
