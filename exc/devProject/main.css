@@ -21,15 +21,18 @@
     text-align: center;
 }
 
-/* .tours{
-    min-width: 40rem;
-} */
+.tours{
+    display: flex;
+    flex-direction: column;
+}
 
 .tour {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #514471;
-    text-align: center;
+    /* text-align: center; */
     padding: 1rem;
-    margin: 0.5rem 0;
     width: 100%;
 }
 
@@ -44,7 +47,8 @@
 }
 
 .tour__price {
-    color: #838383
+    color: #838383;
+    margin: 0;
 }
 
 .tour--highlighted .tour__title {
@@ -65,7 +69,7 @@
 
 .tour__features {
     padding: 0;
-    margin: 0;
+    margin: 0 0 1rem 0;
     list-style: none;
 }
 
@@ -113,17 +117,23 @@
     }
 
     .tours {
-        width: 100%;
         margin: auto;
-        text-align: center;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
     .tour {
-        display: inline-block;
+        display: flex;
+        text-align: center;
         width: 30%;
-        vertical-align: middle;
+        margin: auto 0.2rem;
         min-width: 13rem;
         max-width: 25rem;
+    }
+
+    .tour__annotation{
+        width: 100%;
     }
 
     .tour--highlighted {
