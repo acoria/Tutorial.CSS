@@ -13,7 +13,7 @@ main {
        minus the margin in the top (for the navigation)
        minus the footer height */
     min-height: calc(100vh - 3rem - 4rem);
-    margin-top: 3.2rem;
+    margin-top: 3rem;
 }
 
 .main-header {
