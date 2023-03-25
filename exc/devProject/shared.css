@@ -24,24 +24,20 @@ main {
     top: 0;
     left: 0;
     z-index: 9;
-}
-
-.main-header>div {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
 }
 
 .main-header__brand {
     color: #311238;
     text-decoration: none;
     font-weight: bold;
-    height: 2.5rem;
-    display: inline-block;
 }
 
 .main-header__brand img {
     width: 2.5rem;
     height: 100%;
+    vertical-align: middle;
 }
 
 .toggle-button {
@@ -93,7 +89,7 @@ main {
 .main-nav__item--cta a:hover,
 .main-nav__item--cta a:active,
 .mobile-nav__item--cta a:hover,
-.mobile-nav__item--cta a:active  {
+.mobile-nav__item--cta a:active {
     color: #642472;
     background: white;
     padding: 0.5rem 1rem;
@@ -112,12 +108,15 @@ main {
 }
 
 .mobile-nav__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 90%;
     height: 100%;
     list-style: none;
-    margin: 10% auto;
+    margin: 0 auto;
     padding: 0;
-    text-align: center;
 }
 
 .mobile-nav__item {
@@ -142,12 +141,13 @@ main {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-footer__link {
-    display: block;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 .main-footer__link a {
@@ -194,26 +194,31 @@ main {
         display: none;
     }
 
+    .main-header {
+        justify-content: space-between;
+    }
+
     .main-nav {
-        display: inline-block;
-        text-align: right;
-        width: calc(100% - 100px);
-        vertical-align: middle;
+        display: flex;
     }
 
     .main-nav__items {
+        display: flex;
         margin: 0;
         padding: 0;
         list-style: none;
     }
 
     .main-nav__item {
-        display: inline-block;
         margin: 0 0.3rem;
     }
 
+    .main-footer__links{
+        flex-direction: row;
+        justify-content: center;
+    }
+
     .main-footer__link {
-        display: inline-block;
         margin: 0 1rem;
     }
 }

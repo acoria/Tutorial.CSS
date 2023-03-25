@@ -25,7 +25,8 @@ position (x/y-axis): Positions an element within or outside of the document flow
       It also disappears with its parent when scrolled out.
 
 z-index (z-axis): moves an element along the z-axis.
-    - z-index only applies to elements that have a position-property set to something other than the default (=static), so absolute, fixed or relative.
+    - z-index only applies to elements that have a position-property set to something other than the default (=static), so absolute, fixed or relative or 
+      if they are flexbox items, so items contained within a flexbox flex-container.
     - The default z-index is 0 or auto.
     - If two elements have the same z-index, the order in the html decides what is on top of what, with the last element winning 
     - Stacking context: If two parent elements have a z-index defined, this z-index is independent of any z-index defined for the children elements inside their parents.

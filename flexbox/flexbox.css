@@ -6,22 +6,29 @@
     There is a shorthand for the two attributes:
         - flex-flow: row nowrap;
 
-    There is a main-axis and a cross-axis. They always start in the same corner and are perpencidular.
+    There is a main-axis and a cross-axis. They always start in the same corner and are perpendicular.
     Per default, the "row" direction places the main-axis on the left and when there is not enough space, 
     the elements are wrapped along the cross axis, which also starts in the left corner and goes down.
     For e.g. row-reverse, the main-axis is placed in the right corner and wrapping items will place themselves
     down from there on the right side.
+
+    justify-content: defines the position of the elements along the main-axis. 
+        - center, flex-start/end, baseline, space-evenly, space-between etc.
 
     align-items: defines the position of the elements along the cross-axis.
         - stretch: is the default and stretches all elements along the cross-axis.
         - center: aligns all items in the middle of the cross-axis
         - flex-start: aligns all items at the start of the cross-axis
         - flex-end: aligns all items at the end of the cross-axis
-        - baseline: aligns the items along the elements content (e.g. text) .
+        - baseline: aligns the items along the elements content (e.g. text).
 
-    justify-content: defines the position of the elements along the main-axis.
-
-    align-content: decides about the behavior of the second row when elements wrap, ?-axis.
+    align-content: decides about the alignment on the cross-axis when there is more than one row.
+        - normal: is the default
+        - center: align them all centered
+        - flex-start/end: move elements to the start or end
+        - space-evenly: put an equal space between the start, end and in between
+        - space-between: put only space between the first and second row but not at the start or end
+        - etc.
 */
 
 /* This is the default flex flexbox behavior. The items inside the flex container are aligned horizontally. */
@@ -82,11 +89,16 @@
     flex-direction: column-reverse;
 }
 
-.flexContainer_align-items{
+.flexContainer_align-items {
     display: flex;
+    flex-wrap: wrap;
+    height: 500px;
     flex-direction: row;
-    justify-content: ;
+    justify-content: flex-start;
     align-items: flex-end;
+    /* default */
+    /* align-content: normal; */
+    align-content: space-between;
 }
 
 * {
