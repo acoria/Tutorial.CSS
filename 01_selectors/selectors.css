@@ -1,9 +1,9 @@
 /*  
     Selectors: there are five types of selectors
-        - element
         - class
         - id
-        - tag
+        - tag (element)
+        - attribute
         - universal
         -> also combinators are possible, e.g. class & element (see combinators)
 
