@@ -1,0 +1,4 @@
+- selector
+- pseudo class
+- pseudo element
+- combinators

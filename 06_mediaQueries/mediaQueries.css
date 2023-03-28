@@ -18,6 +18,7 @@ Best practices:
    width: 15vw;
    min-width: 7rem;
    margin: 1rem;
+   display: block;
 }
 
 /* If the screen has a minimum width of 40rem, this style is applied */
@@ -38,7 +39,3 @@ Best practices:
 /* or operator */
 @media (min-width: 40rem),
 (min-height: 60rem) {}
-
-/* Careful with portrait orientation because a desktop-view is landscape mode although you might want 
-   to have the behavior for a big screen in portrait mode*/
-@media (min-width: 40rem) and (orientation: portrait) {}

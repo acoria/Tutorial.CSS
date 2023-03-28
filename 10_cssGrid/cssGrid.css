@@ -1,0 +1,84 @@
+/*  For placing elements, a grid can be defined.
+
+    - An element can be turned into a grid using "display:grid".
+    - Columns/rows can be defined with "grid-template-column/row" in different ways:
+        - px/rem
+        - %: of the entire grid
+        - fr: fraction. If there is only one fraction, it takes the remaining space. If there is more than one, it acts as a weight
+              and the fraction parts split up the space according to their fraction/weight.
+        - auto: forces an element to fill the rest of the remaining space (for the height only if the height of the parent is defined)
+        - repeat(times, pattern): This creates columns by repeating a pattern for a defined amount of times. 
+            E.g. for two equal columns, one could write "50% 50%" or instead repeat(2, 50%)
+            This can be any pattern (20% 20% or 20rem or 2fr)
+        - minmax(minium value, maximum value): This can be used to define a minimum and a maximum value. It will always be ensured that 
+          it has the minimum size and if there is enough space, the maximum will be used.
+            Anything can be put as the value: px, rem, %, fr, auto
+
+    - grid-column-start/end
+        Elements per default span over one column and row but can span over more cells by defining
+            - grid-column-start: starting column
+            - grid-column-end: ending column e.g. 3
+                - An alternative would be to define the cells it should span
+                e.g. grid-column-end: span 2
+                - Columns can also be defined by using negative values. -1 means the rightmost column end
+                grid-column-end: -1; This will let it end at the end of the last cell.
+            - grid-row-start: starting row
+            - grid-row-end: ending row
+        Elements can overlap, if these values are explicitly defined
+        ##
+
+
+*/
+
+.container {
+    margin: 20px;
+    display: grid;
+    /* this defines 5 columns. The %-value is the percentage of the total of the grid's width. */
+    grid-template-columns: 300px 10rem 20% 1fr 2fr;
+    /* this defines the grid's rows */
+    grid-template-rows: 3;
+}
+
+/* elements can span over more than one cell */
+.element1 {
+    background-color: #0066A1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /* an alternative is "span over two cells" */
+    /* grid-column-end: span 2; */
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.repeat {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    /* an alternative: */
+    /* grid-template-columns: repeat(2, 1fr); */
+}
+
+.element2 {
+    background-color: #457ed0;
+}
+
+.element3 {
+    background-color: #80B3D0;
+}
+
+.element4 {
+    background-color: #6558ea;
+}
+
+.element5 {
+    background-color: #004C78;
+}
+
+.element6 {
+    background-color: #94b8d7;
+}
+
+body div {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.3rem;
+}

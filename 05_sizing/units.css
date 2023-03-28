@@ -1,8 +1,8 @@
 /* There are six different types of units:
     - pixels (px)
-    - percentage (%) of the surrounding containers, depending on their position (see below)
     - root em (rem) refers to the browser font size
     - em (em) refers to the inherited font size of its ancestor multiplied its own em-value
+    - percentage (%) of the surrounding containers, depending on their position (see below)
     - viewport height (vh) / viewport width (vw)
     - auto to align element in the center
 
@@ -24,7 +24,6 @@
         height        %/vh
         top/bottom    %
         left/right    % 
-
 */
 
 * {
