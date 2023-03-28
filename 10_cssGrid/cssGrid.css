@@ -6,32 +6,81 @@
         - %: of the entire grid
         - fr: fraction. If there is only one fraction, it takes the remaining space. If there is more than one, it acts as a weight
               and the fraction parts split up the space according to their fraction/weight.
-        - auto: forces an element to fill the rest of the remaining space (for the height only if the height of the parent is defined)
+        - auto: Forces an element to fill the rest of the remaining space (for the height only if the height of the parent is defined).
+                If only fractions are defined and auto, auto will take only as much space as required for the content.
         - repeat(times, pattern): This creates columns by repeating a pattern for a defined amount of times. 
             E.g. for two equal columns, one could write "50% 50%" or instead repeat(2, 50%)
-            This can be any pattern (20% 20% or 20rem or 2fr)
+            This can be any pattern ("20% 20%" or "20rem" or "2fr")
         - minmax(minium value, maximum value): This can be used to define a minimum and a maximum value. It will always be ensured that 
           it has the minimum size and if there is enough space, the maximum will be used.
             Anything can be put as the value: px, rem, %, fr, auto
 
+    - Rows and columns can be given names to address them in []
+        - A grid like this    
+            column 1 | column 2
+          could be named like that
+            grid-template-columns: [column-1-start] 1fr [column-1-end column-2-start] 2fr [column-2-end]
+          and be addressed like this
+            grid-column-start: column-1-start;
+            grid-column-end: column-2-end;
+        - There can be as many names defined as needed for one column/row.
+
     - grid-column-start/end
-        Elements per default span over one column and row but can span over more cells by defining
+        Elements per default span over one column and one row but can span over more cells by defining
             - grid-column-start: starting column
             - grid-column-end: ending column e.g. 3
                 - An alternative would be to define the cells it should span
                 e.g. grid-column-end: span 2
-                - Columns can also be defined by using negative values. -1 means the rightmost column end
+                - Columns can also be defined by using negative values. -1 means the rightmost column, so it automatically spans all the way to the end.
                 grid-column-end: -1; This will let it end at the end of the last cell.
             - grid-row-start: starting row
             - grid-row-end: ending row
-        Elements can overlap, if these values are explicitly defined
-        ##
 
+    - Overlapping:
+        - The grid per default tries to avoid overlapping.    
+        - Elements can overlap, if all values (grid-column-start/grid-column-end, grid-row-start, grid-row-end) are explicitly defined and overlap that way.
+          The last element in the html wins.
+        - A z-index can be defined (the grid supports it without any position-attribute e.g. relative) to change the overlapping priority.
 
+    - Gaps:
+        Allows for spacing between columns and gaps by defining
+            grid-column-gap/grid-row-gap: 1rem;
+
+    - Shorthands:
+        - grid-row-start/end
+            grid-row: row-1-start / row-2-end
+        - grid-column-start/end
+            grid-column: 1 / -1
+
+        - grid-row-start/end & grid-column-start/end
+            Can be shortened with grid-area
+                grid-row-start / grid-column-start / grid-row-end / grid-column-end 
+            grid-area: row-1-start / column-1-start / row-1-end / column-1-end
+
+        - grid-row-gap/grid-column-gap
+            Can be shortened with row gap | column gap 
+                grid-gap: 1rem 1rem
+            or just one value for both row and column
+                grid-gap: 1rem
+    
+    - Grid area templates:
+        A template can be defined for an entire area. The DOM order is ignored for this setup.
+        For a layout like this
+            |       Header              |
+            | Sidebar |    Main content |
+            |       Footer              |
+        A template can be defined like that
+            grid-template-areas: "header header header"
+                                 "sidebar main main"
+                                 "footer footer footer";
+        It is build like a table. So in this example there are three columns and three rows. There have to be as many words as cells to define it.
+        If a part of the grid does not need addressing, the name can be omitted by putting a . like this
+            grid-template-areas: "header header header"
+                                 ". main main"
+                                 "footer footer footer";
 */
 
-.container {
-    margin: 20px;
+.gridContainer {
     display: grid;
     /* this defines 5 columns. The %-value is the percentage of the total of the grid's width. */
     grid-template-columns: 300px 10rem 20% 1fr 2fr;
@@ -39,9 +88,25 @@
     grid-template-rows: 3;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* auto will fill the rest of the column */
+.autoFill {
+    display: grid;
+    grid-template-columns: 100px auto;
+}
+
+/* auto will take only the required space of an element if fractions are defined */
+.autoWithFractions {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+}
+
 /* elements can span over more than one cell */
-.element1 {
-    background-color: #0066A1;
+.spanOverMoreCellsAbsolute {
     grid-column-start: 1;
     grid-column-end: 3;
     /* an alternative is "span over two cells" */
@@ -50,12 +115,98 @@
     grid-row-end: 3;
 }
 
+/* span to -1, so the end of the grid */
+.spanToMinus1 {
+    grid-column-start: 2;
+    grid-column-end: -1;
+}
+
+/* an alternative for spanning over several cells */
+.spanOverMoreCellsSpan {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+}
+
+/* A pattern to define the columns/rows can be repeated */
 .repeat {
-    margin: 20px;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     /* an alternative: */
     /* grid-template-columns: repeat(2, 1fr); */
+}
+
+/* when explicitly defined with columns/rows, elements can overlap */
+.overlapFromLeft {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    z-index: 1;
+}
+
+.overlapFromRight {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+/* in [] is the name of the row that follows. It can have more than one name. */
+.namedRowContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end] 1fr;
+}
+
+.namedRow1 {
+    grid-row-start: row-1-start;
+    grid-row-end: row-1-end;
+}
+
+.namedRow2 {
+    grid-row-start: row-2-start;
+    grid-row-end: row-2-end;
+}
+
+/* adds gaps between columns */
+.columnGaps {
+    grid-column-gap: 1rem;
+}
+
+/*
+    |       Header                 |
+    | Sidebar |    Main content    |
+    |       Footer                 | */
+.areaTemplateContainer {
+    display: grid;
+    grid-template-areas: "header header header"
+        "sidebar main main"
+        "footer footer footer";
+}
+
+.areaTemplateHeader {
+    grid-area: header
+}
+
+.areaTemplateSidebar {
+    grid-area: sidebar;
+}
+
+.areaTemplateMain {
+    grid-area: main;
+}
+
+.areaTemplateFooter {
+    grid-area: footer;
+}
+
+.test {
+    display: grid;
+    grid-template-columns: minmax(50%, 70%);
+}
+
+.element1 {
+    background-color: #0066A1;
 }
 
 .element2 {
@@ -78,7 +229,15 @@
     background-color: #94b8d7;
 }
 
-body div {
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body div {
     padding: 0.3rem;
+}
+
+h3 {
+    margin-bottom: 0.3rem;
+    font-size: small;
 }
