@@ -1,6 +1,8 @@
 /*  For placing elements, a grid can be defined.
 
     - An element can be turned into a grid using "display:grid".
+      If e.g. the body is turned into a grid, only the non-static elements (elements not part of the document flow) will be turned into grid elements.
+
     - Columns/rows can be defined with "grid-template-column/row" in different ways:
         - px/rem
         - %: of the entire grid
@@ -14,6 +16,19 @@
         - minmax(minium value, maximum value): This can be used to define a minimum and a maximum value. It will always be ensured that 
           it has the minimum size and if there is enough space, the maximum will be used.
             Anything can be put as the value: px, rem, %, fr, auto
+        - fit-content(value): Can be used to make an element fit into a cell if it is usually smaller but might change to a bigger size with a media query.
+            It extends its size if the contents needs the space, otherwise it uses as much space as needed.
+
+    - grid-column-start/end
+        Elements per default span over one column and one row but can span over more cells by defining
+            - grid-column-start: starting column
+            - grid-column-end: ending column e.g. 3
+                - An alternative would be to define the cells it should span
+                e.g. grid-column-end: span 2
+                - Columns can also be defined by using negative values. -1 means the rightmost column, so it automatically spans all the way to the end.
+                grid-column-end: -1; This will let it end at the end of the last cell.
+            - grid-row-start: starting row
+            - grid-row-end: ending row
 
     - Rows and columns can be given names to address them in []
         - A grid like this    
@@ -30,17 +45,6 @@
             grid-column-start: col-start 1;
             grid-column-end: col-end 3;
 
-    - grid-column-start/end
-        Elements per default span over one column and one row but can span over more cells by defining
-            - grid-column-start: starting column
-            - grid-column-end: ending column e.g. 3
-                - An alternative would be to define the cells it should span
-                e.g. grid-column-end: span 2
-                - Columns can also be defined by using negative values. -1 means the rightmost column, so it automatically spans all the way to the end.
-                grid-column-end: -1; This will let it end at the end of the last cell.
-            - grid-row-start: starting row
-            - grid-row-end: ending row
-
     - Overlapping:
         - The grid per default tries to avoid overlapping.    
         - Elements can overlap, if all values (grid-column-start/grid-column-end, grid-row-start, grid-row-end) are explicitly defined and overlap that way.
@@ -48,7 +52,7 @@
         - A z-index can be defined (the grid supports it without any position-attribute e.g. relative) to change the overlapping priority.
 
     - Gaps:
-        Allows for spacing between columns and gaps by defining
+        Allows for spacing between columns and rows by defining
             grid-column-gap/grid-row-gap: 1rem;
 
     - Shorthands:
@@ -88,6 +92,20 @@
             grid-template-columns: [hd-start] repeat(4, 1fr) [hd-end];
           and then can be addressed like that
             grid-area: hd;
+        
+    - Positioning:
+        - the entire grid when the container is bigger than space the cells occupy:
+            In the container, define
+            - justify-content: aligns the grid along the x-axis
+            - align-content: aligns the grid along the y-axis
+        - elements inside the grid cells:
+            In the container, define
+            - justify-items: aligns elements along the x-axis (stretch (is the default), start, end)
+            - align-items: aligns elements along the y-axis
+        - a single element inside its cell:
+            For the element, define
+            - justify-self: center;
+            - align-self: center;
 }
 .generatedGridArea{
     grid-area: hd;
@@ -224,13 +242,47 @@
     grid-column: col-start 1 / col-end 3;
 }
 
-.generatedGridAreaContainer{
+.generatedGridAreaContainer {
     display: grid;
     grid-template-rows: [hd-start] repeat(3, 3vh) [hd-end];
     grid-template-columns: [hd-start] repeat(4, 1fr) [hd-end];
 }
-.generatedGridArea{
+
+.generatedGridArea {
     grid-area: hd;
+}
+
+/* Positions the entire grid inside its container because it occupies less space than its surrounding container */
+.positioningTheEntireGrid {
+    height: 25vh;
+    background-color: lightgray;
+    display: grid;
+    grid-template-rows: repeat(2, 10vh);
+    grid-template-columns: repeat(2, 20vw);
+    justify-content: end;
+    align-content: center;
+}
+
+/* Positions the content of the grid along the horizontal and vertical axis */
+.positioningInsideCellsContainer {
+    background-color: lightgray;
+    display: grid;
+    grid-template-rows: repeat(2, 5vh);
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+    align-items: center;
+}
+
+/* Positioning a single element inside its grid cell */
+.positioningSingleElementContainer {
+    display: grid;
+    grid-template-rows: 10vh 1fr;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.positioningSingleElement {
+    justify-self: center;
+    align-self: center;
 }
 
 .element1 {

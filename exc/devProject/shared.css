@@ -2,18 +2,34 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
+    display: grid;
+    /* 3.5rem for the navbar and 8rem for the footer */
+    /* grid-template-rows: 3.5rem auto 8rem; */
+    grid-template-rows: 3.5rem auto fit-content(8rem);
+    height: 100%;
+    /* an alternative for positioning would be to define a grid area */
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
 }
 
 main {
     /* ensure the footer is at the bottom by taking the entire height
        minus the margin in the top (for the navigation)
-       minus the footer height */
-    min-height: calc(100vh - 3rem - 4rem);
-    margin-top: 3rem;
+       minus the footer height -> not the nicest solution, 
+       so it was fixed by introducing a grid */
+    /* min-height: calc(100vh - 3rem - 4rem); */
+    /* margin-top: 3rem; */
+    grid-row: 2 / 3;
 }
 
 .main-header {
@@ -132,6 +148,8 @@ main {
 }
 
 .main-footer {
+    /* using an area: */
+    grid-area: footer;
     background: black;
     padding: 2rem;
     margin-top: 3rem;
@@ -213,7 +231,7 @@ main {
         margin: 0 0.3rem;
     }
 
-    .main-footer__links{
+    .main-footer__links {
         flex-direction: row;
         justify-content: center;
     }
