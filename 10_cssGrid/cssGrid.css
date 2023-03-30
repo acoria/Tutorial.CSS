@@ -24,6 +24,11 @@
             grid-column-start: column-1-start;
             grid-column-end: column-2-end;
         - There can be as many names defined as needed for one column/row.
+        - In the repeat function, they can also be used like this
+            grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+          and addressed like that
+            grid-column-start: col-start 1;
+            grid-column-end: col-end 3;
 
     - grid-column-start/end
         Elements per default span over one column and one row but can span over more cells by defining
@@ -64,20 +69,28 @@
                 grid-gap: 1rem
     
     - Grid area templates:
-        A template can be defined for an entire area. The DOM order is ignored for this setup.
-        For a layout like this
-            |       Header              |
-            | Sidebar |    Main content |
-            |       Footer              |
-        A template can be defined like that
+        - A template can be defined for an entire area. The DOM order is ignored for this setup.
+          For a layout like this
+                |       Header              |
+                | Sidebar |    Main content |
+                |       Footer              |
+          A template can be defined like that
             grid-template-areas: "header header header"
-                                 "sidebar main main"
-                                 "footer footer footer";
-        It is build like a table. So in this example there are three columns and three rows. There have to be as many words as cells to define it.
-        If a part of the grid does not need addressing, the name can be omitted by putting a . like this
-            grid-template-areas: "header header header"
-                                 ". main main"
-                                 "footer footer footer";
+                                    "sidebar main main"
+                                    "footer footer footer";
+          It is build like a table. So in this example there are three columns and three rows. There have to be as many words as cells to define it.
+        - If a part of the grid does not need addressing, the name can be omitted by putting a . like this
+                grid-template-areas: "header header header"
+                                    ". main main"
+                                    "footer footer footer";
+        - Areas can be generated automatically by following the name pattern with a name ending with -start/-end like this
+            grid-template-rows: [hd-start] repeat(3, 3vh) [hd-end];
+            grid-template-columns: [hd-start] repeat(4, 1fr) [hd-end];
+          and then can be addressed like that
+            grid-area: hd;
+}
+.generatedGridArea{
+    grid-area: hd;
 */
 
 .gridContainer {
@@ -173,7 +186,7 @@
     grid-column-gap: 1rem;
 }
 
-/*
+/* areas can be defined using strings.
     |       Header                 |
     | Sidebar |    Main content    |
     |       Footer                 | */
@@ -200,9 +213,24 @@
     grid-area: footer;
 }
 
-.test {
+/* Named columns can be used with repeat... */
+.namedColumnRepeatContainer {
     display: grid;
-    grid-template-columns: minmax(50%, 70%);
+    grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+}
+
+/* ...and can be addressed by number behind the name. This stretches over three cells. */
+.namedColumn {
+    grid-column: col-start 1 / col-end 3;
+}
+
+.generatedGridAreaContainer{
+    display: grid;
+    grid-template-rows: [hd-start] repeat(3, 3vh) [hd-end];
+    grid-template-columns: [hd-start] repeat(4, 1fr) [hd-end];
+}
+.generatedGridArea{
+    grid-area: hd;
 }
 
 .element1 {
