@@ -19,7 +19,7 @@
         - fit-content(value): Can be used to make an element fit into a cell if it is usually smaller but might change to a bigger size with a media query.
             It extends its size if the contents needs the space, otherwise it uses as much space as needed.
 
-    - grid-column-start/end
+    - Define where to position an element inside the grid with "grid-column-start/end" and "grid-row-start/end":
         Elements per default span over one column and one row but can span over more cells by defining
             - grid-column-start: starting column
             - grid-column-end: ending column e.g. 3
@@ -73,20 +73,23 @@
                 grid-gap: 1rem
     
     - Grid area templates:
-        - A template can be defined for an entire area. The DOM order is ignored for this setup.
+        - A template can be defined for an entire area. The DOM order defined in the html is ignored for this setup.
           For a layout like this
                 |       Header              |
                 | Sidebar |    Main content |
                 |       Footer              |
           A template can be defined like that
             grid-template-areas: "header header header"
-                                    "sidebar main main"
-                                    "footer footer footer";
+                                 "sidebar main main"
+                                 "footer footer footer";
           It is build like a table. So in this example there are three columns and three rows. There have to be as many words as cells to define it.
         - If a part of the grid does not need addressing, the name can be omitted by putting a . like this
                 grid-template-areas: "header header header"
                                     ". main main"
                                     "footer footer footer";
+        - Defining areas like above is especially useful for mobile responsiveness because the areas are referenced by the names and 
+          all that needs to be changed for the mobile approach is the "grid-template-areas" to e.g. more rows. 
+          The overriding of column/row-start/end is therefore unnecessary.
         - Areas can be generated automatically by following the name pattern with a name ending with -start/-end like this
             grid-template-rows: [hd-start] repeat(3, 3vh) [hd-end];
             grid-template-columns: [hd-start] repeat(4, 1fr) [hd-end];
@@ -96,19 +99,29 @@
     - Positioning:
         - the entire grid when the container is bigger than space the cells occupy:
             In the container, define
-            - justify-content: aligns the grid along the x-axis
+            - justify-content: aligns the grid along the x-axis with start, center or end
             - align-content: aligns the grid along the y-axis
-        - elements inside the grid cells:
+        - all elements inside their grid cells:
             In the container, define
-            - justify-items: aligns elements along the x-axis (stretch (is the default), start, end)
+            - justify-items: aligns elements along the x-axis (stretch (is the default), start, center, end)
             - align-items: aligns elements along the y-axis
-        - a single element inside its cell:
+        - a single element inside its grid cell:
             For the element, define
-            - justify-self: center;
-            - align-self: center;
-}
-.generatedGridArea{
-    grid-area: hd;
+            - justify-self: aligns an element along the x-axis inside its cell
+            - align-self: aligns an element along the y-axis inside its cell
+    
+    - Sizing of rows/columns:
+        - grid-auto-rows/columns: Defines a size for all rows/columns
+            - auto: is the default
+            - a size in rem, px etc.
+            - minmax can be used to define a minimum and maximum size
+        - It will not override any explicitly set values for not automatically added rows:
+            e.g. grid-template-rows: repeat(2, 20vh) will not be overridden. Only the automatically added rows will have the defined auto-size. 
+
+    - Flow: Decides in which direction the grid should expand if there are not enough grid cells defined.
+        - grid-auto-flow:
+            - row: default, which causes more rows to be added for additional elements (is a good approach for mobile)
+            - column: will result in more columns to be added because the grid expands in column direction
 */
 
 .gridContainer {
@@ -283,6 +296,15 @@
 .positioningSingleElement {
     justify-self: center;
     align-self: center;
+}
+
+/* Will tell the grid to automatically expand by adding columns */
+.autoFlowColumnContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 20vw);
+    grid-auto-flow: column;
+    /* this spaces the automatically added columns evenly. This will not override the explicitly set column widths in the top */
+    grid-auto-columns: 1fr;
 }
 
 .element1 {
