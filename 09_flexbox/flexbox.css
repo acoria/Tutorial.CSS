@@ -1,4 +1,6 @@
-/* The wrapper for a flexbox is the flex container. All elements inside are the flex items.
+/* Flexbox allows for one-dimensional positioning of elements along a vertical or horizontal axis. 
+
+    The wrapper for a flexbox is the flex container. All elements inside are the flex items.
 
     The default when applying display: flex/inline-flex sets the two attributes automatically:
         - flex-direction: row;

@@ -1,4 +1,4 @@
-/*  For placing elements, a grid can be defined.
+/* The CSS grid allows for two-dimensional positioning of elements along the vertical or horizontal axis. 
 
     - An element can be turned into a grid using "display:grid".
       If e.g. the body is turned into a grid, only the non-static elements (elements not part of the document flow) will be turned into grid elements.
