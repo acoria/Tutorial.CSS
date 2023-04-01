@@ -3,7 +3,7 @@
     - An element can be turned into a grid using "display:grid".
       If e.g. the body is turned into a grid, only the non-static elements (elements not part of the document flow) will be turned into grid elements.
 
-    - Columns/rows can be defined with "grid-template-column/row" in different ways:
+    - Columns/rows can be defined with "grid-template-columns/rows" in different ways:
         - px/rem
         - %: of the entire grid
         - fr: fraction. If there is only one fraction, it takes the remaining space. If there is more than one, it acts as a weight
@@ -13,11 +13,17 @@
         - repeat(times, pattern): This creates columns by repeating a pattern for a defined amount of times. 
             E.g. for two equal columns, one could write "50% 50%" or instead repeat(2, 50%)
             This can be any pattern ("20% 20%" or "20rem" or "2fr")
+            For cases where the amount of columns is not clear, auto-fill or auto-fit can be used.
+                - auto-fill: 
+                    repeat(auto-fill, 10rem): Will fit as many columns as fit the contents of the elements into the line.
+                - auto-fit:
+                    repeat(auto-fit, 10rem): Same as auto-fill but it will also center the columns (especially useful if there are less columns than the entire width).
+
         - minmax(minium value, maximum value): This can be used to define a minimum and a maximum value. It will always be ensured that 
           it has the minimum size and if there is enough space, the maximum will be used.
             Anything can be put as the value: px, rem, %, fr, auto
         - fit-content(value): Can be used to make an element fit into a cell if it is usually smaller but might change to a bigger size with a media query.
-            It extends its size if the contents needs the space, otherwise it uses as much space as needed.
+            It extends its size if the contents needs the space, otherwise it uses as much space as needed. 
 
     - Define where to position an element inside the grid with "grid-column-start/end" and "grid-row-start/end":
         Elements per default span over one column and one row but can span over more cells by defining
@@ -118,10 +124,22 @@
         - It will not override any explicitly set values for not automatically added rows:
             e.g. grid-template-rows: repeat(2, 20vh) will not be overridden. Only the automatically added rows will have the defined auto-size. 
 
-    - Flow: Decides in which direction the grid should expand if there are not enough grid cells defined.
-        - grid-auto-flow:
-            - row: default, which causes more rows to be added for additional elements (is a good approach for mobile)
-            - column: will result in more columns to be added because the grid expands in column direction
+    - Implicit grid (vs. explicit grid):
+        There is an explicit grid and an implicit grid. With "grid-template-*" the explicit grid is defined and elements are filled according to this grid.
+        However, if there are more elements than fit in the explicitly defined grid, they are implicitly added into the implicit grid.
+        The implicit grid is defined with "grid-auto-*"
+            - Flow: Decides in which direction the grid should expand if there are not enough grid cells defined.
+                grid-auto-flow: row or column
+                    - row: default, which causes more rows to be added for additional elements (is a good approach for mobile)
+                    - column: will result in more columns to be added because the grid expands in column direction
+            - Dense grid: Ensures that the spaces inside the grid are used as effectively as possible to make the grid as dense as possible.
+              Usually The elements respect the order defined in the DOM, so empty spaces can occur if e.g. an element spans over two columns but there is only 
+              one space left. If the element was placed explicitly by defining "grid-column-start/end", a fitting element would fill the gap. But per default,
+              an empty space is left. This behavior can be overridden
+                    - grid-auto-flow: column dense: The dense causes it to fill more densely.
+              Careful: This will confuse screen readers (accessibility) because they read the DOM and not the visual change.
+            - Columns/rows: Defines the size of all implicitly added rows/columns.
+                grid-auto-rows/columns
 */
 
 .gridContainer {
@@ -305,6 +323,49 @@
     grid-auto-flow: column;
     /* this spaces the automatically added columns evenly. This will not override the explicitly set column widths in the top */
     grid-auto-columns: 1fr;
+}
+
+/* This defines a height of 3rem for the first row (explicit grid) and 4rem for all other rows (implicit grid) */
+.implicitGridAutoRowContainer {
+    display: grid;
+    grid-template-rows: 3rem;
+    grid-auto-rows: 4rem;
+}
+
+/* Dense Grid: a non-dense grid will leave gaps because the DOM order is respected... */
+.nonDenseGridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 3rem;
+}
+
+.nonDenseGridElement1 {
+    grid-column: span 2;
+}
+
+.nonDenseGridElement2 {
+    grid-column: span 2;
+}
+
+/* ...explicitly positioned elements will leave no gap...*/
+.explicitNonDenseGridElement2 {
+    grid-column: 1 / 3;
+    grid-row: 2 /3;
+}
+
+/* ...a dense grid will fill the empty gaps for non-explicitly positioned elements (so it will ignore the DOM default order and fit as many elements as possible . */
+.denseGridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 3rem;
+    grid-auto-flow: row dense;
+}
+
+.denseGridElement1{
+    grid-column: span 2;
+}
+.denseGridElement2 {
+    grid-column: span 2;
 }
 
 .element1 {
