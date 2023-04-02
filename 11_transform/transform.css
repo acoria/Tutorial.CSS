@@ -1,0 +1,59 @@
+/* By transforming an element, it can e.g. be rotated
+    Elements can be transformed by
+        - moving an element visually (instead of using margin)
+        - rotating an element
+
+    - Rotating:
+        - An element can be rotated by using
+            - rotateZ(45deg): Rotates it by 45degrees clockwise. A negative value will rotate it anti-clockwise.
+            - transform-origin: Changes the center it is rotated around. Per default an element rotates around its center.
+                transform-origin: center (default) or "50% 50%"
+                transform-origin: top left (will rotate it around the top left corner). This is the equivalent to "0 0".
+
+            
+        - 
+
+*/
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: small;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* Rotate an element per default around the center */
+.defaultRotateZ{
+    transform: rotateZ(45deg);
+}
+
+/* Change the rotation point from center to top left */
+.changeRotationPoint{
+    transform: rotateZ(45deg);
+    transform-origin: top left;
+}
+
+.container {
+    position: relative;
+    margin-top: 1rem;
+    margin-right: 40rem;
+    height: 10vh;
+    background-color: #80B3D0;
+    border: 3px solid #004C78;
+}
+
+.banner {
+    position: absolute;
+    margin: 0;
+    padding: 0.5rem;
+    top: 0;
+    right: 0;
+    font-size: medium;
+    display: inline;
+    background-color:#d07d45;
+    color: white;
+}
