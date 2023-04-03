@@ -1,47 +1,115 @@
 /* By transforming an element, it can e.g. be rotated
     Elements can be transformed by
+        - rotating
         - moving an element visually (instead of using margin)
-        - rotating an element
+        - skewing (abschrägen)
+
 
     - Rotating:
-        - An element can be rotated by using
-            - rotateZ(45deg): Rotates it by 45degrees clockwise. A negative value will rotate it anti-clockwise.
-            - transform-origin: Changes the center it is rotated around. Per default an element rotates around its center.
-                transform-origin: center (default) or "50% 50%"
-                transform-origin: top left (will rotate it around the top left corner). This is the equivalent to "0 0".
+      An element can be rotated by using
+        - rotateZ(45deg): Rotates it by 45degrees clockwise. A negative value will rotate it anti-clockwise.
+        - transform-origin: Changes the center it is rotated around. Per default an element rotates around its center.
+            transform-origin: center (default) or "50% 50%"
+            transform-origin: top left (will rotate it around the top left corner). This is the equivalent to "0 0".          
+    
+    - Moving:
+      An element can be moved along various axises (x, y, z). Attention: The angle of an axis moves when an object is rotated.
+        - transform: translateX(1rem) -> Can be used to move an element along the x-axis. Negative values move it in the opposite direction.
+    
+    - Skewing: (abschrägen)
+      - An element can be skewed, so the corners are pulled to a certain direction.
+        - transform: skewX(20deg) -> Pulls the top corners to the right
+        - transform: skewY(5deg) -> Pulls the left corners up. A negative value pulls them down.
+      - Shorthand: skew(20deg, 5deg)
+      - If a container that holds an image is skewed, the image is distorted. To avoid this, the image can be skewed the other way.
+        container{
+            transform: skewX(20deg);
+        }
+        image{
+            transform: skewX(-20deg);
+        }
+    
+    - Sizing:
+        - An element can be sized by scaling. The default value is 1. A value of 2 doubles the size.
+            - transform: scaleX(2) -> Doubles the width of an image
+        - Shorthand:
+            - transform: scale(2) -> Doubles the width and height
 
-            
-        - 
-
+    - Transform shorthands - careful! different to the expected behavior:
+        - rotate: equivalent to rotateZ
+        - translate(x-value): equivalent to translateX
+        - translate(x-value, y-value)
+        - skew(x-degree): equivalent to skewX
+        - skew(x-degree, y-degree)
+        - scale(1 ratio): sets x and y ratio
+        - scale(x-ratio, y-ratio)
+    
 */
-*{
+* {
     box-sizing: border-box;
 }
 
-h1{
+h1 {
     font-size: small;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Rotate an element per default around the center */
-.defaultRotateZ{
+.defaultRotateZ {
     transform: rotateZ(45deg);
 }
 
 /* Change the rotation point from center to top left */
-.changeRotationPoint{
+.changeRotationPoint {
     transform: rotateZ(45deg);
     transform-origin: top left;
 }
 
+/* Moving an element along the x-axis. The x-axis is also rotated 45degrees */
+.moveWithTranslateContainer {
+    overflow: hidden;
+}
+
+.moveWithTranslate {
+    transform: rotateZ(45deg) translateX(2.3rem) translateY(-1.5rem);
+}
+
+/* Skewing looks like someone took the top corners and pulled them to the right */
+.skewX{
+    transform: skewX(20deg)
+}
+
+/* Negative skew value changes the position -> The corners are pulled down instead of up */
+.skewY{
+    transform: skewY(-3deg)
+}
+
+h1.skewImageTitle{
+    margin-top: 3rem;
+}
+.skewImageContainer{
+    display: inline-block;
+    margin-left: 5rem;
+    transform: skewX(20deg);
+    box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.deskewedImage{
+    transform: skewX(-20deg);
+}
+
+.deskewedScaledImage{
+    transform: skewX(-20deg) scaleX(1.3) scaleY(1.1)
+}
+
 .container {
     position: relative;
-    margin-top: 1rem;
-    margin-right: 40rem;
-    height: 10vh;
+    margin: 1rem 20rem 1rem 0;
+    height: 8vh;
     background-color: #80B3D0;
     border: 3px solid #004C78;
 }
@@ -49,11 +117,13 @@ body {
 .banner {
     position: absolute;
     margin: 0;
-    padding: 0.5rem;
+    padding: 0.25rem;
     top: 0;
     right: 0;
-    font-size: medium;
+    font-size: small;
     display: inline;
-    background-color:#d07d45;
+    background-color: #d07d45;
     color: white;
+    width: 8rem;
+    text-align: center;
 }

@@ -7,16 +7,20 @@
 }
 
 .testimonial__image-container {
-    width: 100%;
+    width: 60%;
     max-width: 40rem;
     box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.3);
+    transform: skewX(15deg);
+    overflow: hidden;
 }
 
 .testimonial__image {
     width: 100%;
     /* this fixes a white line underneath the images which appears when an image is placed inside an inline-block element */
     vertical-align: top;
-    filter: grayscale(30%)
+    filter: grayscale(30%);
+    /* the negative skew is used to compensate the distortion from the skewed container. A scaling is needed to hide the white corners. */
+    transform: skewX(-15deg) scaleX(1.3);
 }
 
 .testimonial__info {
