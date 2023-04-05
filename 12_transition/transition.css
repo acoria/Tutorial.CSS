@@ -1,0 +1,13 @@
+
+.visibleBox {
+    display: inline-block;
+    background-color: #004C78;
+    opacity: 1;
+    transition: opacity 1s;
+    width: 10%;
+    margin-left: 1rem;
+}
+.toggleBox{
+    display: flex;
+    height: 5rem;
+}
