@@ -6,9 +6,24 @@
     <title>CSS Tutorial: Transition</title>
   </head>
   <body>
-    <div class="toggleBox">
-      <button id="hideBox">Toggle box</button>
-      <div class="visibleBox"></div>
+    <div class="toggleBoxContainer">
+      <button id="toggleVisibilityButton">Toggle visibility</button>
+      <div class="box visibleBox"></div>
+    </div>
+    <div class="toggleBoxContainer">
+      <button id="togglePositionBoxButton">Toggle position</button>
+      <div class="box leftTogglePositionBox"></div>
+    </div>
+    <h1>transition-timing-functions:</h1>
+    <div class="toggleBoxContainer">
+      <button id="timingFunctionButton">Toggle</button>
+      <div class="boxContainer">
+        <div class="box leftBoxEase">ease (default)</div>
+        <div class="box leftBoxLinear">linear</div>
+        <div class="box leftBoxEaseIn">ease-in</div>
+        <div class="box leftBoxEaseOut">ease-out</div>
+        <div class="box leftBoxCubicBezier">cubic-bezier</div>
+      </div>
     </div>
   </body>
   <script src="transition.js"></script>

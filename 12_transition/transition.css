@@ -1,13 +1,109 @@
+/* Transitions can be used to change an elements state e.g. visible to invisible, position x to position y. 
+    - The transition function have these parameters:
+        - transition-property: for which property the transition should be applied, e.g. opacity, transform
+        - transition-duration: how long should the transition take
+        - transition-timing-function: decide if a transition should be equally distributed over the time, faster towards the start or the end etc.
+          This is an optional parameter.
+            - ease: ##? This is the default
+            - ease-in: starts slowly and accelerates until the end 
+            - ease-out: starts quickly and slows down towards the end
+            - linear: an even speed throughout the transition
+            - cubic-bezier: a self-defined cubic-Bezier curve
+            - see https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function for more options, such as self-defined steps
+        - transition-delay: how long should be waited until the transition starts
+          This is an optional parameter.
 
+    - This is an example:
+        transition: opacity 200ms ease-in 0.5s  
+
+    - multiple properties can be defined.
+        transition: opacity 200ms, transform 300ms
+*/
+
+/* toggle opacity of an element */
 .visibleBox {
-    display: inline-block;
-    background-color: #004C78;
     opacity: 1;
     transition: opacity 1s;
-    width: 10%;
-    margin-left: 1rem;
 }
-.toggleBox{
+
+.invisibleBox {
+    opacity: 0;
+}
+
+/* move the position of an element */
+.leftTogglePositionBox {
+    transform: translateX(0rem);
+    transition: transform 1s;
+}
+
+/* ease-in of an element */
+.leftBoxEaseIn {
+    transform: translateX(0rem);
+    transition: transform 1s ease-in;
+}
+
+.leftBoxEase {
+    transform: translateX(0rem);
+    transition: transform 1s;
+}
+
+.leftBoxLinear {
+    transform: translateX(0rem);
+    transition: transform 1s linear;
+}
+
+.leftBoxEaseOut {
+    transform: translateX(0rem);
+    transition: transform 1s ease-out;
+}
+
+.leftBoxCubicBezier {
+    transform: translateX(0rem);
+    transition: transform 1s cubic-bezier(.29, 1.01, 1, -0.68);
+}
+
+.rightBox {
+    transform: translateX(10rem);
+}
+
+.toggleBoxContainer {
     display: flex;
     height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.box {
+    display: inline-block;
+    background-color: #004C78;
+    width: 8rem;
+    margin-left: 1rem;
+}
+
+.boxContainer {
+    width: 8rem;
+    display: flex;
+    flex-direction: column
+        /* align-items: stretch; */
+}
+
+.boxContainer .box {
+    height: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+button {
+    width: 15rem;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: small;
+}
+
+div {
+    color: white;
+    text-align: center;
 }
