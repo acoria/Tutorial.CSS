@@ -1,4 +1,6 @@
 /* Transitions can be used to change an elements state e.g. visible to invisible, position x to position y. 
+   To make a transition work, a property, such as opacity or transform has to be changed by either setting it via javascript directly or applying a class that overrides the
+   previous state with javascript (e.g. sets "opacity:0" to "opacity:1").
     - The transition function have these parameters:
         - transition-property: for which property the transition should be applied, e.g. opacity, transform
         - transition-duration: how long should the transition take
@@ -10,14 +12,18 @@
             - linear: an even speed throughout the transition
             - cubic-bezier: a self-defined cubic-Bezier curve
             - see https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function for more options, such as self-defined steps
+            - see https://easings.net/ for the cheat sheet of more special easing functions and how they translate to cubic-bezier
         - transition-delay: how long should be waited until the transition starts
           This is an optional parameter.
-
     - This is an example:
         transition: opacity 200ms ease-in 0.5s  
-
     - multiple properties can be defined.
         transition: opacity 200ms, transform 300ms
+    
+    - When changing the element property to or from "display:none", transitions will be ignored because the element is not part of the document flow and immediately removed or added. 
+      Opacity has to be used but keep in mind that this only makes an element invisible. For e.g. a backdrop, it will still be there blocking other elements. A workaround is to set
+      a timeout for changing the display-property to ensure the transitions are made and then the element is hidden afterwards.
+
 */
 
 /* toggle opacity of an element */
