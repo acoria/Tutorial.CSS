@@ -1,0 +1,32 @@
+body {
+    margin: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+    background-color: #004C78;
+    padding: 0.5rem;
+    color: white;
+    font-family: inherit;
+    /* which animation | duration | delay | how many times | jump back to start state and restart or animate back to starting state |
+       which value to keep after the animation finishes
+    */
+    animation: wiggle 100ms 1s 8 alternate forwards;
+    /* alternate means that it animates back, so 8 times will make it wiggle 4 times and 4 times back */
+
+    /* none: default -> jump back to your usually defined css-values */
+    /* forwards: keep final values from last keyframe (defined in "to") */
+    /* backwards: go to starting state (defined in "from") */
+    /* both: starts with the starting state (from) and finishes in the finish state(to) */
+}
+
+
+@keyframes wiggle {
+    from {
+        transform: rotateZ(0);
+    }
+
+    to {
+        transform: rotateZ(10deg);
+    }
+}

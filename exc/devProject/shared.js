@@ -1,19 +1,20 @@
 var backdrop = document.querySelector(".backdrop");
 var modal = document.querySelector(".modal");
 var modalNegativeButton = document.querySelector(".modal__action--negative");
-var selectTourButtons = document.querySelectorAll(".tours button")
-var toggleButton = document.querySelector('.toggle-button');
+var tourButtons = document.querySelectorAll(".tours button")
+var navMenuToggleButton = document.querySelector('.toggle-button');
 var mobileNav = document.querySelector('.mobile-nav');
 
-for (var i = 0; i < selectTourButtons.length; i++) {
-    selectTourButtons[i].addEventListener("click", () => {
+for (var i = 0; i < tourButtons.length; i++) {
+    tourButtons[i].addEventListener("click", () => {
         changeElementOpacity(modal)
         toggleBackdrop()
     });
 }
 
 backdrop?.addEventListener("click", function () {
-    changeElementVisibility(mobileNav, false)
+    toggleMobileNav(false)
+    // changeElementVisibility(mobileNav, false)
     closeModal();
 });
 
@@ -41,6 +42,14 @@ function changeElementVisibility(element, visible = true) {
     }
 }
 
+function toggleMobileNav(showMobileNav = true) {
+    if (showMobileNav) {
+        mobileNav?.classList.add("mobile-nav__visible")
+    } else {
+        mobileNav?.classList.remove("mobile-nav__visible")
+    }
+}
+
 function toggleBackdrop(showBackdrop = true) {
     if (showBackdrop) {
         changeElementVisibility(backdrop)
@@ -61,7 +70,8 @@ function closeModal() {
     changeElementOpacity(modal, true)
 }
 
-toggleButton?.addEventListener('click', function () {
-    changeElementVisibility(mobileNav)
+navMenuToggleButton?.addEventListener('click', function () {
+    // changeElementVisibility(mobileNav)
+    toggleMobileNav()
     toggleBackdrop()
 });

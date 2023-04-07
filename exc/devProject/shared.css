@@ -16,7 +16,7 @@ body {
     grid-template-rows: 3.5rem auto fit-content(8rem);
     height: 100%;
     /* an alternative for positioning would be to define a grid area */
-    grid-template-areas: 
+    grid-template-areas:
         "header"
         "main"
         "footer";
@@ -113,14 +113,19 @@ main {
 }
 
 .mobile-nav {
-    display: none;
     position: fixed;
     z-index: 101;
     top: 0;
     left: 0;
+    transform: translateX(-100%);
+    transition: transform 300ms ease-out;
     background: white;
     width: 80%;
     height: 100vh;
+}
+
+.mobile-nav__visible {
+    transform: translateX(0%);
 }
 
 .mobile-nav__items {
