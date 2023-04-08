@@ -2,7 +2,7 @@
    and chaining them allows for different changes to be applied in sequence.
 
    Keyframes can be defined in two ways: 
-        - Defining a starting and a finishing state:
+        - Defining a starting and a finishing state(=one keyframe):
             @keyframes wiggle {
                 from {
                     transform: rotateZ(0);
@@ -11,7 +11,7 @@
                     transform: rotateZ(10deg);
                 }
             }
-        - Defining multiple states:
+        - Defining multiple states(=keyframes):
             @keyframes wiggle {
                 0% {
                     transform: rotateZ(0);
@@ -42,16 +42,24 @@
    - Fill-mode (=Start/end state): defines in which state an element should start and end an animation
         - none: default -> the element jumps back to its originally defined css state defined in the css script (not the animation values from/to-values)
         - forwards: most often used -> keeps the final state from the last keyframe (defined in "to")
-        - backwards: jumps back to the first##? keyframe starting state (defined in "from")
-        - both: starts with the keyframe starting state (from) and finishes in the keyframe finishing state (to)
+        - backwards: jumps to the first keyframe starting state (defined in "from") for the delay period and stops in the state defined in css
+        - both: starts with the keyframe starting state (from) throughout the delay period and finishes in the keyframe finishing state (to)
 
     - Play state: is used to pause an animation by setting either "running" or "paused"
 */
 
-/* .defaultAnimation {
+.wiggle {
+    animation: wiggle 200ms 4;
+}
+
+/* The animation will be repeated twice and each time jump back to 
+   the initial state defined in the starting state before animating */
+.defaultAnimation {
     animation: moveOnXAxis 1s linear 2;
 }
 
+/* The animation will be repeated twice but the direction alternates
+   so it plays forwards and then backwards */
 .directionAlternate {
     animation: moveOnXAxis 1s linear 2 alternate;
 }
@@ -60,65 +68,31 @@
     animation: moveOnXAxis 1s linear 2 reverse;
 }
 
+/* The button will animate and then stay in the position defined in the last keyframe */
 .fillModeForwards {
-    animation: moveOnXAxis 1s linear 2 forwards;
+    animation: moveOnXAxis 1s linear forwards;
 }
 
-.boxInDifferentStartingState {
+.boxInDifferentPosition {
     transform: translateX(5rem);
 }
 
+/* The button will jump to the first keyframe position for the delay period */
 .fillModeBackwards {
-    animation: moveOnXAxis 1s linear 2 backwards;
-} */
+    animation: moveOnXAxis 1s 1s linear backwards;
+}
+
+/* The button will jump to the first keyframe position for the delay period, 
+   then animate and then stay in the last keyframe state */
+.fillModeBoth {
+    animation: moveOnXAxis 1s 1s linear 1 both;
+}
 
 .test {
     animation: test 3s linear forwards;
-}
-
-@keyframes test {
-    0% {
-        transform: skewY(0);
-    }
-    5%{
-        transform: skewY(20deg);
-    }
-    10%{
-        transform: skewY(-20deg);
-    }
-    15%{
-        transform: skewY(0);
-    }
-    50%{
-        transform: perspective(30px) rotateY(-20deg);
-    }
-    70%{
-        transform: rotateY(-90deg);
-    }
-    71%{
-        transform: scale(0.2)
-    }
-}
-
-.box {
-    display: inline-block;
-    background-color: #004C78;
-    color: white;
-    text-align: center;
-    width: 5em;
-    height: 5rem;
-}
-
-.container {
-    margin-top: 2rem;
-}
-
-button {
-    background-color: #004C78;
-    padding: 0.5rem;
-    color: white;
-    font-family: inherit;
-    animation: wiggle 200ms 4;
+    /* animation: test 3s 2s linear forwards; */
+    /* animation: test 2s 2s linear both; */
+    /* animation: test 3s linear backwards; */
 }
 
 @keyframes moveOnXAxis {
@@ -145,7 +119,61 @@ button {
     }
 }
 
+@keyframes test {
+    0% {
+        transform: skewY(10deg);
+    }
+
+    5% {
+        transform: skewY(20deg);
+    }
+
+    10% {
+        transform: skewY(-20deg);
+    }
+
+    15% {
+        transform: skewY(0);
+    }
+
+    50% {
+        transform: perspective(30px) rotateY(-20deg);
+    }
+
+    70% {
+        transform: rotateY(-90deg) perspective(none);
+    }
+
+    70.01% {
+        transform: scale(0.2)
+    }
+
+    100% {
+        transform: scale(0.5)
+    }
+}
+
 body {
     margin: 2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.box {
+    display: inline-block;
+    background-color: #004C78;
+    color: white;
+    text-align: center;
+    width: 7em;
+    height: 5rem;
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+button {
+    background-color: #004C78;
+    padding: 0.5rem;
+    color: white;
+    font-family: inherit;
 }

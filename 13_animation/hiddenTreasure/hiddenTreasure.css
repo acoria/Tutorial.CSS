@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+    font-family: inherit;
+    text-align: center;
+}
+
+.container {
+    display: inline-block;
+    border: 2px solid rgba(138, 43, 226, 0.8);
+    box-shadow: inset 0px 0px 10px rgba(138, 43, 226, 0.5);
+    width: 16.25rem;
+}
+
+#hiddenButton {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+}
+
+.spin360 {
+    animation: spin 1s 2 linear alternate;
+}
+
+#wall {
+    position: relative;
+    display: inline-block;
+    background-color: blueviolet;
+    width: 7rem;
+    height: 7rem;
+    /* animation: slidingWall 1s 10 alternate; */
+    /* animation: test 1s 10 alternate; */
+}
+
+.slideWallToRightSide {
+    animation: slidingWall 1s forwards;
+}
+
+.slideWallToLeftSide {
+    animation: slidingWall 1s reverse backwards;
+}
+
+.test {
+    animation: test 1s 10 alternate;
+}
+
+@keyframes test {
+    0% {
+        background-color: blueviolet;
+    }
+
+    100% {
+        background-color: red;
+    }
+}
+
+#openWall {
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0.2rem;
+}
+
+@keyframes slidingWall {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(9rem);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg)
+    }
+
+    50% {
+        transform: rotateZ(180deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
