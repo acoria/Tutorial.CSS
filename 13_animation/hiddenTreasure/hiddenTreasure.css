@@ -43,11 +43,11 @@ button {
 }
 
 .slideWallToLeftSide {
-    animation: slidingWall 1s reverse backwards;
+    animation: slidingWall 1s reverse;
 }
 
 .test {
-    animation: test 1s 10 alternate;
+    animation: test 1s 4 alternate;
 }
 
 @keyframes test {

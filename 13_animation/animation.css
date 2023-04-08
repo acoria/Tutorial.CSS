@@ -25,27 +25,45 @@
             }
             
 
-   An animation is defined this way:
+   An animation is defined this way: (Except for the three first parameters, the order can be swapped)
                      keyframe name | duration | delay |  timing-function | iterations | direction | fill-mode | play-state
         - animation:     wiggle        100ms      1s        ease-out           8        alternate    forwards    running
     
-   - Duration: defines how long an animation (one iteration) should take
-   - Delay: defines how long an animation is delayed for before it starts
-   - Iterations: defines how many times an animation should be repeated
-   - Direction: 
-        - normal: default -> jumps back to the start and restarts the animation
-        - alternate: after the keyframe finishes, it is animated back to the starting state (each direction counts as one iteration)
-          If there are "8 iterations" and "alternate" is active, an animation is played 4 times: 4 times forward and 4 times backward
-        - reverse: the animation starts with the end state and finishes with the starting state
-        - alternate-reverse: combines alternate and reverse
+    - Duration: defines how long an animation (one iteration) should take
+    - Delay: defines how long an animation is delayed for before it starts
+    - Iterations: defines how many times an animation should be repeated
+    - Direction: 
+            - normal: default -> jumps back to the start and restarts the animation
+            - alternate: after the keyframe finishes, it is animated back to the starting state (each direction counts as one iteration)
+            If there are "8 iterations" and "alternate" is active, an animation is played 4 times: 4 times forward and 4 times backward
+            - reverse: the animation starts with the end state and finishes with the starting state
+            - alternate-reverse: combines alternate and reverse
 
-   - Fill-mode (=Start/end state): defines in which state an element should start and end an animation
-        - none: default -> the element jumps back to its originally defined css state defined in the css script (not the animation values from/to-values)
-        - forwards: most often used -> keeps the final state from the last keyframe (defined in "to")
-        - backwards: jumps to the first keyframe starting state (defined in "from") for the delay period and stops in the state defined in css
-        - both: starts with the keyframe starting state (from) throughout the delay period and finishes in the keyframe finishing state (to)
+    - Fill-mode (=Start/end state): defines in which state an element should start and end an animation
+            - none: default -> the element jumps back to its originally defined css state defined in the css script (not the animation values from/to-values)
+            - forwards: most often used -> keeps the final state from the last keyframe (defined in "to")
+            - backwards: jumps to the first keyframe starting state (defined in "from") for the delay period and stops in the state defined in css
+            - both: starts with the keyframe starting state (from) throughout the delay period and finishes in the keyframe finishing state (to)
 
-    - Play state: is used to pause an animation by setting either "running" or "paused"
+        - Play state: is used to pause an animation by setting either "running" or "paused"
+
+    - Attention: When a transform-function is applied during an animation, all other applied transformations are overridden. To keep them, they have to 
+      be defined extra in the keyframes definition so they are "kept".
+
+    - Events are triggered for an element when an animation starts, ends and when a new iteration starts.
+        - animationstart:
+            element.addEventListener("animationstart", (event) => {
+                console.log("Animation started", event)
+            })
+        - animationend:            
+            element.addEventListener("animationend", (event) => {
+                console.log("Animation ended", event)
+            })
+        - animationiteration:
+            element.addEventListener("animationiteration", (event) => {
+                console.log("Animation iteration", event)
+            })
+
 */
 
 .wiggle {

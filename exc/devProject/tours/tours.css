@@ -26,6 +26,7 @@ main {
 .tour:hover,
 .tour:active {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: moveUp 700ms forwards ease-out;
 }
 
 .clearfix {
@@ -114,5 +115,19 @@ a.tour__link:active {
 
     .tour {
         border: 3px solid #642472;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    33%{
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        transform: translateY(-0.5rem);
     }
 }
