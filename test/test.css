@@ -2,12 +2,15 @@
     box-sizing: border-box;
 }
 
+/* Specifies that this variable should be available within every element selector.
+Could also be placed on a specific element selector but then it would only be usable within this selector
+Two dashes -> variable name */
 :root {
-    /* --my-var: #004C78; */
     --some_var: #004C78;
 }
 
 h1 {
-    /* background-color: var(--my-var, red); */
+    /* The second value is a fallback, in case the variable has not been defined, e.g. for 3rd party libraries
+    where it is not clear if a variable was really set. */
     background-color: var(--some_var, red);
 }

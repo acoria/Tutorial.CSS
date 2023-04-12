@@ -1,0 +1,50 @@
+/*
+    - CSS Variables: 
+        - Can be used to specify a value once and use it everywhere
+        - Is defined starting with two dashes -- and the variable name
+        - To define it, it should be put on the root-selector. This way it is usable within every element selector.
+            :root{
+                --some-variable: #642472;
+            }
+          It could also be placed on a specific element selector, but than it would only be usable within it.
+        
+        - To use the variable, the var()-function is used. It takes one-two arguments. The first one is the variable name.
+          The second is a fallback value. It can be used for cases where the variable was not defined, e.g. for 3rd party libraries
+          where it is not clear if a variable was really set.
+            color: var(--some-variable);
+            color: var(--some-variable, #642472);
+    
+    - CSS Prefixing (=support for older browsers):
+        It is recommended to define e.g. for flexbox browser support for older versions like the following. This allows browser vendors (e.g. Chrome, Firefox)
+        to implement an early version of a new feature without breaking the actual one once it is released.
+            div {
+                display: -webkit-box; (e.g. supports older versions of Safari)
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+            }
+        What should be prefixed can be found:
+            - on caniuse.com
+            - there is a library which automatically adds all those prefixes https://github.com/postcss/autoprefixer when e.g. webpack is used
+            - for manually adding them, https://autoprefixer.github.io/ can be used
+*/
+
+/* CSS variable definition */
+:root {
+    --some-variable: #642472;
+}
+
+/* CSS variable usage */
+h1 {
+    color: var(--some-variable);
+    /* with fallback for missing variable */
+    color: var(--some-variable, green);
+}
+
+/* browsers that support flexbox will override the legacy code lines above the actual "display: flex" line */
+div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
