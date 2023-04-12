@@ -17,4 +17,6 @@
         - When importing 2 css files of which one is a shared css file for several components, always add the shared one first and then the more specific 
           css file. This way you have the possibility to override styles from the more general shared css file because when there are two selectors for the same element,
           the last style defined in the code (the last import) wins.
+
+    CSS variables:
 */

@@ -2,37 +2,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    /* --my-var: #004C78; */
+    --some_var: #004C78;
+}
+
 h1 {
-    margin: 0;
-}
-
-body {
-    margin: 0;
-}
-
-.header{
-    background-color: aquamarine;
-}
-
-.footer{
-    position: relative;
-    z-index: 2;
-}
-
-.container {
-    height: 50vh;
-    width: 100vw;
-    background-color: blueviolet;
-    position: relative;
-    top: 20px;
-    left: 20px;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.container h1 {
-    background-color: aqua;
-    width: 100%;
-    position: absolute;
-    top: 100px;
+    /* background-color: var(--my-var, red); */
+    background-color: var(--some_var, red);
 }
