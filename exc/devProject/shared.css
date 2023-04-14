@@ -12,18 +12,26 @@ html {
 
 body {
     margin: 0;
+    padding-top: 3.5rem;
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
-    display: grid;
-    /* 3rem for the navbar and 8rem for the footer */
-    /* grid-template-rows: 3.5rem auto 8rem; */
-    grid-template-rows: 3rem auto fit-content(8rem);
-    height: 100%;
-    /* an alternative for positioning would be to define a grid area */
-    grid-template-areas:
-        "header"
-        "main"
-        "footer";
+}
+
+/* this is added to override the default if the grid exists as feature in the browser */
+@supports(display: grid) {
+    body {
+        display: grid;
+        /* 3rem for the navbar and 8rem for the footer */
+        /* grid-template-rows: 3.5rem auto 8rem; */
+        grid-template-rows: 3rem auto fit-content(8rem);
+        height: 100%;
+        /* an alternative for positioning would be to define a grid area */
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+        padding-top: 0;
+    }
 }
 
 main {

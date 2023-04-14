@@ -1,0 +1,53 @@
+/*
+    - CSS Prefixing (=support for older browsers):
+        - It is recommended to define e.g. for flexbox browser support for older versions like the following. This allows browser vendors (e.g. Chrome, Firefox)
+          to implement an early version of a new feature without breaking the actual one once it is released.
+            div {
+                display: -webkit-box; (e.g. supports older versions of Safari)
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+            }
+        - What should be prefixed can be found here:
+            - caniuse.com
+            - there is a library which automatically adds all those prefixes https://github.com/postcss/autoprefixer when e.g. webpack is used
+            - for manually adding them, https://autoprefixer.github.io/ can be use
+    - @supports: Conditional CSS
+        - If a browser does not support a feature at all, a condition can be added which only executes code when this condition is met.
+            @supports(display:grid) {
+                .container {
+                    display: grid;
+                }
+                //some other code for positioning
+            }
+          The code that styles something if a feature is not supported is placed first. Then the @supports{} definition is added below so if the feature
+          exists, it overrides the existing code.
+        - Support-Queries can be joined with or/and/not.
+    
+    - Polyfill: If a feature is not supported at all but is needed, sometimes a polyfill exists which includes the feature.
+        - Polyfill is a js-package which enables certain CSS features in browsers which would not be supported otherwise.
+        - The performance is not the best because the package needs loading and parsing. So it is sometimes better to implement a fallback.
+        - Examples of polyfills: rem unit conversion, background-image related features
+    
+    - Cross-Browser inconsistencies:
+        Browsers use different defaults, e.g. box-sizing: border-box is a default in some browsers and not in others. Also margins, paddings etc. can be different.
+        To eliminate those inconsistencies, a reset library (e.g. Normalize.css) could be used but is not recommended since it overrides a lot of styles that might
+        never be used. The recommendation is to override them manually, such as *{box-sizing: border-box}.
+}
+                
+*/
+
+
+/* browsers that support flexbox will override the legacy code lines above the actual "display: flex" line */
+div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@supports(display:grid) {
+    .container {
+        display: grid;
+    }
+}

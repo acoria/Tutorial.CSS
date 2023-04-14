@@ -18,5 +18,30 @@
           css file. This way you have the possibility to override styles from the more general shared css file because when there are two selectors for the same element,
           the last style defined in the code (the last import) wins.
 
-    CSS variables:
+    CSS Variables: 
+        - Can be used to specify a value once and use it everywhere
+        - Is defined starting with two dashes -- and the variable name
+        - To define it, it should be put on the root-selector. This way it is usable within every element selector.
+            :root{
+                --some-variable: #642472;
+            }
+          It could also be placed on a specific element selector, but than it would only be usable within it.
+        
+        - To use the variable, the var()-function is used. It takes one-two arguments. The first one is the variable name.
+          The second is a fallback value. It can be used for cases where the variable was not defined, e.g. for 3rd party libraries
+          where it is not clear if a variable was really set.
+            color: var(--some-variable);
+            color: var(--some-variable, #642472);
 */
+
+/* CSS variable definition */
+:root {
+  --some-variable: #642472;
+}
+
+/* CSS variable usage */
+h1 {
+  color: var(--some-variable);
+  /* with fallback for missing variable */
+  color: var(--some-variable, green);
+}

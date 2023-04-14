@@ -14,3 +14,21 @@ h1 {
     where it is not clear if a variable was really set. */
     background-color: var(--some_var, red);
 }
+
+.test {
+    background-color: blue;
+    color: white;
+    padding: 1rem;
+}
+
+
+.test:hover {
+    background-color: aqua;
+    color: black;
+}
+
+.test:disabled {
+    /* .test:disabled:hover { */
+    background-color: gray;
+    color: black;
+}
