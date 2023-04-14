@@ -21,6 +21,11 @@
     Naming conventions:
       - use kebab-case because css is case-insensitive
       - name by feature e.g. .page-title not by style such as .title-blue
+      - use BEM (Block Element Modifier) for a uniform and consistent way naming CSS classes. This avoids overwriting classes in bigger projects.
+          Convention:
+            .BLOCK__ELEMENT--MODIFIER
+       e.g. .menu-main__item--size-big (for main menu items)
+            .button--success (for all buttons)
 
     CSS Variables: 
         - Can be used to specify a value once and use it everywhere
@@ -36,6 +41,13 @@
           where it is not clear if a variable was really set.
             color: var(--some-variable);
             color: var(--some-variable, #642472);
+
+    Frameworks:
+      - Component frameworks:
+        - Bootstrap
+        - Foundation
+      - Utility frameworks: do not offer complete components but help with styling
+        - Tailwind
 */
 
 /* CSS variable definition */
