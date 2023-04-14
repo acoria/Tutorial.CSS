@@ -72,31 +72,31 @@ z-index (z-axis): moves an element along the z-axis.
 }
 
 /* this element stops at the top at 450px when scrolling down */
-.main_content_sticky {
+.main-content-sticky {
     position: sticky;
     top: 450px;
 }
 
-.absolute_pos_is_html {
+.absolute-pos-is-html {
     position: absolute;
     top: 200px;
     right: 50px;
 }
 
-.main_content__relative_div {
+.main-content__relative-div {
     position: relative;
     border: 2px dashed #642472;
     height: 200px;
 }
 
 /* the ancestor-div has a position "relative" so this is taken as positioning context for the h1-element */
-.absolute_pos_is_div {
+.absolute-pos-is-div {
     position: absolute;
     top: 50px;
     left: 20px;
 }
 
-.main_content__no_special_div {
+.main-content__no-special-div {
     border: 2px dashed #642472;
     height: 100px;
     overflow: hidden;
@@ -104,7 +104,7 @@ z-index (z-axis): moves an element along the z-axis.
 
 /* relative positioning allows the moving of elements away from their actual position.
    In this case, the element moves 50px to the right from its actual position */
-.main_content__relative_title {
+.main-content__relative-title {
     margin: 0;
     position: relative;
     left: 50px;
@@ -112,7 +112,7 @@ z-index (z-axis): moves an element along the z-axis.
 
 /* this relatively positioned element disappear because the parent is set to overflow:hidden
    which prevents an element to be displayed outside of its parent */
-.main_content__relative_title_disappear {
+.main-content__relative-title-disappear {
     margin: 0;
     position: relative;
     left: 50px;
@@ -141,7 +141,7 @@ z-index (z-axis): moves an element along the z-axis.
     z-index: 300;
 }
 
-.on_top_of_footer {
+.on-top-of-footer {
     border: 2px solid black;
     background: white;
     font-size: large;

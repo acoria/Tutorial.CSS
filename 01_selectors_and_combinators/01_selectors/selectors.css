@@ -32,12 +32,12 @@ h1 {
 }
 
 /* class selector */
-.classForClassSelector {
+.class-for-class-selector {
     color: aquamarine;
 }
 
 /* id selector */
-#idOfParagraph {
+#id-of-paragraph {
     color: green
 }
 

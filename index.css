@@ -18,6 +18,10 @@
           css file. This way you have the possibility to override styles from the more general shared css file because when there are two selectors for the same element,
           the last style defined in the code (the last import) wins.
 
+    Naming conventions:
+      - use kebab-case because css is case-insensitive
+      - name by feature e.g. .page-title not by style such as .title-blue
+
     CSS Variables: 
         - Can be used to specify a value once and use it everywhere
         - Is defined starting with two dashes -- and the variable name

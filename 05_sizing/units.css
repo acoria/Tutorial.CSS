@@ -35,7 +35,7 @@ body {
 }
 
 /* fixed element that stretches over entire screen because it uses the viewport as containing block */
-.fixedElement {
+.fixed-element {
     background-color: blueviolet;
     color: white;
     position: fixed;
@@ -44,7 +44,7 @@ body {
     top: 0;
 }
 
-.relativeElement {
+.relative-element {
     background-color: blue;
     color: white;
     position: relative;
@@ -57,14 +57,14 @@ body {
 
 /* Absolute element with width of 50% of the surrounding element because this is its containing block (having position relative).
    The padding of the surrounding container is included in the width for the calculation, so it is exactly half of 800px -> 400px */
-.absoluteElement {
+.absolute-element {
     background-color: green;
     position: absolute;
     width: 50%;
     bottom: 0;
 }
 
-.blockLevelElement {
+.block-level-element {
     width: 1000px;
     height: 250px;
     padding: 50px;
@@ -74,7 +74,7 @@ body {
 /* relative element with a width of 50% of the div-block-level-element (not the a, which is an inline level element) 
    Since the block-level-element is 1000px wide but has 50px padding on each side, the content is 900px wide.
    This leads to 450px for the relative element (50%) */
-.relativeElementInsideBlock {
+.relative-element-inside-block {
     position: relative;
     background-color: red;
     width: 50%;
@@ -99,6 +99,6 @@ body {
 }
 
 /* 2rem will result in 32px for the default browser font-size of 16px (2rem x 16 = 32px) */
-.remSizing {
+.rem-sizing {
     font-size: 2rem;
 }
