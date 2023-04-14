@@ -14,11 +14,11 @@ const addAndRemoveCssClass = (element, cssClass, delayForRemovingCssClass = 2000
     })
 }
 addAndRemoveCssClass(document.getElementById("wiggleButton"), "wiggle", 800);
-addAndRemoveCssClass(document.getElementById("defaultAnimation"), "defaultAnimation");
-addAndRemoveCssClass(document.getElementById("directionAlternate"), "directionAlternate");
-addAndRemoveCssClass(document.getElementById("directionReverse"), "directionReverse");
-addAndRemoveCssClass(document.getElementById("fillModeForwards"), "fillModeForwards", 3000);
-addAndRemoveCssClass(document.getElementById("fillModeBackwards"), "fillModeBackwards", 4000);
-addAndRemoveCssClass(document.getElementById("fillModeBoth"), "fillModeBoth", 4000);
+addAndRemoveCssClass(document.getElementById("defaultAnimation"), "default-animation");
+addAndRemoveCssClass(document.getElementById("directionAlternate"), "direction-alternate");
+addAndRemoveCssClass(document.getElementById("directionReverse"), "direction-reverse");
+addAndRemoveCssClass(document.getElementById("fillModeForwards"), "fill-mode-forwards", 3000);
+addAndRemoveCssClass(document.getElementById("fillModeBackwards"), "fill-mode-backwards", 4000);
+addAndRemoveCssClass(document.getElementById("fillModeBoth"), "fill-mode-both", 4000);
 addAndRemoveCssClass(document.getElementById("test"), "test", 4000);
 

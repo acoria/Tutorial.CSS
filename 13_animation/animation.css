@@ -72,37 +72,37 @@
 
 /* The animation will be repeated twice and each time jump back to 
    the initial state defined in the starting state before animating */
-.defaultAnimation {
+.default-animation {
     animation: moveOnXAxis 1s linear 2;
 }
 
 /* The animation will be repeated twice but the direction alternates
    so it plays forwards and then backwards */
-.directionAlternate {
+.direction-alternate {
     animation: moveOnXAxis 1s linear 2 alternate;
 }
 
-.directionReverse {
+.direction-reverse {
     animation: moveOnXAxis 1s linear 2 reverse;
 }
 
 /* The button will animate and then stay in the position defined in the last keyframe */
-.fillModeForwards {
+.fill-mode-forwards {
     animation: moveOnXAxis 1s linear forwards;
 }
 
-.boxInDifferentPosition {
+.box-in-different-position {
     transform: translateX(5rem);
 }
 
 /* The button will jump to the first keyframe position for the delay period */
-.fillModeBackwards {
+.fill-mode-backwards {
     animation: moveOnXAxis 1s 1s linear backwards;
 }
 
 /* The button will jump to the first keyframe position for the delay period, 
    then animate and then stay in the last keyframe state */
-.fillModeBoth {
+.fill-mode-both {
     animation: moveOnXAxis 1s 1s linear 1 both;
 }
 

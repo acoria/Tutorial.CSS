@@ -144,7 +144,7 @@
                 grid-auto-rows/columns
 */
 
-.gridContainer {
+.grid-container {
     display: grid;
     /* this defines 5 columns. The %-value is the percentage of the total of the grid's width. */
     grid-template-columns: 300px 10rem 20% 1fr 2fr;
@@ -158,19 +158,19 @@
 }
 
 /* auto will fill the rest of the column */
-.autoFill {
+.auto-fill {
     display: grid;
     grid-template-columns: 100px auto;
 }
 
 /* auto will take only the required space of an element if fractions are defined */
-.autoWithFractions {
+.auto-with-fractions {
     display: grid;
     grid-template-columns: 1fr 1fr auto;
 }
 
 /* elements can span over more than one cell */
-.spanOverMoreCellsAbsolute {
+.span-over-more-cells-absolute {
     grid-column-start: 1;
     grid-column-end: 3;
     /* an alternative is "span over two cells" */
@@ -180,13 +180,13 @@
 }
 
 /* span to -1, so the end of the grid */
-.spanToMinus1 {
+.span-to-minus1 {
     grid-column-start: 2;
     grid-column-end: -1;
 }
 
 /* an alternative for spanning over several cells */
-.spanOverMoreCellsSpan {
+.span-over-more-cells-span {
     grid-column-start: 1;
     grid-column-end: span 2;
 }
@@ -200,7 +200,7 @@
 }
 
 /* when explicitly defined with columns/rows, elements can overlap */
-.overlapFromLeft {
+.overlap-from-left {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -208,7 +208,7 @@
     z-index: 1;
 }
 
-.overlapFromRight {
+.overlap-from-right {
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 1;
@@ -216,24 +216,24 @@
 }
 
 /* in [] is the name of the row that follows. It can have more than one name. */
-.namedRowContainer {
+.named-row-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] 1fr [row-2-end] 1fr;
 }
 
-.namedRow1 {
+.named-row1 {
     grid-row-start: row-1-start;
     grid-row-end: row-1-end;
 }
 
-.namedRow2 {
+.named-row2 {
     grid-row-start: row-2-start;
     grid-row-end: row-2-end;
 }
 
 /* adds gaps between columns */
-.columnGaps {
+.column-gaps {
     grid-column-gap: 1rem;
 }
 
@@ -241,52 +241,52 @@
     |       Header                 |
     | Sidebar |    Main content    |
     |       Footer                 | */
-.areaTemplateContainer {
+.area-template-container {
     display: grid;
     grid-template-areas: "header header header"
         "sidebar main main"
         "footer footer footer";
 }
 
-.areaTemplateHeader {
+.area-template-header {
     grid-area: header
 }
 
-.areaTemplateSidebar {
+.area-template-sidebar {
     grid-area: sidebar;
 }
 
-.areaTemplateMain {
+.area-template-main {
     grid-area: main;
 }
 
-.areaTemplateFooter {
+.area-template-footer {
     grid-area: footer;
 }
 
 /* Named columns can be used with repeat... */
-.namedColumnRepeatContainer {
+.named-column-repeat-container {
     display: grid;
     grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
 }
 
 /* ...and can be addressed by number behind the name. This stretches over three cells. */
-.namedColumn {
+.named-column {
     grid-column: col-start 1 / col-end 3;
 }
 
-.generatedGridAreaContainer {
+.generated-grid-area-container {
     display: grid;
     grid-template-rows: [hd-start] repeat(3, 3vh) [hd-end];
     grid-template-columns: [hd-start] repeat(4, 1fr) [hd-end];
 }
 
-.generatedGridArea {
+.generated-grid-area {
     grid-area: hd;
 }
 
 /* Positions the entire grid inside its container because it occupies less space than its surrounding container */
-.positioningTheEntireGrid {
+.positioning-the-entire-grid {
     height: 25vh;
     background-color: lightgray;
     display: grid;
@@ -297,7 +297,7 @@
 }
 
 /* Positions the content of the grid along the horizontal and vertical axis */
-.positioningInsideCellsContainer {
+.positioning-inside-cells-container {
     background-color: lightgray;
     display: grid;
     grid-template-rows: repeat(2, 5vh);
@@ -307,19 +307,19 @@
 }
 
 /* Positioning a single element inside its grid cell */
-.positioningSingleElementContainer {
+.positioning-single-element-container {
     display: grid;
     grid-template-rows: 10vh 1fr;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.positioningSingleElement {
+.positioning-single-element {
     justify-self: center;
     align-self: center;
 }
 
 /* Will tell the grid to automatically expand by adding columns */
-.autoFlowColumnContainer {
+.auto-flow-column-container {
     display: grid;
     grid-template-columns: repeat(2, 20vw);
     grid-auto-flow: column;
@@ -328,46 +328,46 @@
 }
 
 /* This defines a height of 3rem for the first row (explicit grid) and 4rem for all other rows (implicit grid) */
-.implicitGridAutoRowContainer {
+.implicit-grid-auto-row-container {
     display: grid;
     grid-template-rows: 3rem;
     grid-auto-rows: 4rem;
 }
 
 /* Dense Grid: a non-dense grid will leave gaps because the DOM order is respected... */
-.nonDenseGridContainer {
+.non-dense-grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 3rem;
 }
 
-.nonDenseGridElement1 {
+.non-dense-grid-element1 {
     grid-column: span 2;
 }
 
-.nonDenseGridElement2 {
+.non-dense-grid-element2 {
     grid-column: span 2;
 }
 
 /* ...explicitly positioned elements will leave no gap...*/
-.explicitNonDenseGridElement2 {
+.explicit-non-dense-grid-element2 {
     grid-column: 1 / 3;
     grid-row: 2 /3;
 }
 
 /* ...a dense grid will fill the empty gaps for non-explicitly positioned elements (so it will ignore the DOM default order and fit as many elements as possible . */
-.denseGridContainer {
+.dense-grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 3rem;
     grid-auto-flow: row dense;
 }
 
-.denseGridElement1 {
+.dense-grid-element1 {
     grid-column: span 2;
 }
 
-.denseGridElement2 {
+.dense-grid-element2 {
     grid-column: span 2;
 }
 

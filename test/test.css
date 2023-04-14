@@ -2,33 +2,25 @@
     box-sizing: border-box;
 }
 
-/* Specifies that this variable should be available within every element selector.
-Could also be placed on a specific element selector but then it would only be usable within this selector
-Two dashes -> variable name */
-:root {
-    --some_var: #004C78;
+.button-container{
+    padding: 0.3rem;
+    display: flex;
 }
 
-h1 {
-    /* The second value is a fallback, in case the variable has not been defined, e.g. for 3rd party libraries
-    where it is not clear if a variable was really set. */
-    background-color: var(--some_var, red);
+.reverse-order{
+    flex-direction: row-reverse;
 }
 
-.test {
-    background-color: blue;
-    color: white;
-    padding: 1rem;
+.icon{
+    margin-left: 0;
+    margin-right: 0.5rem;
 }
 
-
-.test:hover {
-    background-color: aqua;
-    color: black;
+.reverse-order .icon{
+    margin-left: 0.5rem;
+    margin-right: 0;
 }
 
-.test:disabled {
-    /* .test:disabled:hover { */
-    background-color: gray;
-    color: black;
+.text{
+    display: inline-block;
 }

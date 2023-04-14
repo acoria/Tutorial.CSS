@@ -139,11 +139,11 @@ h3 {
   white-space: pre;
 }
 
-#preWrap {
+#pre-wrap {
   white-space: pre-wrap;
 }
 
-#preLine {
+#pre-line {
   white-space: pre-line;
 }
 
@@ -152,11 +152,11 @@ div {
   width: 20%
 }
 
-#textDecoration {
+#text-decoration {
   text-decoration: underline wavy red;
 }
 
-#textShadow {
+#text-shadow {
   text-shadow: 2px 2px 7px rgb(131, 131, 131);
 }
 

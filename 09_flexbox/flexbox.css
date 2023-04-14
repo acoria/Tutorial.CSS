@@ -52,7 +52,7 @@
 */
 
 /* This is the default flex flexbox behavior. The items inside the flex container are aligned horizontally. */
-.flexContainer_default {
+.flex-container_default {
     display: flex;
     /* this is the default:
     flex-wrap: nowrap;
@@ -61,55 +61,55 @@
 
 /* The inline-flex flexbox behavior is the equivalent to inline-block. 
    It takes up only the necessary space */
-.flexContainer_inline-flex {
+.flex-container_inline-flex {
     display: inline-flex;
 }
 
 /* If there is not enough space, the elements are wrapped into the next line.
    The height of the bottom elements is also only as big as their content. */
-.flexContainer_wrap {
+.flex-container_wrap {
     max-width: 500px;
     display: flex;
     flex-wrap: wrap;
 }
 
 /* If a bigger element is added to a line, the other elements take up the same space. */
-.flexContainer_wrapHeight {
+.flex-container_wrap-height {
     max-width: 450px;
     display: flex;
     flex-wrap: wrap;
 }
 
 /* This switches the direction, causing the smaller elements to dock to the bottom */
-.flexContainer_wrap-reverse {
+.flex-container_wrap-reverse {
     display: flex;
     flex-wrap: wrap-reverse;
 }
 
-.flexContainer_wrapDefault {
+.flex-container_wrap-default {
     display: flex;
     flex-wrap: wrap;
 }
 
 /* This swaps the order of the items from last to first and aligns them horizontally */
-.flexContainer_row-reverse {
+.flex-container_row-reverse {
     display: flex;
     flex-direction: row-reverse;
 }
 
 /* This aligns all elements vertically */
-.flexContainer_column {
+.flex-container_column {
     display: flex;
     flex-direction: column;
 }
 
 /* This swaps the order of the items from last to first and aligns them vertically. */
-.flexContainer_column-reverse {
+.flex-container_column-reverse {
     display: flex;
     flex-direction: column-reverse;
 }
 
-.flexContainer_align-items {
+.flex-container_align-items {
     display: flex;
     flex-wrap: wrap;
     height: 500px;
@@ -126,12 +126,12 @@
 }
 
 /* puts this element in the front because the order of the items is lowest to highest number */
-.secondElement {
+.second-element {
     order: -1;
     background-color: #0066A1;
 }
 
-.firstElement {
+.first-element {
     background-color: #457ed0;
 }
 
@@ -141,7 +141,7 @@
 }
 
 /* allows the positioning of an individual element on the cross axis */
-#toTop {
+#to-top {
     align-self: flex-start;
 }
 
@@ -244,7 +244,7 @@ div {
     padding: 0.5rem;
 }
 
-.normalDiv {
+.normal-div {
     background-color: #004C78;
 }
 
