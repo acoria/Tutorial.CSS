@@ -1,0 +1,7 @@
+/* SASS: Syntactically awesome style sheets
+
+    - is a library to extend CSS during development
+    - does not run in the browser but is compiled to CSS
+    (- needs a Ruby runtime (since it is a Ruby gem -> an application build in Ruby))
+    - can be installed via "npm install -g sass"
+*/
