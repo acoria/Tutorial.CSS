@@ -10,7 +10,7 @@
         SASS:
             body
                 font-size: 1rem
-
+        
         SCSS:
             body{
                 font-size: 1rem;
@@ -22,14 +22,14 @@
         To activate watch mode (to automatically compile on save), write this:
             sass --watch <filename_with_sass_code>:<css_filename_to_compile_into>
         Stop the watch mode with ctrl + C
-
+            
     - Nesting: Selectors can be nested into each other for better readability.
         body li{} becomes
 
         body{
             li{}
         }
-
+    
     - Nesting namespace properties:
         body{
             flex-direction: column;
@@ -42,7 +42,7 @@
                 wrap: nowrap;
             }
         }
-
+    
     - Variables: 
         - Can be defined with a dollar sign.
             $primary-color: #521751;
@@ -64,22 +64,52 @@
                 color: map-get($colors, primary)
             }
 */
+
 /* Nesting */
 body {
-  font-size: 1rem;
-}
-body .title {
-  color: #004C78;
+    font-size: 1rem;
+
+    .title {
+        color: #004C78;
+    }
 }
 
 /* Nesting namespace properties */
 .fontNamespace {
-  font-variant: small-caps;
-  font-size: 1rem;
-  font-weight: 100;
-  font-variant: small-caps;
+    //flex-direction: row;
+    //flex-wrap: nowrap;
+    //become:
+    font-variant: small-caps;
+    // flex: {
+    //     direction: row;
+    //     wrap: nowrap;
+    // }
+    font: {
+        size: 1rem;
+        weight: 100;
+        variant: small-caps;
+    }
 }
 
-/* A map of related variables can be created.. */
+// /* Variables */
+// $primary-color: #004C78;
+// /* Variables can hold a list of values */
+// $border-default: 1px solid black;
+// /* Variables can consist of other variables */
+// $border-default: 1px solid $primary-color;
 
-/*# sourceMappingURL=sass.css.map */
+// h1 {
+//     color: $primary-color;
+//     border: $border-default;
+// }
+
+/* A map of related variables can be created.. */
+// $colors: (
+//     primary: #004C78,
+//     secondary: #80B3D0,
+// );
+
+// h1 {
+//     //..and addressed this way
+//     color: map-get($colors, secondary)
+// }
