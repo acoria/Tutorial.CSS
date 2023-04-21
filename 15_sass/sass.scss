@@ -1,5 +1,4 @@
 /* SASS: Syntactically awesome style sheets
-
     - is a library to extend CSS during development
     - does not run in the browser but is compiled to CSS
     - can be installed via "npm install -g sass"
@@ -16,7 +15,7 @@
                 font-size: 1rem;
             }
 
-    - Compiling: SASS files need compiling.
+    - Compiling: SASS files need compiling. A .css file and a .css.map file is created. 
         Command:
             sass <filename_with_sass_code> <css_filename_to_compile_into>
         To activate watch mode (to automatically compile on save), write this:
@@ -63,6 +62,16 @@
             h1 {
                 color: map-get($colors, primary)
             }
+    - Built-in functions:
+        - They can be used to e.g. change values programmatically, such as lighten/darken colors or change the transparency.
+        .darken {
+            background-color: scale-color($origin-color, $lightness: -30%);
+        }
+        .lighten {
+            background-color: scale-color($origin-color, $lightness: 30%);
+        }
+        .transparentize{
+            background-color: transparentize($origin-color, $amount: 0.8);
 */
 
 /* Nesting */
@@ -76,14 +85,6 @@ body {
 
 /* Nesting namespace properties */
 .fontNamespace {
-    //flex-direction: row;
-    //flex-wrap: nowrap;
-    //become:
-    font-variant: small-caps;
-    // flex: {
-    //     direction: row;
-    //     wrap: nowrap;
-    // }
     font: {
         size: 1rem;
         weight: 100;
@@ -91,25 +92,47 @@ body {
     }
 }
 
-// /* Variables */
-// $primary-color: #004C78;
-// /* Variables can hold a list of values */
-// $border-default: 1px solid black;
-// /* Variables can consist of other variables */
-// $border-default: 1px solid $primary-color;
+/* Variables */
+$primary-color: #80B3D0;
+/* Variables can hold a list of values */
+$border-default: 2px solid #004C78;
+/* Variables can consist of other variables */
+$border-default-with-variable: 2px solid $primary-color;
 
-// h1 {
-//     color: $primary-color;
-//     border: $border-default;
-// }
+.variable {
+    color: $primary-color;
+    border: $border-default;
+}
+
+.variableWithVariable {
+    border: $border-default-with-variable;
+}
 
 /* A map of related variables can be created.. */
-// $colors: (
-//     primary: #004C78,
-//     secondary: #80B3D0,
-// );
+$colors: (
+    primary: #6558ea,
+    secondary: #457ed0,
+);
 
-// h1 {
-//     //..and addressed this way
-//     color: map-get($colors, secondary)
-// }
+.map {
+    //..and addressed this way
+    color: map-get($colors, primary)
+}
+
+$origin-color: #457ed0;
+
+.origin {
+    background-color: $origin-color;
+}
+
+.darken {
+    background-color: scale-color($origin-color, $lightness: -30%);
+}
+
+.lighten {
+    background-color: scale-color($origin-color, $lightness: 30%);
+}
+
+.transparentize{
+    background-color: transparentize($origin-color, $amount: 0.8);
+}

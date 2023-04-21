@@ -1,5 +1,4 @@
 /* SASS: Syntactically awesome style sheets
-
     - is a library to extend CSS during development
     - does not run in the browser but is compiled to CSS
     - can be installed via "npm install -g sass"
@@ -16,7 +15,7 @@
                 font-size: 1rem;
             }
 
-    - Compiling: SASS files need compiling.
+    - Compiling: SASS files need compiling. A .css file and a .css.map file is created. 
         Command:
             sass <filename_with_sass_code> <css_filename_to_compile_into>
         To activate watch mode (to automatically compile on save), write this:
@@ -63,6 +62,16 @@
             h1 {
                 color: map-get($colors, primary)
             }
+    - Built-in functions:
+        - They can be used to e.g. change values programmatically, such as lighten/darken colors or change the transparency.
+        .darken {
+            background-color: scale-color($origin-color, $lightness: -30%);
+        }
+        .lighten {
+            background-color: scale-color($origin-color, $lightness: 30%);
+        }
+        .transparentize{
+            background-color: transparentize($origin-color, $amount: 0.8);
 */
 /* Nesting */
 body {
@@ -74,12 +83,42 @@ body .title {
 
 /* Nesting namespace properties */
 .fontNamespace {
-  font-variant: small-caps;
   font-size: 1rem;
   font-weight: 100;
   font-variant: small-caps;
 }
 
+/* Variables */
+/* Variables can hold a list of values */
+/* Variables can consist of other variables */
+.variable {
+  color: #80B3D0;
+  border: 2px solid #004C78;
+}
+
+.variableWithVariable {
+  border: 2px solid #80B3D0;
+}
+
 /* A map of related variables can be created.. */
+.map {
+  color: #6558ea;
+}
+
+.origin {
+  background-color: #457ed0;
+}
+
+.darken {
+  background-color: #27579b;
+}
+
+.lighten {
+  background-color: #7da5de;
+}
+
+.transparentize {
+  background-color: rgba(69, 126, 208, 0.2);
+}
 
 /*# sourceMappingURL=sass.css.map */
