@@ -5,6 +5,11 @@
         - values (e.g. red, 10px, 30%)
 
     Properties are listed here: https://developer.mozilla.org/en-US/docs/Web/CSS
+      Certain properties have a namespace, e.g. font and have several different properties, such as
+        font-family
+        font-size
+        font-weight etc.
+
     Browser support can be checked here: caniuse.com (market share: it also shows how much of the market you reach with a certain css/js-feature)
 
     Best practices:
@@ -48,6 +53,9 @@
         - Foundation
       - Utility frameworks: do not offer complete components but help with styling
         - Tailwind
+
+    - getComputedStyle() allows for querying all applied css properties after the stylesheets were applied and basic computation was resolved
+      e.g. getComputedStyle(document.querySelector("body")).getPropertyValue("width") 
 */
 
 /* CSS variable definition */

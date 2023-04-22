@@ -133,6 +133,12 @@ $origin-color: #457ed0;
     background-color: scale-color($origin-color, $lightness: 30%);
 }
 
-.transparentize{
+.transparentize {
     background-color: transparentize($origin-color, $amount: 0.8);
+}
+
+$test : scale-color($origin-color, $lightness: 30%);
+
+.test {
+    background-color: $test;
 }
