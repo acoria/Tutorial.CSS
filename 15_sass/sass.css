@@ -15,19 +15,38 @@
                 font-size: 1rem;
             }
 
-    - Compiling: SASS files need compiling. A .css file and a .css.map file is created. 
-        Command:
+    - Compiling: SASS files need compiling. A .css file and a .css.map file is created. Make sure you are in the correct directory (where the file is located).
+        - Command:
             sass <filename_with_sass_code> <css_filename_to_compile_into>
-        To activate watch mode (to automatically compile on save), write this:
+        - To activate watch mode (to automatically compile on chang), write this:
             sass --watch <filename_with_sass_code>:<css_filename_to_compile_into>
-        Stop the watch mode with ctrl + C
+          Stop the watch mode with ctrl + C
+        - Usually in a project the compilation is done via sass loader (not part of the tutorial)
 
-    - Nesting: Selectors can be nested into each other for better readability.
-        body li{} becomes
+    - Nesting selectors: 
+        - Selectors can be nested into each other for better readability.
+            body li{} is written like this
 
-        body{
-            li{}
-        }
+            body{
+                li{}
+            }
+
+        - Direct selectors need an ampersand:
+            body.title{} is written like this
+
+            body{
+                &.title{ }
+            }
+
+            ---or---
+
+            button:hover{} is written like this
+
+            button{
+                &:hover{ }
+            }
+
+
 
     - Nesting namespace properties:
         body{
@@ -63,15 +82,96 @@
                 color: map-get($colors, primary)
             }
     - Built-in functions:
-        - They can be used to e.g. change values programmatically, such as lighten/darken colors or change the transparency.
+        They can be used to e.g. change values programmatically, such as lighten/darken colors or change the transparency.
         .darken {
             background-color: scale-color($origin-color, $lightness: -30%);
         }
         .lighten {
             background-color: scale-color($origin-color, $lightness: 30%);
         }
-        .transparentize{
+        .transparentize {
             background-color: transparentize($origin-color, $amount: 0.8);
+        }
+
+    - Calculations:
+        Values can be calculated:
+        .calculateMargin {
+            margin-left: $origin-margin * 2;
+        }
+
+    - Partials can be used to make css files e.g. their included variables accessible from other css files. See folder "partials"
+      Partials are named with an underscore 
+        e.g. _globalColors.scss
+      and can be imported like this
+        @import 'globalColors';
+      Usually reusable variables are stored in partials and can be accessed in the scss file where the partial was imported.
+      Scss files can be imported into other scss files without the need to compile the imported files separately.
+
+    - Imports:
+        When importing a css file, this file has to be retrieved separately (which can be seen in the network tab in the dev console)
+            e.g. import 'someFile.css'
+        When a scss file is imported, the code of the imported file is copied into the file with the import. This means that there
+        will only be one file requested.
+
+    - Media queries:
+        They can be positioned together with (or rather inside) the code they effect which makes it more readable:
+            h1{
+                width: 5rem;
+                media(min-width: 40rem){
+                    width: 10rem;
+                }
+            }
+
+    - Inheritance:
+        When several attributes are the same for different elements, a class is usually added to every element that needs it. Instead of 
+        this approach, css styles can inherit from other styles using @extend
+            .classToInheritFrom {
+                background-color: yellow;
+            }
+            .inheritingClass {
+                @extend .classToInheritFrom;
+                color: blue;
+            }
+
+    - Mixins are self-defined, reusable code snippets. The code from it is added directly into the style.
+        - A mixin can be defined like this:
+                @mixin display-flex() {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: -webkit-flex;
+                    display: flex;
+                }
+            and used with @include like this:
+                .useMixin{
+                    @include display-flex();
+                }
+            which will result in this compiled css code:
+                .useMixin {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: -webkit-flex;
+                    display: flex;
+                }
+        - Parameters can be passed into a mixin with $parameterName:
+            @mixin media-min-width($width) {
+                @media (min-width: $width) {
+                    font-size: 2rem;
+                }
+            }
+        - Mixins can have dynamic content:
+            @mixin media-min-width() {
+                @media (min-width: 40rem) {
+                    @content
+                }
+            }
+          which can be handed over in curly brackets(=braces):
+            .usingMediaMinWidthMixin {
+                @include media-min-width() {
+                    font-size: 5rem;
+                }
+            }
+}
+
 */
 /* Nesting */
 body {
@@ -79,6 +179,14 @@ body {
 }
 body .title {
   color: #004C78;
+}
+
+/* Nesting a direct accessor */
+button {
+  background-color: #004C78;
+}
+button:hover {
+  background-color: #80B3D0;
 }
 
 /* Nesting namespace properties */
@@ -105,6 +213,7 @@ body .title {
   color: #6558ea;
 }
 
+/* Built-in function: */
 .origin {
   background-color: #457ed0;
 }
@@ -121,8 +230,47 @@ body .title {
   background-color: rgba(69, 126, 208, 0.2);
 }
 
-.test {
-  background-color: #7da5de;
+.originMargin {
+  margin-left: 2rem;
+}
+
+.calculateMargin {
+  margin-left: 4rem;
+}
+
+/* Partials can be used to store global values */
+.coloredWithGlobalColor {
+  color: yellowGreen;
+}
+
+/* Inheritance */
+.classToInheritFrom, .inheritingClass {
+  background-color: yellow;
+}
+
+.inheritingClass {
+  color: blue;
+}
+
+/* Mixins can be defined this way */
+/* and used like that */
+.useMixin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* A mixin with a parameter */
+.useFontSizeMixin {
+  font-size: 3rem;
+}
+
+/* Dynamic content can be passed to a mixin */
+@media (min-width: 40rem) {
+  .usingMediaMinWidthMixin {
+    font-size: 5rem;
+  }
 }
 
 /*# sourceMappingURL=sass.css.map */
