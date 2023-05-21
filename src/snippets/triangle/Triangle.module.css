@@ -1,0 +1,13 @@
+.triangleWrapper h1 {
+    margin: 1rem 0 0.3rem 0;
+    font-size: 1.2rem;
+}
+
+.triangle {
+    height: 0;
+    width: 0;
+    border: 10px solid black;
+    border-top: none;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
