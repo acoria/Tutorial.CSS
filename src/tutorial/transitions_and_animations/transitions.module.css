@@ -1,0 +1,6 @@
+/* When hiding e.g. a modal using the opacity attribute, it is always part of the DOM.
+   Negative: 
+    - the DOM is bloated -> slightly worse performance
+    - bad accessibility
+
+    */
