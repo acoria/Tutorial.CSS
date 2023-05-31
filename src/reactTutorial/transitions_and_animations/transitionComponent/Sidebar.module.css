@@ -5,9 +5,10 @@
     color: white;
     text-align: end;
     padding: 1rem;
+    transform: translateX(0);
     transition: transform 1s ease-in;
 }
 
 .sidebarHidden {
-    transform: translateX(-25vw);
+    transform: translateX(-40vw);
 }

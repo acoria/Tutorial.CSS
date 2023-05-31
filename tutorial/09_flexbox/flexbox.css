@@ -224,6 +224,24 @@
     flex-basis: 300px;
 }
 
+/* Example: split to left and right and keep some content in the middle */
+.example-flex-split{
+    display: flex;
+    justify-content: center;
+}
+.example-flex-split div{
+    background-color: #004C78;
+    height: 100px;
+    width: 100px;
+}
+
+.example-flex-split :first-child{
+    margin-right: auto;
+}
+.example-flex-split :last-child{
+    margin-left: auto;
+}
+
 * {
     box-sizing: border-box;
 }
