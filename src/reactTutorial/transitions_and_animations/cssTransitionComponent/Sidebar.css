@@ -5,23 +5,26 @@
     color: white;
     text-align: end;
     padding: 1rem;
-    transform: translateX(0);
     transition: transform 1s ease-in;
 }
 
 /* These classes (the passed className in classNames concatenated with enter, enter-active, enter-done and equivalent for exit) 
    are going to be wrapped around the wrapped element and added depending on the state of the transition */
 
+.slide-enter {
+    transform: translateX(-40vw);
+}
+
+.slide-enter-active {
+    transform: translateX(0);
+}
+
+/* equivalent to state "entered" */
 .slide-enter-done {
     background-color: blue;
 }
 
 /* equivalent to state "exiting" */
 .slide-exit-active {
-    transform: translateX(-40vw);
-}
-
-/* equivalent to state "exited" */
-.slide-exit-done {
     transform: translateX(-40vw);
 }

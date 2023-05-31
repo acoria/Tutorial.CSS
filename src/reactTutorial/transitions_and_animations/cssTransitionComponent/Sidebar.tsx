@@ -15,7 +15,7 @@ import "./Sidebar.css";
 */
 export const Sidebar: React.FC<{ visible: boolean }> = (props) => {
   return (
-    <CSSTransition in={props.visible} timeout={1000} classNames="slide">
+    <CSSTransition in={props.visible} timeout={1000} classNames="slide" mountOnEnter unmountOnExit>
       <div className="sidebar">Sidebar</div>
     </CSSTransition>
   );
