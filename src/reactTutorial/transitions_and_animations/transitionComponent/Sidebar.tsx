@@ -1,12 +1,13 @@
-import { Transition } from "react-transition-group";
+import { Transition, TransitionStatus } from "react-transition-group";
 import styles from "./Sidebar.module.css";
+import { EXITED, EXITING } from "react-transition-group/Transition";
 
 export const Sidebar: React.FC<{ visible: boolean }> = (props) => {
   return (
     <Transition in={props.visible} timeout={1000} mountOnEnter unmountOnExit>
-      {(state) => {
+      {(state: TransitionStatus) => {
         const animationStyle =
-          state === "exiting" || state === "exited" ? styles.sidebarHidden : "";
+          state === EXITING || state === EXITED ? styles.sidebarHidden : "";
         return (
           <div className={`${styles.sidebar} ${animationStyle}`}>Sidebar</div>
         );
