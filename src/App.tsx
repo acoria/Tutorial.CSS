@@ -1,3 +1,4 @@
+import { AnimatingList } from "./reactTutorial/animatingList/AnimatingList";
 import { TransitionComponent } from "./reactTutorial/transitions_and_animations/TransitionComponent";
 import { CSSTransitionComponent } from "./reactTutorial/transitions_and_animations/cssTransitionComponent/CSSTransitionComponent";
 import { TransitionOfComponents } from "./reactTutorial/transitions_and_animations/transitionComponent/TransitionOfComponents";
@@ -10,8 +11,9 @@ function App() {
       <hr></hr>
       <hr></hr> */}
       {/* <TransitionOfComponents /> */}
-      <CSSTransitionComponent />
+      {/* <CSSTransitionComponent /> */}
       {/* <TransitionComponent /> */}
+      <AnimatingList />
     </>
   );
 }

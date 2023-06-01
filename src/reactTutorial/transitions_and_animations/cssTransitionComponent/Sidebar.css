@@ -28,3 +28,17 @@
 .slide-exit-active {
     transform: translateX(-40vw);
 }
+
+
+/* instead of concatenating the classnames, classes can be passed as object to the CSSTransition component */
+.hideSidebar {
+    transform: translateX(-40vw);
+}
+
+.showSidebar {
+    transform: translateX(0);
+}
+
+.changeColorOnDone {
+    background-color: blue;
+}

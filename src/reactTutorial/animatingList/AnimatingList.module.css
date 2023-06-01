@@ -1,0 +1,32 @@
+.animatingList ul {
+    list-style: none;
+}
+
+.animatingListItem {
+    border: 1px solid black;
+    width: 20vw;
+    text-align: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    opacity: 0;
+    background-color: purple;
+}
+
+.show {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.visible{
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.hidden{
+    opacity: 0;
+}

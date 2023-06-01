@@ -15,7 +15,24 @@ import "./Sidebar.css";
 */
 export const Sidebar: React.FC<{ visible: boolean }> = (props) => {
   return (
-    <CSSTransition in={props.visible} timeout={1000} classNames="slide" mountOnEnter unmountOnExit>
+    <CSSTransition
+      in={props.visible}
+      timeout={1000}
+      classNames="slide"
+      /* instead of passing a className as a string, an object can be used
+      classNames={{
+        enter: "hideSidebar",
+        enterActive: "showSidebar",
+        enterDone: "changeColorOnDone",
+        exitActive: "hideSidebar",
+        exitDone: "hideSidebar",
+      }}
+      */
+
+      /* breaks the animation */
+      // mountOnEnter
+      // unmountOnExit
+    >
       <div className="sidebar">Sidebar</div>
     </CSSTransition>
   );
