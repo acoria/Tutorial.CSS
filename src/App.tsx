@@ -1,4 +1,5 @@
 import { AnimatingList } from "./reactTutorial/animatingList/AnimatingList";
+import { Component as FadingBoxComponent } from "./reactTutorial/mvce/FadingBoxComponent";
 import { TransitionComponent } from "./reactTutorial/transitions_and_animations/TransitionComponent";
 import { CSSTransitionComponent } from "./reactTutorial/transitions_and_animations/cssTransitionComponent/CSSTransitionComponent";
 import { TransitionOfComponents } from "./reactTutorial/transitions_and_animations/transitionComponent/TransitionOfComponents";
@@ -13,7 +14,8 @@ function App() {
       {/* <TransitionOfComponents /> */}
       {/* <CSSTransitionComponent /> */}
       {/* <TransitionComponent /> */}
-      <AnimatingList />
+      {/* <AnimatingList /> */}
+      <FadingBoxComponent />
     </>
   );
 }
