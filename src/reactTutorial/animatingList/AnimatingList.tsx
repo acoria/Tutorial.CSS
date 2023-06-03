@@ -1,15 +1,6 @@
 import { useState } from "react";
-import {
-    Transition,
-    TransitionGroup,
-    TransitionStatus,
-} from "react-transition-group";
-import {
-    ENTERED,
-    ENTERING,
-    EXITED,
-    EXITING
-} from "react-transition-group/Transition";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+
 import styles from "./AnimatingList.module.css";
 
 export const AnimatingList: React.FC = () => {
@@ -28,22 +19,6 @@ export const AnimatingList: React.FC = () => {
       return previous.filter((number) => number !== key);
     });
 
-  const listItemClass = (transitionStatus: TransitionStatus, key: number) => {
-    console.log(`${key} - ${transitionStatus}`);
-    switch (transitionStatus) {
-      case EXITING:
-        return styles.hide;
-      case EXITED:
-        return styles.hidden;
-      case ENTERING:
-        return styles.show;
-      case ENTERED:
-        return styles.visible;
-      default:
-        return styles.hidden;
-    }
-  };
-
   /*  Transition Group is in charge of handling elements inside a list. It determines whether an element is part of the list
     (if it was added or removed) and a takes over the handling of the "in" property by setting it depending on the elements.
 
@@ -53,22 +28,24 @@ export const AnimatingList: React.FC = () => {
     - The li elements need to be wrapped into Transition or CSSTransition components.
  */
   const listItems = numbers.map((number) => (
-    <Transition key={number} timeout={1000}>
-      {(state) => (
-        <div>
-          <div>{state}</div>
-          <li
-            className={`${styles.animatingListItem} ${listItemClass(
-              state,
-              number
-            )}`}
-            onClick={() => removeEntry(number)}
-          >
-            {number}
-          </li>
-        </div>
-      )}
-    </Transition>
+    <CSSTransition
+      key={number}
+      timeout={2000}
+      classNames={{
+        enter: styles.fadeEnter,
+        enterActive: styles.fadeEnterActive,
+        enterDone: styles.fadeEnterDone,
+        exitActive: styles.fadeExitActive,
+        exitDone: styles.fadeExitDone,
+      }}
+    >
+      <li
+        className={`${styles.animatingListItem}`}
+        onClick={() => removeEntry(number)}
+      >
+        {number}
+      </li>
+    </CSSTransition>
   ));
 
   return (

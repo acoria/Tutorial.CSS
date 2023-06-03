@@ -14,8 +14,8 @@ function App() {
       {/* <TransitionOfComponents /> */}
       {/* <CSSTransitionComponent /> */}
       {/* <TransitionComponent /> */}
-      {/* <AnimatingList /> */}
-      <FadingBoxComponent />
+      <AnimatingList />
+      {/* <FadingBoxComponent /> */}
     </>
   );
 }

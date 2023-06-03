@@ -8,25 +8,27 @@
     text-align: center;
     padding: 0.5rem;
     cursor: pointer;
-    /* opacity: 0; */
     background-color: purple;
 }
 
-.show {
+.fadeEnter {
     opacity: 0;
-    transition: opacity 1s ease-out;
 }
 
-.visible{
+.fadeEnterActive {
     opacity: 1;
-    transition: opacity 1s ease-out;
+    transition: opacity 2s ease-out;
 }
 
-.hide {
+.fadeEnterDone {
+    opacity: 1;
+}
+
+.fadeExitActive {
     opacity: 0;
-    transition: opacity 1s ease-out;
+    transition: opacity 2s ease-out;
 }
 
-.hidden{
+.fadeExitDone {
     opacity: 0;
 }

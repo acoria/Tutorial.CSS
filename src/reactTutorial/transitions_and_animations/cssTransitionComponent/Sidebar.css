@@ -5,7 +5,6 @@
     color: white;
     text-align: end;
     padding: 1rem;
-    transition: transform 1s ease-in;
 }
 
 /* These classes (the passed className in classNames concatenated with enter, enter-active, enter-done and equivalent for exit) 
@@ -17,6 +16,7 @@
 
 .slide-enter-active {
     transform: translateX(0);
+    transition: transform 1s ease-in;
 }
 
 /* equivalent to state "entered" */
@@ -27,16 +27,24 @@
 /* equivalent to state "exiting" */
 .slide-exit-active {
     transform: translateX(-40vw);
+    transition: transform 1s ease-in;
 }
 
 
-/* instead of concatenating the classnames, classes can be passed as object to the CSSTransition component */
-.hideSidebar {
+/* Instead of concatenating the classnames, css classes can be passed as object to the CSSTransition component
+   This way css modules can be used as well (see AnimatingList) */
+.hiddenSidebar {
     transform: translateX(-40vw);
 }
 
 .showSidebar {
     transform: translateX(0);
+    transition: transform 1s ease-in;
+}
+
+.hideSidebar {
+    transform: translateX(-40vw);
+    transition: transform 1s ease-in;
 }
 
 .changeColorOnDone {
