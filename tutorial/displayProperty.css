@@ -26,7 +26,7 @@ a {
 }
 
 /* This is a mixed type for when both behaviors are needed. It allows elements to show up next to each other (inline) 
-   and it also allows adding top/bottom-margins, paddings like on block elements (block) */
+   and it also allows adding height/width, top/bottom-margins, paddings like on block elements (block) */
 a {
     display: inline-block;
 }

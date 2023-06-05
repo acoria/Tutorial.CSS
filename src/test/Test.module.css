@@ -1,0 +1,7 @@
+.test {
+    display: inline-block;
+    background-color: cornflowerblue;
+    height: 5rem;
+    border: 5px solid blue;
+    padding: 5px;
+}
