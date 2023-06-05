@@ -1,0 +1,34 @@
+.animatingList ul {
+    list-style: none;
+}
+
+.animatingListItem {
+    border: 1px solid black;
+    width: 20vw;
+    text-align: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    background-color: purple;
+}
+
+.fadeEnter {
+    opacity: 0;
+}
+
+.fadeEnterActive {
+    opacity: 1;
+    transition: opacity 2s ease-out;
+}
+
+.fadeEnterDone {
+    opacity: 1;
+}
+
+.fadeExitActive {
+    opacity: 0;
+    transition: opacity 2s ease-out;
+}
+
+.fadeExitDone {
+    opacity: 0;
+}
