@@ -1,4 +1,5 @@
 import { PersonSelect } from "./personSelect/PersonSelect";
+import { PersonTurn } from "./personSelect/PersonTurn";
 import { AnimatingList } from "./reactTutorial/animatingList/AnimatingList";
 import { Component as FadingBoxComponent } from "./reactTutorial/mvce/FadingBoxComponent";
 import { TransitionComponent } from "./reactTutorial/transitions_and_animations/TransitionComponent";
@@ -22,7 +23,8 @@ function App() {
       <div style={{ backgroundColor: "blue", height: "10vh" }}></div> */
   }
   // return <Test />;
-  return <PersonSelect />;
+  // return <PersonSelect />;
+  return <PersonTurn />;
 }
 
 export default App;
