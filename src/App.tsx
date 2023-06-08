@@ -1,3 +1,4 @@
+import { PersonSelect } from "./personSelect/PersonSelect";
 import { AnimatingList } from "./reactTutorial/animatingList/AnimatingList";
 import { Component as FadingBoxComponent } from "./reactTutorial/mvce/FadingBoxComponent";
 import { TransitionComponent } from "./reactTutorial/transitions_and_animations/TransitionComponent";
@@ -14,13 +15,14 @@ function App() {
       {/* <TransitionOfComponents /> */}
       {/* <CSSTransitionComponent /> */}
       {/* <TransitionComponent /> */}
-      <AnimatingList />
+      // <AnimatingList />
       {/* <FadingBoxComponent /> */}
   {
     /* <LoadingSpinner />
       <div style={{ backgroundColor: "blue", height: "10vh" }}></div> */
   }
-  return <Test />;
+  // return <Test />;
+  return <PersonSelect />;
 }
 
 export default App;
