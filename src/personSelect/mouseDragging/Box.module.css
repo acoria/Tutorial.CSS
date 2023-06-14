@@ -1,0 +1,11 @@
+.box {
+    background-color: rgba(0, 128, 0, 0.664);
+    border: 1px solid black;
+    text-align: center;
+    height: 2rem;
+    padding: 1rem;
+}
+
+.selected{
+    background-color: rgba(0, 0, 255, 0.685);
+}

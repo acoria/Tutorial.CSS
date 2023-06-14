@@ -27,7 +27,7 @@ export const Sidebar: React.FC<{ visible: boolean }> = (props) => {
         // enterDone is 
         enterDone: "changeColorOnDone",
         exitActive: "hideSidebar",
-        //is theoretically unnecessary since the element is removed from the DOM
+        //is theoretically unnecessary since the element is removed from the DOM for this example
         exitDone: "hiddenSidebar",
       }}
       mountOnEnter

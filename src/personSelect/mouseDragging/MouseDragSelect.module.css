@@ -1,0 +1,5 @@
+.mouseDragSelect {
+    display: grid;
+    grid-template-columns: repeat(40, auto);
+}
+
