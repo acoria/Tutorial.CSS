@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sidebar } from "./Sidebar";
 
-export const TransitionOfComponents: React.FC = () => {
+export const TransitionOfSidebar: React.FC = () => {
   const [showSidebar, setShowSidebar] = useState(true);
 
   const toggleVisibility = () => {

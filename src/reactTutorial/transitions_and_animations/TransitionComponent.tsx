@@ -20,7 +20,7 @@ import { Transition, TransitionStatus } from "react-transition-group";
          - exited
       
       - takes attributes:
-         - in (boolean): should the children be rendered/visible or not
+         - in (boolean): this toggles the state between enter and exit
          - timeout (milliseconds or an object): how long should it take to switch from entering to entered and from exiting to exited
             object: {enter: milliseconds, exit: milliseconds} e.g. { enter: 400, exit: 1000 }
          - mountOnEnter/unmountOnExit: places/removes the element from the DOM
