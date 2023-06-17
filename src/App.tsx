@@ -1,6 +1,6 @@
+import { Paint } from "./miniApps/paint/Paint";
 import { PersonSelect } from "./personSelect/PersonSelect";
 import { PersonTurn } from "./personSelect/PersonTurn";
-import { MouseDragSelect } from "./personSelect/mouseDragging/MouseDragSelect";
 import { AnimatingList } from "./reactTutorial/animatingList/AnimatingList";
 import { Component as FadingBoxComponent } from "./reactTutorial/mvce/FadingBoxComponent";
 import { TransitionComponent } from "./reactTutorial/transitions_and_animations/TransitionComponent";
@@ -28,9 +28,8 @@ function App() {
   // return <Test />;
   // return <PersonSelect />;
   // return <PersonTurn />;
-  return <MuiSlider onValueChange={(value) => console.log(value)} />;
   // return <CSSTransitionComponent />;
-  // return <MouseDragSelect />;
+  return <Paint />;
 }
 
 export default App;
