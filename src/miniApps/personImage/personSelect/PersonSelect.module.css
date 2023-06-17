@@ -1,0 +1,30 @@
+.background {
+    display: inline-block;
+    position: relative;
+    margin: 2rem 2rem;
+    border: 1px solid black;
+}
+
+.background img {
+    width: 100%;
+    height: auto;
+}
+
+.grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(20, auto);
+    grid-template-rows: repeat(20, auto);
+    /* grid-template-columns: 10% 35% 22% auto;
+    grid-template-rows: 22% 13% 20% 20% auto; */
+}
+
+.body {
+    background-color: rgba(0, 255, 42, 0.658);
+    cursor: pointer;
+}
