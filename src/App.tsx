@@ -9,6 +9,7 @@ import { LoadingSpinner } from "./snippets/loadingSpinner/LoadingSpinner";
 import { MuiSlider } from "./snippets/muiSlider/MuiSlider";
 import { Triangle } from "./snippets/triangle/Triangle";
 import { PersonTurn } from "./miniApps/personImage/personTurn/PersonTurn";
+import { Test } from "./test/Test";
 
 function App() {
   // return<Triangle />
@@ -18,9 +19,10 @@ function App() {
   // return <TransitionComponent />;
   // return <AnimatingList />;
   // return <LoadingSpinner />
-  return <PersonSelect />;
+  // return <PersonSelect />;
   // return <PersonTurn />;
   // return <CSSTransitionComponent />;
+  return <Test />;
 }
 
 export default App;

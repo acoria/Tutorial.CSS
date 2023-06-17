@@ -1,44 +1,75 @@
 .test {
-    height: 100vh;
-    display: flex;
-}
-.surround{
-    background-color: rgb(175, 168, 168);
-}
-.with{
-    height: 200px;
+    position: relative;
+    width: 100vw;
+    height: 80vh;
 }
 
-.without{
-    background-color: green;
+.left {
+    margin: 2rem;
+    background-color: #426742;
+    height: 10rem;
+}
+
+.enterLeft {
+    transform: translateX(-110%);
+}
+
+.enterActiveLeft {
+    transform: translateX(0);
+    transition: transform 1s linear;
+}
+
+.enterDoneLeft {
+    transform: translateX(0);
+}
+
+.exitLeft {
+    transform: translateX(0);
+}
+
+.exitActiveLeft {
+    transform: translateX(-110%);
+    transition: transform 1s linear;
+}
+
+.exitDoneLeft {
+    transform: translateX(-110%);
 }
 
 
-
-
-/* .loader {
-    width: 360px;
-    height: 100px;
-    display: block;
-    background-image:
-        linear-gradient(100deg, transparent, rgba(61, 161, 211, 0.5) 50%, transparent 80%),
-        linear-gradient(#FFF 100px, transparent 0),
-        linear-gradient(#FFF 20px, transparent 0),
-        linear-gradient(#FFF 20px, transparent 0),
-        linear-gradient(#FFF 20px, transparent 0);
-    background-repeat: no-repeat;
-    background-size: 75px 100px, 100px 100px, 125px 20px, 260px 20px, 260px 20px;
-    background-position: -50% 0, 0 0, 120px 0, 120px 40px, 120px 80px, 120px 120px;
-    box-sizing: border-box;
-    animation: animloader 10s linear infinite;
+.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    margin-top: 0;
+    background-color: #10bb10;
+    height: 10rem;
+    width: 100vw;
 }
 
-@keyframes animloader {
-    0% {
-        background-position: 0% 0, 0 0, 120px 0, 120px 40px, 120px 80px, 120px 120px;
-    }
+.enterRight {
+    transform: translateX(110%);
+}
 
-    100% {
-        background-position: 100% 0, 0 0, 120px 0, 120px 40px, 120px 80px, 120px 120px;
-    }
-} */
+.enterActiveRight {
+    transform: translateX(0);
+    transition: transform 1s linear;
+}
+
+.enterDoneRight {
+    transform: translateX(0);
+}
+
+.exitRight {
+    transform: translateX(0);
+}
+
+.exitActiveRight {
+    transform: translateX(110%);
+    transition: transform 1s linear;
+}
+
+.exitDoneRight {
+    transform: translateX(110%);
+}
