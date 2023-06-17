@@ -8,6 +8,7 @@ import { CSSTransitionComponent } from "./reactTutorial/transitions_and_animatio
 import { CSSTransitionSidebar } from "./reactTutorial/transitions_and_animations/cssTransitionComponent/sidebar/CSSTransitionSidebar";
 import { TransitionOfSidebar } from "./reactTutorial/transitions_and_animations/transitionComponent/TransitionOfSidebar";
 import { LoadingSpinner } from "./snippets/loadingSpinner/LoadingSpinner";
+import { MuiSlider } from "./snippets/muiSlider/MuiSlider";
 import { Triangle } from "./snippets/triangle/Triangle";
 import { Test } from "./test/Test";
 
@@ -27,7 +28,8 @@ function App() {
   // return <Test />;
   // return <PersonSelect />;
   // return <PersonTurn />;
-  return <CSSTransitionComponent />;
+  return <MuiSlider onValueChange={(value) => console.log(value)} />;
+  // return <CSSTransitionComponent />;
   // return <MouseDragSelect />;
 }
 
