@@ -1,0 +1,10 @@
+.slider {
+    margin: 1rem;
+    width: 20%
+}
+
+@media (min-width: 40rem) and (min-height: 25rem) {
+    .slider {
+        width: 50%
+    }
+}
