@@ -10,6 +10,7 @@ import { MuiSlider } from "./snippets/muiSlider/MuiSlider";
 import { Triangle } from "./snippets/triangle/Triangle";
 import { PersonTurn } from "./miniApps/personImage/personTurn/PersonTurn";
 import { Test } from "./test/Test";
+import { BerryGreen } from "./colorPalettes/berryGreen/BerryGreen";
 
 function App() {
   // return<Triangle />
@@ -22,7 +23,8 @@ function App() {
   // return <PersonSelect />;
   // return <PersonTurn />;
   // return <CSSTransitionComponent />;
-  return <Test />;
+  // return <Test />;
+  return <BerryGreen />;
 }
 
 export default App;
