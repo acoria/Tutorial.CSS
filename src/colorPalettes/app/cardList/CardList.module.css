@@ -1,0 +1,4 @@
+.cardList {
+    padding: 2rem;
+    background-color: var(--mainCardListBackground);
+}
