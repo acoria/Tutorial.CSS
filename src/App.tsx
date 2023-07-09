@@ -8,9 +8,9 @@ import { TransitionOfSidebar } from "./reactTutorial/transitions_and_animations/
 import { LoadingSpinner } from "./snippets/loadingSpinner/LoadingSpinner";
 import { MuiSlider } from "./snippets/muiSlider/MuiSlider";
 import { Triangle } from "./snippets/triangle/Triangle";
-import { PersonTurn } from "./miniApps/personImage/personTurn/PersonTurn";
 import { Test } from "./test/Test";
 import { BerryGreen } from "./colorPalettes/berryGreen/BerryGreen";
+import { TurningPerson } from "./miniApps/personImage/personTurn/person/TurningPerson";
 
 function App() {
   // return<Triangle />
@@ -21,10 +21,10 @@ function App() {
   // return <AnimatingList />;
   // return <LoadingSpinner />
   // return <PersonSelect />;
-  // return <PersonTurn />;
+  return <TurningPerson />;
   // return <CSSTransitionComponent />;
   // return <Test />;
-  return <BerryGreen />;
+  // return <BerryGreen />;
 }
 
 export default App;
