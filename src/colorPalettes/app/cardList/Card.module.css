@@ -1,0 +1,37 @@
+.card {
+    background-color: var(--mainCardBackgroundColor);
+    border-radius: 8px;
+    margin: 1rem 15rem;
+    padding: 1rem;
+}
+
+.title {
+    color: var(--mainCardTitleColor);
+    font-size: x-large;
+}
+
+.text {
+    color: var(--mainCardTextColor)
+}
+
+.buttons {
+    display: flex;
+    justify-content: end;
+}
+
+.buttons button {
+    padding: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-style: none;
+    margin-right: 1rem;
+}
+
+.button {
+    background-color: var(--mainCardMainButtonBackgroundColor);
+    color: var(--mainCardButtonColor);
+}
+
+.buttonMain {
+    background-color: var(--mainCardButtonBackgroundColor);
+}

@@ -1,0 +1,22 @@
+.turningPerson{
+  position: relative;
+  display: inline-block;
+}
+
+.turnButton {
+  position: absolute;
+  right: 10%;
+  top: 45%;
+  font-size: xxx-large;
+  cursor: pointer;
+}
+
+.image {
+  transform: rotateY(0deg);
+  transition: transform ease-in 1s;
+}
+
+.flipSideways {
+  transform: rotateY(180deg);
+  transition: transform ease-in 1s;
+}

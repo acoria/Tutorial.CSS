@@ -1,0 +1,14 @@
+.eye {
+    position: absolute;
+    top: 10%;
+    background-color: white;
+    width: 1rem;
+    height: 1rem;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.wink {
+    transform: rotateX(90deg);
+    transition: transform ease-in 0.3s;
+}
