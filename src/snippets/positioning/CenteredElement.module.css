@@ -1,0 +1,11 @@
+.centeredElement {
+  position: absolute;
+  top: 10%;
+  /* move element 50% over */
+  left: 50%;
+  /* than move it 50% of its own width back to the left */
+  transform: translateX(-50%);
+  width: 40rem;
+  height: 30rem;
+  background-color: gray;
+}
