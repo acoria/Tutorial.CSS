@@ -10,6 +10,8 @@ import { MuiSlider } from "./snippets/muiSlider/MuiSlider";
 import { Triangle } from "./snippets/triangle/Triangle";
 import { Test } from "./test/Test";
 import { BerryGreen } from "./colorPalettes/berryGreen/BerryGreen";
+import { Test2 } from "./test/test2/Test2";
+import { CenteredElement } from "./snippets/positioning/CenteredElement";
 import { TurningPerson } from "./miniApps/personImage/personTurn/person/TurningPerson";
 
 function App() {
@@ -21,10 +23,12 @@ function App() {
   // return <AnimatingList />;
   // return <LoadingSpinner />
   // return <PersonSelect />;
-  return <TurningPerson />;
+  // return <TurningPerson />;
   // return <CSSTransitionComponent />;
   // return <Test />;
   // return <BerryGreen />;
+  // return <Test2 />;
+  return <CenteredElement />;
 }
 
 export default App;
