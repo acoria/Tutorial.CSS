@@ -1,0 +1,35 @@
+:root {
+  --trackedX: 0.5;
+  --trackedY: 0.5;
+  --containerSize: 200px;
+}
+
+.container,
+.tracker {
+  position: absolute;
+}
+
+.container {
+  width: var(--containerSize);
+  height: var(--containerSize);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid black;
+}
+
+.tracker {
+  width: 10px;
+  height: 10px;
+  left: 0;
+  top: 0;
+  background: purple;
+  border-radius: 50%;
+  /* -50% centers the dot first */
+  transform: translate(
+    calc(-50% + var(--containerSize) * var(--trackedX)),
+    calc(-50% + var(--containerSize) * var(--trackedY))
+  );
+  /* optionally a stabilizer for a smoother transition */
+  transition: transform 0.1s
+}

@@ -13,6 +13,7 @@ import { BerryGreen } from "./colorPalettes/berryGreen/BerryGreen";
 import { Test2 } from "./test/test2/Test2";
 import { CenteredElement } from "./snippets/positioning/CenteredElement";
 import { TurningPerson } from "./miniApps/personImage/personTurn/person/TurningPerson";
+import { MouseTracker } from "./snippets/mouseTracker/MouseTracker";
 
 function App() {
   // return<Triangle />
@@ -28,7 +29,8 @@ function App() {
   // return <Test />;
   // return <BerryGreen />;
   // return <Test2 />;
-  return <CenteredElement />;
+  // return <CenteredElement />;
+  return <MouseTracker />;
 }
 
 export default App;
