@@ -10,10 +10,16 @@ export const IngredientList: React.FC = () => {
   const water = <Ingredient name="Water" amount="250ml" image={waterImage} />;
 
   return (
-    <div className={styles.ingredientList}>
-      {flour}
-      {salt}
-      {water}
-    </div>
+    <>
+      <div className={styles.ingredientList}>
+        {flour}
+        {salt}
+        {water}
+      </div>
+      <div className={styles.ingredientList}>
+        {flour}
+        {water}
+      </div>
+    </>
   );
 };
