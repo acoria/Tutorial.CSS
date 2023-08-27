@@ -3,8 +3,7 @@
   width: 9rem;
   font-size: large;
   font-weight: 600;
-  color: var(--primaryColor);
-  box-shadow: 1px 1px 1px 1px #f3d396;
+  box-shadow: 1px 1px 1px 1px var(--primaryColor);
   border-radius: 3px;
   padding: 0 0.5rem;
   background-color: var(--light);
@@ -30,12 +29,13 @@
   border-bottom: 1px solid var(--secondaryColor);
   font-size: smaller;
   align-self: flex-end;
-  color: var(--secondaryColor);
+  color: var(--primaryColor);
 }
 
 .ingredientAmount {
   font-weight: 800;
   font-size: x-large;
+  color: var(--secondaryColor);
   padding: 0.3rem 0;
   justify-self: end;
   align-self: center;
