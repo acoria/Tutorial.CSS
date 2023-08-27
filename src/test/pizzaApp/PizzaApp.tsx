@@ -1,13 +1,14 @@
 import styles from "./PizzaApp.module.css";
-import { IngredientList } from "./ingredientList/IngredientList";
+import { IngredientList } from "./features/ingredientList/IngredientList";
 import "./color.css";
+import { DoughConfigurationList } from "./features/doughConfiguration/DoughConfigurationList";
 
 export const PizzaApp: React.FC = () => {
   return (
     <div className={styles.pizzaApp}>
       <h1>Pizzateig Rechner</h1>
       <IngredientList />
-      <div className={styles.settings}></div>
+      <DoughConfigurationList />
     </div>
   );
 };

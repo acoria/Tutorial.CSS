@@ -1,10 +1,10 @@
 import { Ingredient } from "../ingredient/Ingredient";
 import styles from "./IngredientList.module.css";
-import flourImage from "../assets/grain.png";
-import saltImage from "../assets/salt.png";
-import waterImage from "../assets/water.png";
-import honeyImage from "../assets/honey.png";
-import yeastImage from "../assets/yeast.png";
+import flourImage from "../../assets/grain.png";
+import saltImage from "../../assets/salt.png";
+import waterImage from "../../assets/water.png";
+import honeyImage from "../../assets/honey.png";
+import yeastImage from "../../assets/yeast.png";
 
 export const IngredientList: React.FC = () => {
   const flour = <Ingredient name="Flour" amount="1600g" image={flourImage} />;
