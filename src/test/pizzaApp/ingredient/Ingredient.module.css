@@ -6,7 +6,7 @@
 
 .ingredient {
   display: inline-block;
-  /* width: 6rem; */
+  width: 7rem;
   font-size: large;
   font-weight: 600;
   color: var(--lighter);
@@ -19,7 +19,7 @@
 .ingredientTile {
   display: grid;
   grid-template-columns: auto 2fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr;
   column-gap: 0.5rem;
 }
 
@@ -28,12 +28,11 @@
   grid-row-end: 3;
   align-self: center;
   height: 3rem;
-  color: var(--dark);
 }
 
 .ingredientTitle {
   display: inline-block;
-  padding: 0.2rem;
+  padding: 0.4rem 0.2rem 0.2rem 0.2rem;
   border-bottom: 1px solid var(--dark);
   font-size: smaller;
   align-self: flex-end;
@@ -42,6 +41,7 @@
 
 .ingredientAmount {
   font-weight: 800;
+  font-size: x-large;
   padding: 0.3rem 0;
   justify-self: end;
   align-self: center;
