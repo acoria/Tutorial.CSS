@@ -1,0 +1,38 @@
+:root {
+  --cannonContainerSize: 7rem;
+  --cannonTurretDiameter: calc(var(--cannonContainerSize) * 0.57);
+  --cannonBarrelWidth: calc(var(--cannonContainerSize) * 0.12);
+}
+
+.cannon {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: var(--cannonTurretColor);
+  width: var(--cannonTurretDiameter);
+  height: var(--cannonTurretDiameter);
+  border-radius: 50%;
+}
+
+.cannonBarrel {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: var(--cannonBarrelWidth);
+  height: calc(var(--cannonContainerSize) * 0.4);
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotateZ(var(--cannonAimAngle));
+  background-color: var(--cannonBarrelColor);
+}
+
+.cannonMount {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: var(--cannonBarrelWidth);
+  height: var(--cannonBarrelWidth);
+  border-radius: 50%;
+  background-color: var(--cannonBarrelColor);
+}

@@ -14,6 +14,7 @@ import { Test2 } from "./test/test2/Test2";
 import { CenteredElement } from "./snippets/positioning/CenteredElement";
 import { TurningPerson } from "./miniApps/personImage/personTurn/person/TurningPerson";
 import { MouseTracker } from "./snippets/mouseTracker/MouseTracker";
+import { PizzaApp } from "./test/pizzaApp/PizzaApp";
 
 function App() {
   // return<Triangle />
@@ -30,7 +31,8 @@ function App() {
   // return <BerryGreen />;
   // return <Test2 />;
   // return <CenteredElement />;
-  return <MouseTracker />;
+  // return <MouseTracker />;
+  return <PizzaApp />;
 }
 
 export default App;

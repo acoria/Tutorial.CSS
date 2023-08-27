@@ -1,0 +1,48 @@
+:root {
+  --dark: #c39a6e;
+  --lighter: #f3d396;
+  --light: #f4edd4;
+}
+
+.ingredient {
+  display: inline-block;
+  /* width: 6rem; */
+  font-size: large;
+  font-weight: 600;
+  color: var(--lighter);
+  box-shadow: 1px 1px 1px 1px #f3d396;
+  border-radius: 3px;
+  padding: 0 0.5rem;
+  background-color: var(--light);
+}
+
+.ingredientTile {
+  display: grid;
+  grid-template-columns: auto 2fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 0.5rem;
+}
+
+.image {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  align-self: center;
+  height: 3rem;
+  color: var(--dark);
+}
+
+.ingredientTitle {
+  display: inline-block;
+  padding: 0.2rem;
+  border-bottom: 1px solid var(--dark);
+  font-size: smaller;
+  align-self: flex-end;
+  color: var(--dark);
+}
+
+.ingredientAmount {
+  font-weight: 800;
+  padding: 0.3rem 0;
+  justify-self: end;
+  align-self: center;
+}
