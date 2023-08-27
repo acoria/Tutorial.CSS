@@ -29,7 +29,7 @@
   border-bottom: 1px solid var(--secondaryColor);
   font-size: smaller;
   align-self: flex-end;
-  color: var(--primaryColor);
+  color: var(--secondaryColor);
 }
 
 .ingredientAmount {
