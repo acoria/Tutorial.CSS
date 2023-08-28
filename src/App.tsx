@@ -15,6 +15,7 @@ import { CenteredElement } from "./snippets/positioning/CenteredElement";
 import { TurningPerson } from "./miniApps/personImage/personTurn/person/TurningPerson";
 import { MouseTracker } from "./snippets/mouseTracker/MouseTracker";
 import { PizzaApp } from "./test/pizzaApp/PizzaApp";
+import { Svg } from "./reactTutorial/svg/Svg";
 
 function App() {
   // return<Triangle />
@@ -32,7 +33,8 @@ function App() {
   // return <Test2 />;
   // return <CenteredElement />;
   // return <MouseTracker />;
-  return <PizzaApp />;
+  // return <PizzaApp />;
+  return <Svg />;
 }
 
 export default App;

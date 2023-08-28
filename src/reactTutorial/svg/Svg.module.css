@@ -1,0 +1,19 @@
+.embeddedImage {
+  display: inline-block;
+  width: 20rem;
+}
+
+.waterDroplet {
+  color: green;
+  stroke: blue;
+  fill: red;
+}
+
+.myFirstSvg {
+  border: 1px solid black;
+}
+
+.myFirstSvg h3 {
+  margin-bottom: 0;
+  border-bottom: 1px solid black;
+}
