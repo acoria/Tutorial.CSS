@@ -1,0 +1,5 @@
+.switch {
+  --switchWidth: 10rem;
+  --switchColorOff: purple;
+  --switchColorOn: darkgreen;
+}

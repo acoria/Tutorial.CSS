@@ -1,17 +1,19 @@
 .switch {
- /* --checkboxWidth: 4rem;
- --checkboxHeight: var(--checkboxWidth) / 2; */
+  --switchWidth: 2rem;
+  --switchColorOff: #ccc;
+  --switchColorOn: #2196f3;
+  --sliderColor: white;
+  --switchHeight: calc(var(--switchWidth) / 2);
+  --sliderSize: calc(var(--switchWidth) * 0.425);
+  --transformLength: calc(var(--switchWidth) * 0.45);
+  --switchBorderRadius: calc(var(--switchWidth) / 2);
   position: relative;
   display: inline-block;
-  /* width: 60px;
-  height: 34px; */
-  /* width: var(--checkboxWidth);
-  height: var(--checkboxHeight); */
-  width: 4rem;
-  height: 2rem;
+  width: var(--switchWidth);
+  height: var(--switchHeight);
 }
 
-.switch checkbox {
+.switch .checkbox {
   opacity: 0;
   width: 0;
   height: 0;
@@ -24,7 +26,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--switchColorOff);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -32,35 +34,30 @@
 .slider:before {
   position: absolute;
   content: "";
-  /* height: 26px;
-  width: 26px; */
-  height: 1.7rem;
-  width: 1.7rem;
-  /* left: 4px;
-  bottom: 4px; */
+  height: var(--sliderSize);
+  width: var(--sliderSize);
   left: 6%;
   bottom: 8%;
-  background-color: white;
+  background-color: var(--sliderColor);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .checkbox:checked + .slider {
-    background-color: #2196f3;
-  /* background-color: var(--sliderColor); */
+  background-color: var(--switchColorOn);
 }
 
 .checkbox:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px var(--switchColorOn);
 }
 
 .checkbox:checked + .slider:before {
-  -webkit-transform: translateX(1.8rem);
-  -ms-transform: translateX(1.8rem);
-  transform: translateX(1.8rem);
+  -webkit-transform: translateX(var(--transformLength));
+  -ms-transform: translateX(var(--transformLength));
+  transform: translateX(var(--transformLength));
 }
 .slider.round {
-  border-radius: 2rem;
+  border-radius: var(--switchBorderRadius);
 }
 
 .slider.round:before {
