@@ -1,4 +1,6 @@
 export interface ISwitchProps {
+  onChange: (checked: boolean) => void;
+  checked?: boolean;
   /** The width of the switch in e.g. rem, px. */
   width?: string;
   /** The color of the switch in "on" state */
