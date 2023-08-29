@@ -16,8 +16,7 @@ import { TurningPerson } from "./miniApps/personImage/personTurn/person/TurningP
 import { MouseTracker } from "./snippets/mouseTracker/MouseTracker";
 import { PizzaApp } from "./test/pizzaApp/PizzaApp";
 import { Svg } from "./reactTutorial/svg/Svg";
-import { Switch } from "./snippets/switch/Switch";
-import { SwitchApp } from "./snippets/switch/app/SwitchApp";
+import { SwitchApp } from "./snippets/switch/SwitchApp";
 
 function App() {
   // return<Triangle />

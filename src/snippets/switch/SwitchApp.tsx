@@ -1,5 +1,5 @@
-import { Switch } from "../Switch";
 import styles from "./SwitchApp.module.css";
+import { Switch } from "./component/Switch";
 
 export const SwitchApp: React.FC = () => {
   //   return <Switch className={styles.switch} />;
@@ -10,9 +10,8 @@ export const SwitchApp: React.FC = () => {
       switchColorOff="darkgrey"
       switchColorOn="black"
       onChange={(switchedOn) => {
-          console.log(`Switched to "${switchedOn}"`);
-        }
-      }
+        console.log(`Switched to "${switchedOn}"`);
+      }}
       checked
     />
   );

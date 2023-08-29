@@ -12,8 +12,8 @@ export interface ISwitchProps {
   /**
    * To override the width and colors in css, the following constants are available:
    *   --switchWidth (same as @param{width})
-   *   --switchBackgroundColorOff
-   *   --switchBackgroundColorOn
+   *   --switchColorOff
+   *   --switchColorOn
    *   --sliderColor
    */
   className?: string;
