@@ -24,19 +24,17 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
     } as CSSProperties);
 
   return (
-    <>
-      <label style={style} className={`${styles.switch} ${props.className}`}>
-        <input
-          className={styles.checkbox}
-          type="checkbox"
-          onChange={(event) => {
-            setIsChecked(event.target.checked);
-            props.onChange(event.target.checked);
-          }}
-          checked={isChecked}
-        />
-        <span className={`${styles.slider} ${styles.round}`}></span>
-      </label>
-    </>
+    <label style={style} className={`${props.className} ${styles.switch}`}>
+      <input
+        className={styles.checkbox}
+        type="checkbox"
+        onChange={(event) => {
+          setIsChecked(event.target.checked);
+          props.onChange(event.target.checked);
+        }}
+        checked={isChecked}
+      />
+      <span className={`${styles.slider} ${styles.round}`}></span>
+    </label>
   );
 };

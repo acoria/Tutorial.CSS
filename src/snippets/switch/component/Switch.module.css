@@ -1,8 +1,10 @@
-.switch {
+label {
   --switchWidth: 2rem;
   --switchColorOff: #ccc;
   --switchColorOn: #2196f3;
   --sliderColor: white;
+}
+.switch {
   --switchHeight: calc(var(--switchWidth) / 2);
   --sliderSize: calc(var(--switchWidth) * 0.425);
   --transformLength: calc(var(--switchWidth) * 0.45);
