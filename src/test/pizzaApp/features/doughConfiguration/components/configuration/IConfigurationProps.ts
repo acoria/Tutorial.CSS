@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { IConfiguration } from "../../model/IConfiguration";
+import { IDoughConfiguration } from "../../model/IDoughConfiguration";
 
 export interface IConfigurationProps {
-  configuration: IConfiguration;
+  configuration: IDoughConfiguration;
   children: ReactNode | ReactNode[];
 }
