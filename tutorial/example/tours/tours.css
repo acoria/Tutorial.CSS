@@ -1,0 +1,133 @@
+main {
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+}
+
+.background {
+    background: url(../images/jungle.jpg);
+    background-size: 150%;
+    background-position: left 20% center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+
+.tour {
+    width: 80%;
+    max-width: 60rem;
+    margin: 0.5rem 0;
+    border: 3px solid #642472;
+    border-left: none;
+    position: relative;
+    z-index: 1;
+}
+
+.tour:hover,
+.tour:active {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: moveUp 700ms forwards ease-out;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.tour_plus {
+    background: rgba(100, 36, 114, 0.8);
+}
+
+.tour__badge {
+    display: inline;
+    background: #327224;
+    font-size: small;
+    padding: 0.25rem;
+    margin: 0.8rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.tour_free {
+    background: rgba(151, 54, 172, 0.8);
+    float: right;
+    border-left: 3px solid #642472;
+    border-right: none;
+    text-align: right;
+}
+
+.tour_free:hover,
+.tour_free:active {
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tour_premium {
+    background: rgba(100, 36, 114, 0.95);
+}
+
+.tour_premium h1 {
+    color: white;
+}
+
+.tour_premium .tour__subtitle {
+    color: #bbb;
+}
+
+.tour__link {
+    text-decoration: none;
+    display: block;
+    padding: 1.2rem;
+}
+
+.tour__link p:active,
+a.tour__link:active {
+    color: black;
+}
+
+.tour__title {
+    color: black;
+    font-size: large;
+}
+
+.tour__subtitle {
+    color: #838383;
+    font-size: medium;
+}
+
+.tour__description {
+    background: white;
+    border: 2px solid #642472;
+    padding: 0.8rem;
+}
+
+@media (min-width: 40rem) {
+    main {
+        max-width: 70rem;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 70rem) {
+    .tour_free {
+        border: 3px solid #642472;
+    }
+
+    .tour {
+        border: 3px solid #642472;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    33%{
+        transform: translateY(-0.3rem);
+    }
+
+    100% {
+        transform: translateY(-0.1rem);
+    }
+}
