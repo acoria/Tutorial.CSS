@@ -34,9 +34,9 @@ function App() {
   // return <Test2 />;
   // return <CenteredElement />;
   // return <MouseTracker />;
-  // return <PizzaApp />;
+  return <PizzaApp />;
   // return <Svg />;
-  return <SwitchApp />;
+  // return <SwitchApp />;
 }
 
 export default App;

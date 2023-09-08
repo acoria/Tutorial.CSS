@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./SwitchApp.module.css";
-import { Switch } from "./component/Switch";
+import { Switch } from "./switch/Switch";
 
 export const SwitchApp: React.FC = () => {
   const [toggle, setToggle] = useState(false);

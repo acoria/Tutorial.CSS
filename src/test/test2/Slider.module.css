@@ -1,0 +1,82 @@
+.sliderContainer {
+  --trackHeight: 0.5rem;
+  --sliderColor: orange;
+  --thumbRadius: calc(var(--trackHeight) * 2.5);
+  --marginTop: calc(
+    calc(var(--trackHeight) / 2) - calc(var(--thumbRadius) / 2)
+  );
+  --thumbPosition: 50%;
+  position: relative;
+}
+
+.progressBar {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  height: var(--trackHeight);
+  width: 5rem;
+  background-color: var(--sliderColor);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  transform: translateY(-50%);
+  z-index: -10;
+}
+
+.thumb {
+  position: absolute;
+  top: 50%;
+  left: var(--thumbPosition);
+  height: var(--thumbRadius);
+  width: var(--thumbRadius);
+  border-radius: 50%;
+  background-color: var(--sliderColor);
+  cursor: pointer;
+  z-index: -5;
+}
+
+.track {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  width: 98%;
+  height: var(--trackHeight);
+  background-color: purple;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  z-index: -15;
+}
+
+.slider {
+  /* clears all default styles in every browser */
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+.slider::-webkit-slider-runnable-track {
+  background-color: transparent;
+  height: var(--trackHeight);
+  border-radius: 8px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  height: var(--thumbRadius);
+  width: var(--thumbRadius);
+  border-radius: 50%;
+  margin-top: var(--marginTop);
+}
+
+/* .slider:focus {
+    outline: none;
+  }
+  
+  .slider:focus::-webkit-slider-thumb {
+    border: 1px solid #053a5f;
+    outline: 3px solid #053a5f;
+    outline-offset: 0.125rem;
+  } */
