@@ -1,0 +1,11 @@
+:root {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 356px;
+  /* width: "180px", */
+  height: 100px;
+  background-color: red;
+  border: 2px solid black;
+}

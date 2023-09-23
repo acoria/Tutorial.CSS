@@ -17,6 +17,7 @@ import { MouseTracker } from "./snippets/mouseTracker/MouseTracker";
 import { PizzaApp } from "./test/pizzaApp/PizzaApp";
 import { Svg } from "./reactTutorial/svg/Svg";
 import { SwitchApp } from "./components/switch/SwitchApp";
+import { Test3 } from "./Test3";
 
 function App() {
   // return<Triangle />
@@ -34,9 +35,10 @@ function App() {
   // return <Test2 />;
   // return <CenteredElement />;
   // return <MouseTracker />;
-  return <PizzaApp />;
+  // return <PizzaApp />;
   // return <Svg />;
   // return <SwitchApp />;
+  return <Test3 />;
 }
 
 export default App;

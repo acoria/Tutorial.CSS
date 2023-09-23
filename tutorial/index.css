@@ -55,7 +55,10 @@
         - Tailwind
 
     - getComputedStyle() allows for querying all applied css properties after the stylesheets were applied and basic computation was resolved
-      e.g. getComputedStyle(document.querySelector("body")).getPropertyValue("width") 
+      e.g.
+        window
+          .getComputedStyle(document.getElementById("root")!, null)
+          .getPropertyValue("--secondaryColor");
 */
 
 /* CSS variable definition */
