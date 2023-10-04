@@ -1,0 +1,66 @@
+:root {
+  --inputDialogConfirm: green;
+  --inputDialogConfirmHighlighted: rgb(16, 63, 16);
+  --inputDialogCancel: red;
+  --inputDialogCancelHighlighted: rgb(138, 39, 39);
+  --inputDialogHighlight: rgba(241, 235, 235, 0.966);
+}
+
+.editInputDialog {
+  /* needs absolute positioning so it is displayed as on top of the screen */
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 0.5rem;
+  padding-right: 0.5rem;
+  border: 2px solid var(--inputDialogHighlight);
+  border-radius: 2px;
+}
+
+.inputWithButtons {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  background-color: var(--inputDialogHighlight);
+  outline: none;
+  border: none;
+}
+
+.validationError,
+.validationError:focus-visible {
+  outline-color: var(--inputDialogCancel);
+  border: 1px solid var(--inputDialogCancel);
+}
+
+.validationErrorMessage {
+  color: var(--inputDialogCancel);
+  font-size: small;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.okButton {
+  margin-left: 0.6rem;
+  margin-right: 0.4rem;
+  color: var(--inputDialogConfirm);
+  cursor: pointer;
+}
+
+.okButton:hover {
+  color: var(--inputDialogConfirmHighlighted);
+}
+
+.cancelButton {
+  margin-left: 0.3rem;
+  margin-right: 0.4rem;
+  color: var(--inputDialogCancel);
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  color: var(--inputDialogCancelHighlighted);
+}
