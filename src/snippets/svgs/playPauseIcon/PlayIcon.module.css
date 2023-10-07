@@ -1,0 +1,9 @@
+.playIcon {
+  position: relative;
+}
+
+.iconInside {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
