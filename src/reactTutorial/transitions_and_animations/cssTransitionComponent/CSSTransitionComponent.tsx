@@ -2,6 +2,14 @@ import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import styles from "./CSSTransitionComponent.module.css";
 
+/**
+ * The CSSTransitionComponent is a wrapper around React components for an easier handling
+ * They need installing:
+ *  - install react-transition-group
+ *  - install the types for it (e.g. @types/react-transition-group": "^4.4.6")
+ * 
+ */
+
 export const CSSTransitionComponent: React.FC = () => {
   const [move, setMove] = useState(false);
 
