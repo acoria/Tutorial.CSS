@@ -1,0 +1,12 @@
+<svg viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg">
+    <ellipse width="10" height="10">
+        <animate attributeName="rx" values="0;30;0" dur="2s" repeatCount="indefinite" />
+    </ellipse>
+
+    <!-- cx: x position of the center of the ellipsis.
+     rx: x radius of the ellipsis -->
+    <ellipse cx="50" cy="50" rx="10" ry="10" fill="blue">
+        <animate attributeName="rx" values="0;30;0" dur="2s" repeatCount="indefinite" />
+    </ellipse>
+</svg>

@@ -1,0 +1,31 @@
+<!-- To draw a half circle or a part of a half circle, an arcs function can be used.
+
+    An arcs function consists of the following values:
+    [A|a]rx,ry, x-axis-rotation, large-arc-flag, sweep-flag, x,y
+
+        e.g. d="M20,2 a20,20 0 0,1 20,10"
+            - M20,2 starting point of the circle
+            - a20,20 (a rx, ry): are the radius of the ellipsis, for a circle they are equal (a capital letter means that coordinates are absolute, lowercase means relative to the last point on the path, whatever this means..)
+            - large-arcs-flag/sweep-flag: decide which part of the circle to use and which arc direction
+            - 20,10 (x,y): is the end point of the arc from the starting point
+   -->
+<svg viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg">
+    <!-- M20,2: starting point of the circle -->
+    <path d="M20,2 a20,20 0 0,1 20,10" stroke="red" stroke-width="2" fill="none" />
+
+    <!-- a10,10 (a rx,ry) is the radius of the circle(ellipsis) and equal for a circle -->
+    <path d="M20,20 a10,10 0 0,1 20,10" stroke="yellow" stroke-width="2" fill="none" />
+
+    <!-- 1 (large-arcs-flag): decides which part of the circle to draw (together with sweep-flag)
+                           -> this one here -->
+    <path d="M20,30 a20,20 0 1,0 20,10" stroke="purple" stroke-width="2" fill="none" />
+
+    <!-- 0 (sweep-flag) is the direction of the arc together (with large-arcs-flag)
+                             ->  this one below  -->
+    <path d="M60,4 a20,20 0 0,0 20,10" stroke="green" stroke-width="2" fill="none" />
+    <path d="M60,4 a20,20 0 0,1 20,10" stroke="red" stroke-width="2" fill="none" />
+
+    <!-- 20,10: is the end point of the arc from the starting point -->
+    <path d="M60,30 a20,20 0 0,1 20,40," stroke="blue" stroke-width="2" fill="none" />
+</svg>

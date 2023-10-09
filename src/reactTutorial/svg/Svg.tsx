@@ -19,6 +19,7 @@ import styles from "./Svg.module.css";
          If a width/height is defined, e.g. 100px/200px, each grid cell will be 1px.
   
   The viewport is defined by width/height.
+
  */
 
 import water from "./waterColorful.svg";
