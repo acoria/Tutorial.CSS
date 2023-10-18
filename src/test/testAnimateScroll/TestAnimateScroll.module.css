@@ -1,0 +1,51 @@
+.boards {
+  display: flex;
+  flex-direction: column;
+}
+
+.first {
+    background-color: rgba(17, 216, 17, 0.568);
+    height: 110vh;
+  font-size: x-large;
+}
+
+.second {
+  height: 50vh;
+}
+
+.circleWrapper {
+  position: relative;
+  width: 20%;
+  align-self: center;
+}
+
+.smallerCircle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(60%);
+}
+
+.circleTurnClockwise {
+  transform: rotate(180deg);
+  transition: transform 1.5s;
+}
+
+.grownCircle {
+  transform: none;
+}
+
+.title {
+  opacity: 1;
+}
+
+.moveTitle {
+  transform: translateX(2%);
+  transition: transform 1s;
+}
+
+.growingTitle {
+  transform-origin: left;
+  transform: scale(200%);
+  transition: transform 1s;
+}

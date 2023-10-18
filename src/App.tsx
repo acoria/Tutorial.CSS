@@ -10,7 +10,7 @@ import { MuiSlider } from "./snippets/muiSlider/MuiSlider";
 import { Triangle } from "./snippets/triangle/Triangle";
 import { Test } from "./test/Test";
 import { BerryGreen } from "./colorPalettes/berryGreen/BerryGreen";
-import { Test2 } from "./test/test2/Test2";
+import { Test2ForSlider } from "./test/test2/Test2ForSlider";
 import { CenteredElement } from "./snippets/positioning/CenteredElement";
 import { TurningPerson } from "./miniApps/personImage/personTurn/person/TurningPerson";
 import { MouseTracker } from "./snippets/mouseTracker/MouseTracker";
@@ -18,12 +18,14 @@ import { PizzaApp } from "./test/pizzaApp/PizzaApp";
 import { Svg } from "./reactTutorial/svg/Svg";
 import { SwitchApp } from "./components/switch/SwitchApp";
 import { Test3 } from "./Test3";
+import { TestAnimateScroll } from "./test/testAnimateScroll/TestAnimateScroll";
+import { AnimationExample } from "./test/testAnimateScroll/AnimationExample";
 
 function App() {
   // return<Triangle />
   // return <Paint />;
   // return <TransitionOfSidebar />;
-  // return <CSSTransitionSidebar />
+  // return <CSSTransitionSidebar />;
   // return <TransitionComponent />;
   // return <AnimatingList />;
   // return <LoadingSpinner />
@@ -32,13 +34,15 @@ function App() {
   // return <CSSTransitionComponent />;
   // return <Test />;
   // return <BerryGreen />;
-  // return <Test2 />;
+  // return <Test2ForSlider />;
   // return <CenteredElement />;
   // return <MouseTracker />;
   // return <PizzaApp />;
   // return <Svg />;
   // return <SwitchApp />;
-  return <Test3 />;
+  // return <Test3 />;
+  return <TestAnimateScroll />;
+  // return <AnimationExample />;
 }
 
 export default App;
