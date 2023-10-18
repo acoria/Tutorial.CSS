@@ -1,12 +1,24 @@
 import { useInView } from "react-intersection-observer";
-import styles from "./TestAnimateScroll.module.css";
 import { CSSTransition } from "react-transition-group";
-import { ReactComponent as DottedCircle } from "./noun-dotted-circle-250117.svg";
-import { useState } from "react";
+import styles from "./AnimatingOnScroll.module.css";
+import { ReactComponent as DottedCircle } from "./dottedCircle.svg";
 
-export const TestAnimateScroll: React.FC = () => {
-  const { ref: turningCircleRef, inView, entry } = useInView({
-    threshold: 1,
+/**
+ * For listening to scrolling events, the library "react-intersection-observer" can be used.
+ * It provides a hook "useInView":
+ *    - ref: is applied to the element to listen to
+ *    - inView: is toggled whenever the element comes into view
+ *    - threshold: is a number between 0 and 1. Decides whether inView is true when the entire element is visible (1)
+ *                 or when it comes into view (0)
+ */
+
+export const AnimatingOnScroll: React.FC = () => {
+  const {
+    ref: turningCircleRef,
+    inView,
+    entry,
+  } = useInView({
+    threshold: 0,
   });
 
   const [movingTitleRef, titleInView] = useInView({

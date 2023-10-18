@@ -18,8 +18,7 @@ import { PizzaApp } from "./test/pizzaApp/PizzaApp";
 import { Svg } from "./reactTutorial/svg/Svg";
 import { SwitchApp } from "./components/switch/SwitchApp";
 import { Test3 } from "./Test3";
-import { TestAnimateScroll } from "./test/testAnimateScroll/TestAnimateScroll";
-import { AnimationExample } from "./test/testAnimateScroll/AnimationExample";
+import { AnimatingOnScroll } from "./reactTutorial/animatingOnScroll/AnimatingOnScroll";
 
 function App() {
   // return<Triangle />
@@ -41,8 +40,7 @@ function App() {
   // return <Svg />;
   // return <SwitchApp />;
   // return <Test3 />;
-  return <TestAnimateScroll />;
-  // return <AnimationExample />;
+  return <AnimatingOnScroll />;
 }
 
 export default App;
