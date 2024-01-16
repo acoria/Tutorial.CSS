@@ -19,6 +19,10 @@ import { Svg } from "./reactTutorial/svg/Svg";
 import { SwitchApp } from "./components/switch/SwitchApp";
 import { Test3 } from "./Test3";
 import { AnimatingOnScroll } from "./reactTutorial/animatingOnScroll/AnimatingOnScroll";
+import { FramerMotion } from "./reactTutorial/framerMotion/FramerMotion";
+import { Animation } from "./reactTutorial/framerMotion/Animation";
+import { SidebarMotion } from "./reactTutorial/framerMotion/appearingMotion/SidebarMotion";
+import { FramerMotionVariants } from "./reactTutorial/framerMotion/inheritingStatesByVariants/FramerMotionVariants";
 
 function App() {
   // return<Triangle />
@@ -40,7 +44,11 @@ function App() {
   // return <Svg />;
   // return <SwitchApp />;
   // return <Test3 />;
-  return <AnimatingOnScroll />;
+  // return <AnimatingOnScroll />;
+  // return <FramerMotion />;
+  // return <Animation />;
+  return <SidebarMotion />;
+  // return <FramerMotionVariants />;
 }
 
 export default App;

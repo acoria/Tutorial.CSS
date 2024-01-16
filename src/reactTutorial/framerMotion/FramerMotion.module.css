@@ -1,0 +1,50 @@
+.framerMotion {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftSide {
+  width: 50%;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+.cube {
+  width: 5rem;
+  height: 5rem;
+  background-color: purple;
+}
+
+.rightSide {
+  width: 50%;
+  height: 50vh;
+  padding-top: 2rem;
+}
+
+.xValue {
+  display: flex;
+  flex-direction: row;
+}
+
+.yValue {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+.rotateValue {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+label {
+  font-size: large;
+  font-weight: 600;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+input {
+  width: 4rem;
+}

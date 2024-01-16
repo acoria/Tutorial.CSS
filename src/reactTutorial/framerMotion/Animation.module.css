@@ -1,0 +1,37 @@
+.animation {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+  background-color: gray;
+  padding: 0 0.5rem 0 0.5rem;
+}
+
+h3 {
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+.triangle {
+  height: 0;
+  width: 0;
+  border: 10px solid black;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.poppingButton {
+  color: white;
+  background-color: purple;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
