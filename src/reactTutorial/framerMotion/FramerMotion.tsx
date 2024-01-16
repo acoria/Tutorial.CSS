@@ -41,10 +41,13 @@ import styles from "./FramerMotion.module.css";
  * Variants can be self-defined attributes
  *  e.g. visible, hidden, myHiddenContent
  *  Those attributes can be accessed in inherited components. -> see {@link Child}
+ *
+ * Entire layouts can be set to be animated automatically
  */
 export const FramerMotion: React.FC = () => {
   const [showSidebar, setShowSidebar] = useState(true);
   const [showSquare, setShowSquare] = useState(true);
+  const [listElements, setListElements] = useState<number[]>([1, 2, 3]);
 
   const sidebar = (
     <div style={{ marginTop: "1rem" }}>
@@ -97,9 +100,12 @@ export const FramerMotion: React.FC = () => {
     </div>
   );
 
+  const space = <div className={styles.space}></div>;
+
   return (
     <>
       {sidebar}
+      {space}
       {variants}
     </>
   );
