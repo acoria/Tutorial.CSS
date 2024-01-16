@@ -1,28 +1,4 @@
-import { Paint } from "./miniApps/paint/Paint";
-import { PersonSelect } from "./miniApps/personImage/personSelect/PersonSelect";
-import { AnimatingList } from "./reactTutorial/animatingList/AnimatingList";
-import { TransitionComponent } from "./reactTutorial/transitions_and_animations/transitionComponent/TransitionComponent";
-import { CSSTransitionComponent } from "./reactTutorial/transitions_and_animations/cssTransitionComponent/CSSTransitionComponent";
-import { CSSTransitionSidebar } from "./reactTutorial/transitions_and_animations/cssTransitionComponent/sidebar/CSSTransitionSidebar";
-import { TransitionOfSidebar } from "./reactTutorial/transitions_and_animations/transitionComponent/sidebar/TransitionOfSidebar";
-import { LoadingSpinner } from "./snippets/loadingSpinner/LoadingSpinner";
-import { MuiSlider } from "./snippets/muiSlider/MuiSlider";
-import { Triangle } from "./snippets/triangle/Triangle";
-import { Test } from "./test/Test";
-import { BerryGreen } from "./colorPalettes/berryGreen/BerryGreen";
-import { Test2ForSlider } from "./test/test2/Test2ForSlider";
-import { CenteredElement } from "./snippets/positioning/CenteredElement";
-import { TurningPerson } from "./miniApps/personImage/personTurn/person/TurningPerson";
-import { MouseTracker } from "./snippets/mouseTracker/MouseTracker";
-import { PizzaApp } from "./test/pizzaApp/PizzaApp";
-import { Svg } from "./reactTutorial/svg/Svg";
-import { SwitchApp } from "./components/switch/SwitchApp";
-import { Test3 } from "./Test3";
-import { AnimatingOnScroll } from "./reactTutorial/animatingOnScroll/AnimatingOnScroll";
 import { FramerMotion } from "./reactTutorial/framerMotion/FramerMotion";
-import { Animation } from "./reactTutorial/framerMotion/Animation";
-import { SidebarMotion } from "./reactTutorial/framerMotion/appearingMotion/SidebarMotion";
-import { FramerMotionVariants } from "./reactTutorial/framerMotion/inheritingStatesByVariants/FramerMotionVariants";
 
 function App() {
   // return<Triangle />
@@ -45,10 +21,7 @@ function App() {
   // return <SwitchApp />;
   // return <Test3 />;
   // return <AnimatingOnScroll />;
-  // return <FramerMotion />;
-  // return <Animation />;
-  return <SidebarMotion />;
-  // return <FramerMotionVariants />;
+  return <FramerMotion />;
 }
 
 export default App;
