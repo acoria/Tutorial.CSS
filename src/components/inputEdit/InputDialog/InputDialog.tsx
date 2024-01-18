@@ -1,9 +1,9 @@
 import React, {
-    HTMLInputTypeAttribute,
-    useCallback,
-    useEffect,
-    useRef,
-    useState,
+  HTMLInputTypeAttribute,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
 } from "react";
 import useOnClickOutside from "../useOnClickOutside";
 import { IInputDialogProps } from "./IInputDialogProps";
@@ -58,6 +58,8 @@ export function InputDialog<T>(props: IInputDialogProps<T>) {
     }
   };
 
+  const style = props.widthInRem ? { width: `${props.widthInRem}rem` } : {};
+
   return (
     <div className={styles.editInputDialog} ref={inputDialogRef}>
       <div className={styles.inputWithButtons}>
@@ -70,17 +72,22 @@ export function InputDialog<T>(props: IInputDialogProps<T>) {
           onKeyDown={onKeyDown()}
           className={`${styles.input} ${error && styles.validationError}`}
           autoFocus={props.autoFocus}
+          style={style}
         />
         <div
-        //   type={IconType.CHECK}
+          //   type={IconType.CHECK}
           onClick={onSubmit}
           className={styles.okButton}
-        >OK</div>
+        >
+          OK
+        </div>
         <div
-        //   type={IconType.CLOSE}
+          //   type={IconType.CLOSE}
           onClick={() => props.onCancel?.()}
           className={styles.cancelButton}
-        >CANCEL</div>
+        >
+          CANCEL
+        </div>
       </div>
       {error && (
         <span className={styles.validationErrorMessage}>{error.message}</span>
