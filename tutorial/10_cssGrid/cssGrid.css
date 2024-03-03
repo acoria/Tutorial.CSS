@@ -38,6 +38,11 @@
             - grid-row-start: starting row
             - grid-row-end: ending row
 
+    - The grid orientation can be changed with "grid-auto-flow":
+        Per default it is set to "row": So the elements fill from left to right.
+        It can also be set to "column": filling from top to bottom.
+        Or "row dense": Filling grid elements into spaces to fill the entire grid up (order of elements changes).
+
     - Rows and columns can be given names to address them in []
         - A grid like this    
             column 1 | column 2
