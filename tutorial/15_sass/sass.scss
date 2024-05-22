@@ -159,17 +159,18 @@
                 }
             }
         - Mixins can have dynamic content:
-            @mixin media-min-width() {
+            @mixin largeScreen() {
                 @media (min-width: 40rem) {
                     @content
                 }
             }
           which can be handed over in curly brackets(=braces):
             .usingMediaMinWidthMixin {
-                @include media-min-width() {
+                @include largeScreen() {
                     font-size: 5rem;
                 }
             }
+           Use them for media queries to have the screen size in one place.
 */
 
 /* Nesting */

@@ -39,3 +39,10 @@ Best practices:
 /* or operator */
 @media (min-width: 40rem),
 (min-height: 60rem) {}
+
+/* when using sass, use mixins to have the screen size in one place */
+/* @mixin largeScreen{
+   @media (min-width: 40rem){
+      @content  
+   }
+} */
