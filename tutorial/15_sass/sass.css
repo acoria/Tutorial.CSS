@@ -170,6 +170,12 @@
                     font-size: 5rem;
                 }
             }
+    - Using values in JavaScript/TypeScript
+      For this they need to be exported inside a file, e.g. colors.module.scss.
+      !Attention, the colors file needs to be a module file (colors.module.scss) in order for the values to be loaded:
+      :export {
+        primaryColor: $primary-color;
+      }
 }
 
 */
@@ -178,15 +184,15 @@ body {
   font-size: 1rem;
 }
 body .title {
-  color: #004C78;
+  color: #004c78;
 }
 
 /* Nesting a direct accessor */
 button {
-  background-color: #004C78;
+  background-color: #004c78;
 }
 button:hover {
-  background-color: #80B3D0;
+  background-color: #80b3d0;
 }
 
 /* Nesting namespace properties */
@@ -200,12 +206,12 @@ button:hover {
 /* Variables can hold a list of values */
 /* Variables can consist of other variables */
 .variable {
-  color: #80B3D0;
-  border: 2px solid #004C78;
+  color: #80b3d0;
+  border: 2px solid #004c78;
 }
 
 .variableWithVariable {
-  border: 2px solid #80B3D0;
+  border: 2px solid #80b3d0;
 }
 
 /* A map of related variables can be created.. */
@@ -244,7 +250,8 @@ button:hover {
 }
 
 /* Inheritance */
-.classToInheritFrom, .inheritingClass {
+.classToInheritFrom,
+.inheritingClass {
   background-color: yellow;
 }
 
