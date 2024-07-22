@@ -2,7 +2,7 @@ import { GradientText } from "./designs/01_gradientText/GradientText";
 import { FramerMotion } from "./reactTutorial/framerMotion/FramerMotion";
 import { ExtendingMenuExample } from "./snippets/extendingMenu/ExtendingMenuExample";
 import { Clipping } from "./tricks/clipping/Clipping";
-import { ClippingSquares } from "./tricks/clipping/clippingSquares/ClippingSquares";
+import { Glassy } from "./designs/02_glassy/Glassy";
 
 function App() {
   // return<Triangle />
@@ -29,7 +29,7 @@ function App() {
   // return <ExtendingMenuExample />;
   // return <GradientText />;
   // return <Clipping />;
-  return <ClippingSquares />;
+  return <Glassy />;
 }
 
 export default App;

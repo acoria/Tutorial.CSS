@@ -1,0 +1,93 @@
+@import './colors.scss';
+
+.background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  height: 300vh;
+  background-color: $primary;
+}
+
+.clippingSquares {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,
+      $neutral_300,
+      $neutral_200,
+      $neutral_100,
+      $neutral_400,
+    );
+  clip-path: url(#svgCircles);
+}
+
+.glassy {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  margin: 5rem;
+  margin-top: 10rem;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  color: $white;
+  border: 2px solid $glassyBorder;
+  background-color: $glassyBackground_100;
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  margin: 1rem;
+  padding-top: rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.searchBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: $primary_light;
+  color: $primary;
+  border-radius: 30px;
+  padding: 1rem;
+}
+
+.search {
+  fill: $primary;
+  width: 3rem;
+  height: 2rem;
+}
+
+.searchBox>h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.textBox {
+  padding: 2rem;
+  border-radius: 30px;
+  border: 1px solid $glassyBackground_500;
+  background-color: $glassyBackground_500;
+}
+
+.textBox>h1 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.textBox>p {
+  font-size: 1.3rem;
+}
+
+.button {
+  padding: 1rem;
+  border: 1px solid transparentize($primary_light, 0.8);
+  border-radius: 30px;
+  color: $primary_light;
+  background: linear-gradient(to right, $neutral_400 50%, $neutral_500);
+  font-size: 1.5rem;
+  font-weight: 600;
+}

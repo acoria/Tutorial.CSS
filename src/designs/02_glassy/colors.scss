@@ -1,0 +1,14 @@
+$primary: #2b1c5d;
+$primary_light: #cecaf1;
+
+$neutral_500: #760ad1;
+$neutral_400: #9606af;
+$neutral_300: #ac02c3;
+$neutral_200: #c24fd3;
+$neutral_100: #e901ff;
+
+$white: white;
+
+$glassyBackground_500: transparentize($white, 0.7);
+$glassyBackground_100: transparentize($white, 0.95);
+$glassyBorder: transparentize($white, 0.9);
