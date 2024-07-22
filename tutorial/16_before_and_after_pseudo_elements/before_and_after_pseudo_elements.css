@@ -1,0 +1,84 @@
+/**
+    ::before and ::after are pseudo elements that are inserted before and after an element.
+    With their help, styles can be applied that are normally not possible on an element, 
+        e.g. putting a gradient to an header tag (see h2)
+    
+    - Even when there is no text content, the attribute needs to be set as empty -> content : ""
+    - Before adds an element before, after after
+
+**/
+
+body {
+  background-color: #0b0d10;
+}
+
+div {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: white;
+}
+h2 {
+  position: relative;
+  /* would not work, so a pseudo element is needed: */
+  /* background: linear-gradient(to right, red, blue); */
+}
+
+h2::after {
+  content: "My gradient header";
+  background: linear-gradient(to right, red, blue);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+h1 {
+  position: relative;
+  width: max-content;
+}
+
+h1::after {
+  content: "";
+  background: linear-gradient(to right, red, blue);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.3rem;
+  width: 100%;
+  transition: 100ms;
+}
+
+h1:hover::after {
+  width: 0;
+}
+
+/** Border gradient by adding a slightly bigger ::after element and setting the z-index behind the button **/
+button {
+  margin-left: 5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* slightly lighter background than the div */
+  background-color: #161a20;
+  border: none;
+  color: #f0f0f0;
+  border-radius: 1000px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  height: 104%;
+  width: 102%;
+  border-radius: 1000px;
+  background-image: linear-gradient(to bottom right, #00fcff, #e100ff);
+  z-index: -1;
+}
+
+button:hover {
+  z-index: 0;
+  /* Make it glow */
+  box-shadow: 40px 0 100px #00fcff85, -40px 0 100px #e100ff85;
+}
