@@ -1,0 +1,15 @@
+/* Add a slightly darker than white color */
+.background {
+  background-color: #f9f9f9;
+  height: 100vh;
+  padding: 10rem;
+}
+
+.hoverEffect {
+  padding: 2rem;
+  width: max-content;
+}
+
+.hoverEffect:hover {
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px 10px white;
+}

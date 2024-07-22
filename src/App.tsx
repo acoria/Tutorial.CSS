@@ -4,6 +4,7 @@ import { ExtendingMenuExample } from "./snippets/extendingMenu/ExtendingMenuExam
 import { Clipping } from "./tricks/01_clipping/Clipping";
 import { Glassy } from "./designs/02_glassy/Glassy";
 import { Resizing } from "./tricks/02_resizing/Resizing";
+import { HoverEffect } from "./tricks/03_hover_effect/HoverEffect";
 
 function App() {
   // return<Triangle />
@@ -31,7 +32,8 @@ function App() {
   // return <GradientText />;
   // return <Clipping />;
   // return <Glassy />;
-  return <Resizing />
+  // return <Resizing />
+  return <HoverEffect />;
 }
 
 export default App;
