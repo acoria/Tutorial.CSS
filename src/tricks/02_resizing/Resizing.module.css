@@ -1,0 +1,35 @@
+/** If an elements overflow is set to something other than "visible" and is not an inline element, it can be set to be resized by the user:
+        - both ways
+        - only vertically
+        - only horizontally
+    by setting "resize" attribute accordingly.
+**/
+.resizing {
+  color: white;
+}
+
+.resizableBothWays {
+  width: 50rem;
+  height: 10rem;
+  background-color: rgb(59, 59, 211);
+  overflow: hidden;
+  resize: both;
+}
+
+.resizableHorizontally {
+  margin-top: 1rem;
+  width: 50rem;
+  height: 10rem;
+  background-color: rgb(226, 85, 207);
+  overflow: hidden;
+  resize: horizontal;
+}
+
+.resizableVertically {
+  margin-top: 1rem;
+  width: 50rem;
+  height: 10rem;
+  background-color: rgb(45, 202, 45);
+  overflow: hidden;
+  resize: vertical;
+}
