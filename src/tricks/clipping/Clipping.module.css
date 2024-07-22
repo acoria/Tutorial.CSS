@@ -1,0 +1,32 @@
+/* clip-path allows for shapes to be cut out of an html element. Also works with images */
+div {
+  width: 25rem;
+  height: 25rem;
+}
+
+.circle {
+  background: linear-gradient(to right, #4b94de, #8379ca, #c96676);
+  clip-path: circle(10rem);
+}
+
+.polygon {
+  width: 50rem;
+  height: 30rem;
+  background: linear-gradient(to right, #4b94de, #8379ca, #c96676);
+  clip-path: polygon(16px 463px, 765px 236px, 687px 31px, 271px 100px);
+}
+
+/* The svg containing the clipped path. Can be hidden */
+.svg {
+  width: 25rem;
+  height: 25rem;
+  background-color: blue;
+  position: absolute;
+}
+
+.clippedBySVG {
+  width: 80rem;
+  height: 80rem;
+  background: linear-gradient(to right, #4b94de, #8379ca, #c96676);
+  clip-path: url(#clippedShapeId);
+}

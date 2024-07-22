@@ -1,0 +1,88 @@
+.background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  height: 200vh;
+  background-color: #2b1c5d;
+}
+
+.clippingSquares {
+  width: 100%;
+  height: 100%;
+  background-image: url("./purpleBackground.png");
+  background-size: cover;
+  background-repeat: repeat-y;
+  clip-path: url(#svgCircles);
+}
+
+.glassy {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  margin: 5rem;
+  margin-top: 10rem;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  margin: 1rem;
+  padding-top: rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.searchBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: #cecaf1;
+  color: #2b1c5d;
+  border-radius: 30px;
+  padding: 1rem;
+}
+
+.search {
+  fill: #2b1c5d;
+  width: 3rem;
+  height: 2rem;
+}
+
+.searchBox > h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.textBox {
+  padding: 2rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.textBox > h1 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.textBox > p {
+  font-size: 1.3rem;
+}
+
+.button {
+  padding: 1rem;
+  border: 1px solid rgba(207, 207, 207, 0.1);
+  border-radius: 30px;
+  color: #cecaf1;
+  background: linear-gradient(to right, #9606af 50%, #760ad1);
+  font-size: 1.5rem;
+  font-weight: 600;
+}

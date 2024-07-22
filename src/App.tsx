@@ -1,4 +1,8 @@
+import { GradientText } from "./designs/01_gradientText/GradientText";
 import { FramerMotion } from "./reactTutorial/framerMotion/FramerMotion";
+import { ExtendingMenuExample } from "./snippets/extendingMenu/ExtendingMenuExample";
+import { Clipping } from "./tricks/clipping/Clipping";
+import { ClippingSquares } from "./tricks/clipping/clippingSquares/ClippingSquares";
 
 function App() {
   // return<Triangle />
@@ -21,7 +25,11 @@ function App() {
   // return <SwitchApp />;
   // return <Test3 />;
   // return <AnimatingOnScroll />;
-  return <FramerMotion />;
+  // return <FramerMotion />;
+  // return <ExtendingMenuExample />;
+  // return <GradientText />;
+  // return <Clipping />;
+  return <ClippingSquares />;
 }
 
 export default App;

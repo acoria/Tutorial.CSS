@@ -1,0 +1,27 @@
+.background {
+  padding: 5rem;
+  background-color: black;
+}
+
+.background > h1 {
+  display: inline;
+  font-size: 10rem;
+  font-weight: 900;
+  position: relative;
+}
+
+.square {
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: -1rem;
+  right: 13rem;
+  fill: #8379ca;
+}
+
+/* To add gradient text, do the following: */
+.gradientText {
+  background: linear-gradient(to right, #4b94de 50%, #8379ca, #c96676);
+  background-clip: text;
+  color: transparent;
+}
