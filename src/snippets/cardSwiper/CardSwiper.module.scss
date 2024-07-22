@@ -1,0 +1,53 @@
+$width: 20rem;
+
+.cardSwiper {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(240, 238, 238);
+}
+
+/* Wrapper needs to be the same width as each card so only one card is displayed at the time.
+  overflow-x: scroll ensures that the user needs to scroll to see more.
+
+  scroll-snap-type: To ensure that the cards always stop in the same place when scrolling, set the scroll-snap-type on the parent element with:
+      - the axis: x or y for horizontal or vertical
+      - mandatory/proximity: mandatory will always scroll to the next card. proximity will snap to the closest end, so if you do not scroll "hard enough" it will snap back.
+  scroll-snap-align: Set the position at where to snap. For this, set scroll-snap-align to either start, center, end. Since the cards are the same size, 
+    it does not matter which one to choose.
+*/
+.wrapper {
+  display: flex;
+  gap: 1.5rem;
+  width: $width;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  scroll-snap-align: center;
+  box-sizing: border-box;
+  padding: 1.5rem 2rem;
+  flex-shrink: 0;
+  width: $width;
+  background-color: white;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.wrapper::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+}
+
+.wrapper::-webkit-scrollbar-thumb:hover {
+  background: #757575;
+}
