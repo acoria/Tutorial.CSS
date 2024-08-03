@@ -1,5 +1,5 @@
 import { GradientText } from "./designs/01_gradientText/GradientText";
-import { FramerMotion } from "./reactTutorial/framerMotion/FramerMotion";
+import { FramerMotion } from "./reactTutorial/07_framerMotion/FramerMotion";
 import { ExtendingMenuExample } from "./snippets/extendingMenu/ExtendingMenuExample";
 import { Clipping } from "./tricks/01_clipping/Clipping";
 import { Glassy } from "./designs/02_glassy/Glassy";
@@ -35,7 +35,7 @@ function App() {
   // return <Glassy />;
   // return <Resizing />
   // return <HoverEffect />;
-  return <CardSwiper />;
+  // return <CardSwiper />;
 }
 
 export default App;

@@ -1,3 +1,4 @@
+import { CirclePainter } from "./CirclePainter";
 import styles from "./Glassy.module.scss";
 import { ReactComponent as Circles } from "./circles.svg";
 import { ReactComponent as Search } from "./search.svg";
@@ -7,7 +8,7 @@ export const Glassy: React.FC = () => {
     <>
       <div className={styles.background}>
         <div className={styles.clippingSquares}></div>
-        <Circles />
+        <CirclePainter />
       </div>
       <div className={styles.glassy}>
         <h1 className={styles.title}>A glassy look</h1>

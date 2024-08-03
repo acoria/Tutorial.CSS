@@ -1,0 +1,46 @@
+.cssTransition button {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 10;
+}
+
+.transitionDiv {
+    height: 30rem;
+    background-color: black;
+}
+
+.enter {
+    width: 40rem;
+}
+
+.enterActive {
+    width: 60rem;
+    transition: width ease-in 1s;
+    background-color: blue;
+}
+
+.enterDone {
+    width: 60rem;
+    transition: width ease-in 1s;
+    background-color: lightblue;
+}
+
+.exit {
+    width: 60rem;
+    transition: width ease-in 1s;
+}
+
+.exitActive {
+    width: 40rem;
+    transition: width ease-in 1s;
+    background-color: red;
+}
+
+/* In the done states, the end result should be defined incase the component is not removed from view.
+   Like this, a toggle effect can be achieved. Otherwise the view would jump back to its initial state.
+   If it is removed, this state is irrelevant. */
+.exitDone {
+    width: 40rem;
+    background-color: orange;
+}
