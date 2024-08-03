@@ -1,0 +1,7 @@
+/* To hide e.g. elements that slide in from the side, use overflow-x. 
+  "clip" should help avoid errors for sticky headers. Otherwise "hidden" should be fine too */
+html,
+body {
+  overflow-x: clip;
+  /* overflow-x: hidden; */
+}
