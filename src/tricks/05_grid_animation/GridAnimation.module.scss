@@ -1,0 +1,22 @@
+.gridAnimation {
+    padding: 5rem;
+}
+
+.gridAnimationWiden {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.gridCell {
+    height: 15rem;
+}
+
+.gridCell1 {
+    @extend .gridCell;
+    background-color: blue;
+}
+
+.gridCell2 {
+    @extend .gridCell;
+    background-color: green;
+}

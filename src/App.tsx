@@ -6,6 +6,9 @@ import { Glassy } from "./designs/02_glassy/Glassy";
 import { Resizing } from "./tricks/02_resizing/Resizing";
 import { HoverEffect } from "./tricks/03_hover_effect/HoverEffect";
 import { CardSwiper } from "./snippets/cardSwiper/CardSwiper";
+import { MultiSelectButtons } from "./components/multiSelectButtons/MultiSelectButtons";
+import { GridAnimation } from "./tricks/05_grid_animation/GridAnimation";
+import { Test } from "./test/Test";
 
 function App() {
   // return<Triangle />
@@ -36,6 +39,8 @@ function App() {
   // return <Resizing />
   // return <HoverEffect />;
   // return <CardSwiper />;
+  // return <MultiSelectButtons buttonLabels={["one", "two"]} />;
+  return <GridAnimation />;
 }
 
 export default App;

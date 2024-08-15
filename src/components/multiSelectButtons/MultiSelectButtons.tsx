@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { style } from "../../utils/style";
 import { IMultiSelectButtonsProps } from "./IMultiSelectButtonsProps";
 import styles from "./MultiSelectButtons.module.scss";
+import { style } from "./toMove/utils/style";
 
 export const MultiSelectButtons: React.FC<IMultiSelectButtonsProps> = (
   props
@@ -21,7 +21,7 @@ export const MultiSelectButtons: React.FC<IMultiSelectButtonsProps> = (
     if (props.isSingleSelect) {
       if (buttonIndexOfSelectedButton !== -1) {
         return;
-      }else{
+      } else {
         setSelectedButtonIndices([index]);
       }
       // if (buttonIndexOfSelectedButton === -1) {

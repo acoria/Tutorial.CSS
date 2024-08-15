@@ -1,4 +1,4 @@
-import { Enum } from "../../../core/types/Enum";
+import { Enum } from "../toMove/core/types/Enum";
 import { MultiSelectButtons } from "../MultiSelectButtons";
 import { IEnumMultiSelectButtonsProps } from "./IEnumMultiSelectButtonsProps";
 

@@ -1,4 +1,8 @@
-@import '../../styles/core/colors.module.scss';
+//delete:
+$color-primary-dark: #143d3c;
+$color-primary: #0b4141;
+$color-secondary-light: #e49c6c;
+$color-secondary-lightest: #f8f1ed;
 
 .multiSelectButton {
     display: flex;
@@ -7,20 +11,20 @@
 
 .button {
     padding: 0.5rem;
-    background-color: $primaryDark;
-    color: $gray;
+    background-color: $color-primary-dark;
+    color: $color-secondary-light;
     cursor: pointer;
-    border: 1px solid $primary;
+    border: 1px solid $color-primary;
     font-weight: 600;
     font-size: 0.75rem;
 }
 
 .button:hover {
-    background-color: lighten($primaryDark, 5%);
-    color: $white;
+    background-color: lighten($color-primary-dark, 5%);
+    color: $color-secondary-lightest;
 }
 
 .selectedButton {
-    background-color: $primary;
-    color: $white;
+    background-color: $color-primary;
+    color: $color-secondary-lightest;
 }
