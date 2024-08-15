@@ -1,10 +1,29 @@
+// examples from here:
+// https://css-tricks.com/animating-css-grid-how-to-examples/
+
 .gridAnimation {
     padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
 }
 
 .gridAnimationWiden {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: var(--left, 50%) var(--right, 50%);
+
+    //selecting the grid (parent) for the animation to change the entire grid when hovering over a cell (child) 
+    &:has(.right:hover) {
+        --right: 80%;
+        --left: 20%;
+        transition: all 1s;
+    }
+
+    &:has(.left:hover) {
+        --right: 20%;
+        --left: 80%;
+        transition: all 1s;
+    }
 }
 
 .gridCell {
@@ -13,10 +32,60 @@
 
 .gridCell1 {
     @extend .gridCell;
-    background-color: blue;
+    background-color: #1d5d5d;
 }
 
 .gridCell2 {
     @extend .gridCell;
-    background-color: green;
+    background-color: #d97534;
+}
+
+// --------------------------------
+
+.gridAnimationWiden2 {
+    height: 15rem;
+    transition: 500ms;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    background: crimson;
+
+    &:has(.left:hover) {
+        grid-template-columns: 2fr 0.5fr 0.5fr;
+    }
+
+    &:has(.center:hover) {
+        grid-template-columns: 0.5fr 2fr 0.5fr;
+    }
+
+    &:has(.right:hover) {
+        grid-template-columns: 0.5fr 0.5fr 2fr;
+    }
+}
+
+:where(.left, .center, .right) {
+    background: navajowhite;
+    transition: 300ms;
+
+    &:hover {
+        background: crimson;
+    }
+}
+
+// --------------------------------
+.gridAnimationAddCell {
+    height: 15rem;
+    transition: 300ms;
+    display: grid;
+    //the trick is to have a "hidden" column with 0fr that can be changed
+    grid-template-columns: 1fr 1fr 0fr;
+    background: navajowhite;
+
+    &:hover {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.gridAddCell {
+    outline: 1.5px solid rgb(0 0 0 / 10%);
 }

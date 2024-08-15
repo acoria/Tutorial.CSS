@@ -41,6 +41,7 @@ function App() {
   // return <CardSwiper />;
   // return <MultiSelectButtons buttonLabels={["one", "two"]} />;
   return <GridAnimation />;
+  // return <GridAnimationAddCell />;
 }
 
 export default App;
