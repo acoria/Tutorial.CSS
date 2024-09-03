@@ -1,0 +1,60 @@
+$color-accordion-header-background: transparentize(#1e6085, 0.8);
+$color-accordion-item-box-shadow: transparentize(#1e6085, 0.5);
+$color-accordion-item-chevron-fill: #1e6085;
+$color-accordion-item-content-background: transparentize(#b4d9ee, 0.8);
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-accordion-header-background;
+
+    &:hover {
+        @extend .headerIsOpen;
+    }
+}
+
+.headerIsOpen {
+    box-shadow: 0 1px 4px $color-accordion-item-box-shadow;
+    font-weight: 600;
+}
+
+.title {
+    font-size: medium;
+    padding: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.chevron {
+    fill: $color-accordion-item-chevron-fill;
+    pointer-events: none;
+    margin-right: 0.5rem;
+}
+
+.chevronUp {
+    @extend .chevron;
+    transform: rotate(90deg);
+    transition: transform 0.3s;
+}
+
+.chevronDown {
+    @extend .chevron;
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+}
+
+.content {
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    background: $color-accordion-item-content-background;
+}
+
+.contentIsOpen {
+    transition: height 0.5s ease-in-out;
+}
+
+.childWrapper {
+    margin: 0.5rem;
+}

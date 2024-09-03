@@ -9,6 +9,8 @@ import { CardSwiper } from "./snippets/cardSwiper/CardSwiper";
 import { MultiSelectButtons } from "./components/multiSelectButtons/MultiSelectButtons";
 import { GridAnimation } from "./tricks/05_grid_animation/GridAnimation";
 import { Test } from "./test/Test";
+import { Accordion } from "./components/accordion/Accordion";
+import { AccordionWrapper } from "./components/accordion/AccordionWrapper";
 
 function App() {
   // return<Triangle />
@@ -40,8 +42,9 @@ function App() {
   // return <HoverEffect />;
   // return <CardSwiper />;
   // return <MultiSelectButtons buttonLabels={["one", "two"]} />;
-  return <GridAnimation />;
+  // return <GridAnimation />;
   // return <GridAnimationAddCell />;
+  return <AccordionWrapper />;
 }
 
 export default App;
