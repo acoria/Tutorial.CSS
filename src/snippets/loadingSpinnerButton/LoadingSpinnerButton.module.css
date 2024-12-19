@@ -1,0 +1,27 @@
+.loadingSpinnerButton {
+  font-size: medium;
+  font-weight: 600;
+  align-items: center;
+  display: grid;
+  grid-template-areas: "oneColumOneRow";
+}
+
+.spinner {
+  grid-area: oneColumOneRow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.5rem;
+  visibility: hidden;
+}
+
+.text {
+  grid-area: oneColumOneRow;
+  /* visibility: visible; */
+}
+.text.loading {
+  visibility: hidden;
+}
+.spinner.loading {
+  visibility: visible;
+}

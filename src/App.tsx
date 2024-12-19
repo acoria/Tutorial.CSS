@@ -11,6 +11,8 @@ import { GridAnimation } from "./tricks/05_grid_animation/GridAnimation";
 import { Test } from "./test/Test";
 import { Accordion } from "./components/accordion/Accordion";
 import { AccordionWrapper } from "./components/accordion/AccordionWrapper";
+import { LoadingSpinnerButton } from "./snippets/loadingSpinnerButton/LoadingSpinnerButton";
+import { LoadingSpinnerButtonExample } from "./snippets/loadingSpinnerButton/LoadingSpinnerButtonExample";
 
 function App() {
   // return<Triangle />
@@ -20,6 +22,7 @@ function App() {
   // return <TransitionComponent />;
   // return <AnimatingList />;
   // return <LoadingSpinner />
+  return <LoadingSpinnerButtonExample />;
   // return <PersonSelect />;
   // return <TurningPerson />;
   // return <CSSTransitionComponent />;
@@ -44,7 +47,7 @@ function App() {
   // return <MultiSelectButtons buttonLabels={["one", "two"]} />;
   // return <GridAnimation />;
   // return <GridAnimationAddCell />;
-  return <AccordionWrapper />;
+  // return <AccordionWrapper />;
 }
 
 export default App;
