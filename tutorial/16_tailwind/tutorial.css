@@ -1,0 +1,39 @@
+/* Tailwind scans the code for css classes. Never dynamically build together a class name e.g. `bg-${color}-500` */
+
+/* use inline if you are referencing other variables from tailwind */
+@theme inline {
+  --color-primary: var(--color-red-700);
+}
+@theme {
+  /* Reset all predefined colors to define your own color palette */
+  /* With the *, anything, even the entire predefined values for tailwind, can be deleted. */
+  --color-*: initial;
+}
+
+/* Use "@layer base" to customize base components such as h1, p */
+@layer base {
+  /* h1{
+      color: green;
+    } */
+}
+
+/* Use @apply to apply any utility to a component  */
+/* Use "@layer components" for more complicated classes, e.g. like card, button */
+/* can be used like this <div className="card"> */
+@layer components {
+  .card {
+    width: 10rem;
+    background-color: var(--color-lime-400);
+    border-radius: var(--radius-lg);
+    /* padding: calc(var(--spacing) * 4); */
+    /* @apply p-4; */
+    /* padding: var(--spacing); */
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+/* Use @utility for a single attribute to be changed. */
+/* It can then be used with variants, e.g. hover: <div className="card hover:my-padding"> */
+@utility my-padding {
+  padding: 4rem;
+}
